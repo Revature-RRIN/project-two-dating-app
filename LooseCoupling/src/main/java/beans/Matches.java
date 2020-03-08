@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -28,7 +31,8 @@ public class Matches {
 	private Integer femaleId;
 	@Column
 	private Integer statusId;
-	
+	@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
+	private Set<Messages> matchMessages;
 	
 	
 	public Matches() {
@@ -40,12 +44,13 @@ public class Matches {
 		this.matchesId = matchesId;
 	}
 
-	public Matches(Integer matchesId, Integer maleId, Integer femaleId, Integer statusId) {
+	public Matches(Integer matchesId, Integer maleId, Integer femaleId, Integer statusId, Set<Messages> matchMessages) {
 		super();
 		this.matchesId = matchesId;
 		this.maleId = maleId;
 		this.femaleId = femaleId;
 		this.statusId = statusId;
+		this.matchMessages = matchMessages;
 	}
 
 	public Integer getMatchesId() {
@@ -79,14 +84,23 @@ public class Matches {
 	public void setStatusId(Integer statusId) {
 		this.statusId = statusId;
 	}
+	
+	public Set<Messages> getMatchMessages() {
+		return matchMessages;
+	}
+
+	public void setMatchMessages(Set<Messages> matchMessages) {
+		this.matchMessages = matchMessages;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((femaleId == null) ? 0 : femaleId.hashCode());
-		result = prime * result + ((matchesId == null) ? 0 : matchesId.hashCode());
 		result = prime * result + ((maleId == null) ? 0 : maleId.hashCode());
+		result = prime * result + ((matchMessages == null) ? 0 : matchMessages.hashCode());
+		result = prime * result + ((matchesId == null) ? 0 : matchesId.hashCode());
 		result = prime * result + ((statusId == null) ? 0 : statusId.hashCode());
 		return result;
 	}
@@ -105,15 +119,20 @@ public class Matches {
 				return false;
 		} else if (!femaleId.equals(other.femaleId))
 			return false;
-		if (matchesId == null) {
-			if (other.matchesId != null)
-				return false;
-		} else if (!matchesId.equals(other.matchesId))
-			return false;
 		if (maleId == null) {
 			if (other.maleId != null)
 				return false;
 		} else if (!maleId.equals(other.maleId))
+			return false;
+		if (matchMessages == null) {
+			if (other.matchMessages != null)
+				return false;
+		} else if (!matchMessages.equals(other.matchMessages))
+			return false;
+		if (matchesId == null) {
+			if (other.matchesId != null)
+				return false;
+		} else if (!matchesId.equals(other.matchesId))
 			return false;
 		if (statusId == null) {
 			if (other.statusId != null)
@@ -125,7 +144,8 @@ public class Matches {
 
 	@Override
 	public String toString() {
-		return "Matches [matchesId=" + matchesId + ", maleId=" + maleId + ", femaleId=" + femaleId + ", statusId=" + statusId + "]";
+		return "Matches [matchesId=" + matchesId + ", maleId=" + maleId + ", femaleId=" + femaleId + ", statusId="
+				+ statusId + ", matchMessages=" + matchMessages + "]";
 	}
 	
 }

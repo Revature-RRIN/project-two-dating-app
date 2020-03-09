@@ -34,6 +34,7 @@ public class Matches {
 	@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
 	//@JoinColumn??
 	private Set<Messages> matchMessages;
+	//Should Match have two Users field (ex: private Users user1), or are IDs enough?
 	
 	//Need @OneToMany mapping to users (as a set), as well as IDs??
 		//OneToOne for each user...

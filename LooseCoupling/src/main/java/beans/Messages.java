@@ -23,7 +23,8 @@ public class Messages {
 	@Column
 	private String remark;
 	
-	//Need @OneToMany mapping for users??
+	//NEEDS two OneToOne mappings for each sender and receiver
+
 	
 	
 	public Messages() {

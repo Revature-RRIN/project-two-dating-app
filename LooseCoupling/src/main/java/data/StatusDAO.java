@@ -7,7 +7,7 @@ import beans.Status;
 
 public interface StatusDAO {
 	//Do we need an Add Status method, or would they all be predefined...?
-	public Integer addStatus(Status s);
+//	public Integer addStatus(Status s);
 	
 	public Status getStatusById(int id);
 	public Status getStatusByMatch(Matches m);
@@ -15,5 +15,5 @@ public interface StatusDAO {
 	public void updateStatus(Status s);
 	
 	//Do we need a delete Status method?
-	public void deleteStatus(Status s); 
+//	public void deleteStatus(Status s); 
 }

@@ -22,6 +22,7 @@ public class Messages {
 	private Integer receiverId;
 	@Column
 	private String remark;
+	//Should Messages have two Users fields (ex: private Users user1) or are IDs enough?
 	
 	//NEEDS two OneToOne mappings for each sender and receiver
 

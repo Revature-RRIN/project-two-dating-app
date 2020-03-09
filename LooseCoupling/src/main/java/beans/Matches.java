@@ -32,8 +32,14 @@ public class Matches {
 	@Column
 	private Integer statusId;
 	@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
+	//@JoinColumn??
 	private Set<Messages> matchMessages;
 	
+	//Need @OneToMany mapping to users (as a set), as well as IDs??
+		//OneToOne for each user...
+	//Need @OneToOne mapping to status, given match has a status... or does statusId field cover it??
+	
+	//RICHARD DIDN'T LIKE MALE-FEMALE EXCLUSIVITY...
 	
 	public Matches() {
 		super();

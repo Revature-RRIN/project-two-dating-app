@@ -4,9 +4,9 @@
 	<session-factory>
 		<!-- JDBC set up -->
 		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
-		<property name="hibernate.connection.username">bookapp</property>
-		<property name="hibernate.connection.password">p4ssw0rd</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.username">Loose_Coupling</property>
+		<property name="hibernate.connection.password">password111</property>
 
 		<!-- Hibernate set up -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
@@ -19,16 +19,11 @@
 
 		<!-- Annotation Mappings -->
 		
-		<!-- NEED TO RE-MAP BEANS!!! -->
-		<mapping class="com.revature.beans.Address" />
-		<mapping class="com.revature.beans.Author" />
-		<mapping class="com.revature.beans.Book" />
-		<mapping class="com.revature.beans.Customer" />
-		<mapping class="com.revature.beans.Employee" />
-		<mapping class="com.revature.beans.Genre" />
-		<mapping class="com.revature.beans.InvoiceLine" />
-		<mapping class="com.revature.beans.Purchase" />
-		<mapping class="com.revature.beans.User" />
-				
+		<!-- BEANS PROPERLY MAPPED?? HOW TO DOUBLE-CHECK FULLY QUALIFIED CLASS NAME? -->
+		<mapping class="com.revature.beans.Answers" />
+		<mapping class="com.revature.beans.Matches" />
+		<mapping class="com.revature.beans.Messages" />
+		<mapping class="com.revature.beans.Status" />
+		<mapping class="com.revature.beans.Users" />				
 	</session-factory>
 </hibernate-configuration>

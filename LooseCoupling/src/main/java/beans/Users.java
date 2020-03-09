@@ -37,6 +37,7 @@ public class Users {
 	@Column
 	private String lastname;
 	@Column
+	//DON'T GO BLOB ROUTE! S3 INTEGRATION
 	private Blob profilepic;
 	@Column
 	private Integer score;
@@ -58,6 +59,13 @@ public class Users {
 		joinColumns=@JoinColumn(name="users_id"),
 		inverseJoinColumns=@JoinColumn(name="messages_id"))
 	private Set<Messages> userMessages;
+	
+	//Need @OneToMany mapping for answers (as a set)?? Or does the cumulative "score" field suffice??
+		//...Will we ever need to retrieve answers individually??
+	
+	//Need to remove recursive elements (userMatches and userMessages) 
+		//from .hascode(), .equals(), and .toString()
+	
 	
 	public Users() {
 		super();
@@ -218,7 +226,7 @@ public class Users {
 		result = prime * result + ((location == null) ? 0 : location.hashCode());
 		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
 		result = prime * result + ((score == null) ? 0 : score.hashCode());
-		result = prime * result + ((userMatches == null) ? 0 : userMatches.hashCode());
+//		result = prime * result + ((userMatches == null) ? 0 : userMatches.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		result = prime * result + ((usersId == null) ? 0 : usersId.hashCode());
 		result = prime * result + ((usertype == null) ? 0 : usertype.hashCode());
@@ -274,11 +282,11 @@ public class Users {
 				return false;
 		} else if (!score.equals(other.score))
 			return false;
-		if (userMatches == null) {
-			if (other.userMatches != null)
-				return false;
-		} else if (!userMatches.equals(other.userMatches))
-			return false;
+//		if (userMatches == null) {
+//			if (other.userMatches != null)
+//				return false;
+//		} else if (!userMatches.equals(other.userMatches))
+//			return false;
 		if (username == null) {
 			if (other.username != null)
 				return false;
@@ -301,8 +309,7 @@ public class Users {
 	public String toString() {
 		return "Users [usersId=" + usersId + ", usertype=" + usertype + ", username=" + username + ", pass=" + pass
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", score=" + score + ", age=" + age
-				+ ", gender=" + gender + ", location=" + location + ", banned=" + banned + ", userMatches="
-				+ userMatches + "]";
+				+ ", gender=" + gender + ", location=" + location + ", banned=" + banned + "]";
 	}
 	
 }

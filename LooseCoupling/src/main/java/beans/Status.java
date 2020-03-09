@@ -19,7 +19,10 @@ public class Status {
 	private Integer statusId;
 	@Column(name = "status_state")
 	private String statusState;
+	
+	//Need @OneToOne for matches (b/c each status refers to a match, and each match has a status)??
 
+	
 	public Status() {
 		super();
 	}

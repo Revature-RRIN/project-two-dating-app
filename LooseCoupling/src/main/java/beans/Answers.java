@@ -25,9 +25,13 @@ public class Answers {
 	@Column (name="answer_4")
 	private Integer answer4;
 	@Column
-	
-	
 	private Integer cumulative;
+	
+	//Need @ManyToOne mapping for user?? Given answers have a user that provided the answers??
+	
+	//NOT 1ST NORMAL FORM!!... NEED TO CHANGE
+	//RICHARD WANTS ADMIN TO BE ABLE TO ADD QUESTIONS
+	
 	public Answers() {
 		super();
 	}

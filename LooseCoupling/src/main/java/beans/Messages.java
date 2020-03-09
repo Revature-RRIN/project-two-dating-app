@@ -22,12 +22,14 @@ public class Messages {
 	private Integer receiverId;
 	@Column
 	private String remark;
-
+	
+	//Need @OneToMany mapping for users??
+	
+	
 	public Messages() {
 		super();
 	}
 
-	
 	public Messages(Integer messagesId) {
 		super();
 		this.messagesId = messagesId;

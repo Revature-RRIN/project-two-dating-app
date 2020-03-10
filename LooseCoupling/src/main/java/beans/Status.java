@@ -1,10 +1,15 @@
 package beans;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -19,6 +24,9 @@ public class Status {
 	private Integer statusId;
 	@Column(name = "status_state")
 	private String statusState;
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name="matchesId")
+	private Set<Matches> matchByStatus;
 	
 	//Need @OneToOne for matches (b/c each status refers to a match, and each match has a status)??
 
@@ -57,11 +65,21 @@ public class Status {
 		this.statusState = statusState;
 	}
 
-	
+	public Set<Matches> getMatchByStatus() {
+		return matchByStatus;
+	}
+
+
+	public void setMatchByStatus(Set<Matches> matchByStatus) {
+		this.matchByStatus = matchByStatus;
+	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((matchByStatus == null) ? 0 : matchByStatus.hashCode());
 		result = prime * result + ((statusId == null) ? 0 : statusId.hashCode());
 		result = prime * result + ((statusState == null) ? 0 : statusState.hashCode());
 		return result;
@@ -76,6 +94,11 @@ public class Status {
 		if (getClass() != obj.getClass())
 			return false;
 		Status other = (Status) obj;
+		if (matchByStatus == null) {
+			if (other.matchByStatus != null)
+				return false;
+		} else if (!matchByStatus.equals(other.matchByStatus))
+			return false;
 		if (statusId == null) {
 			if (other.statusId != null)
 				return false;
@@ -91,7 +114,8 @@ public class Status {
 
 	@Override
 	public String toString() {
-		return "Status [statusId=" + statusId + ", statusState=" + statusState + "]";
+		return "Status [statusId=" + statusId + ", statusState=" + statusState + ", matchByStatus=" + matchByStatus
+				+ "]";
 	}
 
 }

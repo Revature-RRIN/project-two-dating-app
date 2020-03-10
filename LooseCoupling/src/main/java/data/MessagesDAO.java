@@ -10,7 +10,7 @@ import beans.Users;
 public interface MessagesDAO {
 	public Integer addMessage(Messages msg);
 	public Messages getMessageById(int id);
-	public Messages getMessageByUser(Users u);
+	public Set<Messages> getMessageByUser(Users u);
 	public Set<Messages> getMessagesByMatch(Matches m);
 	
 	//ByStatus for Admin functionality... (so he/she can retrieve "deleted/reported" messages)?

@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -14,6 +15,7 @@ import utils.LogUtil;
 
 public class UsersHibernate implements UsersDAO{
 	private HibernateUtil hu = HibernateUtil.getInstance();
+	private Logger log = Logger.getLogger(UsersHibernate.class);
 
 	public Integer addUser(Users u) {
 		Session s = hu.getSession();
@@ -32,8 +34,27 @@ public class UsersHibernate implements UsersDAO{
 		}
 		return u.getUsersId();
 	}
+	
+	public Users getUser(Users u) {
+		Session s = hu.getSession();
+		Users u2;
+		log.trace(u);
+		if(u.getUsersId()!=null && u.getUsersId()!=0) {
+			//this means we're going to retrieve by id
+			u2 = s.get(Users.class, u.getUsersId());
+		} else {
+			//this means we're getting by user/pass
+			String query = "from Users u2 where u2.username=:username and u2.pass=:pass";
+			Query<Users> q = s.createQuery(query, Users.class);
+			q.setParameter("username", u.getUsername());
+			q.setParameter("pass", u.getPass());
+			u2 = q.uniqueResult();
+		}
+		s.close();
+		return u2;
+	}
 
-	public Users getUser(String username, String password) {
+	public Users getUserByUandP(String username, String password) {
 		Session s = hu.getSession();
 		String query = "FROM Users u where u.username = :username and u.pass = :pass";
 		Query<Users> q = s.createQuery(query, Users.class);

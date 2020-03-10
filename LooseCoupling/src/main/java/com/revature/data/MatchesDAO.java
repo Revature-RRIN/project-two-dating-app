@@ -1,9 +1,9 @@
-package data;
+package com.revature.data;
 
 import java.util.Set;
 
-import beans.Matches;
-import beans.Users;
+import com.revature.beans.Matches;
+import com.revature.beans.Users;
 
 public interface MatchesDAO {
 	public Integer addMatch(Matches m);

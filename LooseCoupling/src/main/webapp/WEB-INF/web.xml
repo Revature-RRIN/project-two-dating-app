@@ -4,16 +4,23 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-	<!-- NEED TO CHANGE WHEN SPRING IS INTRODUCED!!! FRONT CONTROLLER -->
+	<!-- SPRING IS INTRODUCED!!! FRONT CONTROLLER -->
 
 	<display-name>LooseCoupling</display-name>
 	<servlet>
-		<servlet-name>front</servlet-name>
-		<servlet-class>com.revature.controller.FrontController</servlet-class>
+		<servlet-name>Coupling</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/beans.xml</param-value>
+		</init-param>
+
+
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>front</servlet-name>
+		<servlet-name>Coupling</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 </web-app>

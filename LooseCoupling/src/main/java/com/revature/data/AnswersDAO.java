@@ -1,9 +1,9 @@
-package data;
+package com.revature.data;
 
 import java.util.Set;
 
-import beans.Answers;
-import beans.Users;
+import com.revature.beans.Answers;
+import com.revature.beans.Users;
 
 public interface AnswersDAO {
 	public Integer addAnswer(Answers a); //returns ID for a given set of Answers

@@ -1,4 +1,4 @@
-package beans;
+package com.revature.beans;
 
 import java.sql.Blob;
 import java.util.Set;

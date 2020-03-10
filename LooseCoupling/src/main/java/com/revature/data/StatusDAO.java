@@ -1,9 +1,9 @@
-package data;
+package com.revature.data;
 
 import java.util.Set;
 
-import beans.Matches;
-import beans.Status;
+import com.revature.beans.Matches;
+import com.revature.beans.Status;
 
 public interface StatusDAO {
 	//Do we need an Add Status method, or would they all be predefined...?

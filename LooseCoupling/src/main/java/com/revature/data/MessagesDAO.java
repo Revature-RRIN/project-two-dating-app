@@ -1,11 +1,11 @@
-package data;
+package com.revature.data;
 
 import java.util.Set;
 
-import beans.Matches;
-import beans.Messages;
-import beans.Status;
-import beans.Users;
+import com.revature.beans.Matches;
+import com.revature.beans.Messages;
+import com.revature.beans.Status;
+import com.revature.beans.Users;
 
 public interface MessagesDAO {
 	public Integer addMessage(Messages msg);

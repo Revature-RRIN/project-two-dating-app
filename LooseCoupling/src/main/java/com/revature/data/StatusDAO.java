@@ -12,7 +12,7 @@ public interface StatusDAO {
 	public Status getStatusById(int id);
 	public Status getStatusByMatch(Matches m);
 	public Set<Status> getAllStatuses();
-	public void updateStatus(Status s);
+	public void updateStatus(Status stat);
 	
 	//Do we need a delete Status method?
 //	public void deleteStatus(Status s); 

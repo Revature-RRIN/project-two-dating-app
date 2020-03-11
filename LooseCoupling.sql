@@ -17,7 +17,7 @@ create table users (
     pass varchar2 (20),
     firstname varchar2 (20),
     lastname varchar2 (20),
-    profilepic blob,
+--    profilepic blob,
     score number (3),
     age number (3),
     gender number (1),

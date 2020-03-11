@@ -1,4 +1,4 @@
-package data;
+package com.revature.data.hibernate;
 
 import java.util.HashSet;
 import java.util.List;
@@ -8,12 +8,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import beans.Matches;
-import beans.Messages;
-import beans.Status;
-import beans.Users;
-import utils.HibernateUtil;
-import utils.LogUtil;
+import com.revature.beans.Matches;
+import com.revature.beans.Messages;
+import com.revature.beans.Status;
+import com.revature.beans.Users;
+import com.revature.data.MessagesDAO;
+import com.revature.utils.HibernateUtil;
+import com.revature.utils.LogUtil;
 
 public class MessagesHibernate implements MessagesDAO{
 	private HibernateUtil hu = HibernateUtil.getInstance();

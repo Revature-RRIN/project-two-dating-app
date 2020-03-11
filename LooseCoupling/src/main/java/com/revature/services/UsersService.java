@@ -1,8 +1,8 @@
-package Services;
+package com.revature.services;
 
 import java.util.Set;
 
-import beans.Users;
+import com.revature.beans.Users;
 
 public interface UsersService {
 	public void addUser(Users u);

@@ -1,4 +1,4 @@
-package data;
+package com.revature.data.hibernate;
 
 import java.util.HashSet;
 import java.util.List;
@@ -8,10 +8,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import beans.Matches;
-import beans.Status;
-import utils.HibernateUtil;
-import utils.LogUtil;
+import com.revature.beans.Matches;
+import com.revature.beans.Status;
+import com.revature.data.StatusDAO;
+import com.revature.utils.HibernateUtil;
+import com.revature.utils.LogUtil;
 
 
 public class StatusHibernate implements StatusDAO{

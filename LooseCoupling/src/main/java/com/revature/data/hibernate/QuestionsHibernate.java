@@ -1,4 +1,4 @@
-package data;
+package com.revature.data.hibernate;
 
 import java.util.HashSet;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import beans.Questions;
-import utils.HibernateUtil;
-import utils.LogUtil;
+import com.revature.beans.Questions;
+import com.revature.utils.HibernateUtil;
+import com.revature.utils.LogUtil;
 
 public class QuestionsHibernate implements QuestionsDAO{
 	private HibernateUtil hu = HibernateUtil.getInstance();

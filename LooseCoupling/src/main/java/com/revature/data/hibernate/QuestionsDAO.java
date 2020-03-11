@@ -1,8 +1,8 @@
-package data;
+package com.revature.data.hibernate;
 
 import java.util.Set;
 
-import beans.Questions;
+import com.revature.beans.Questions;
 
 public interface QuestionsDAO {
 	public Integer addQuestion(Questions q); 

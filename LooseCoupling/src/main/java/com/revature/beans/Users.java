@@ -106,7 +106,7 @@ public class Users {
 		return usersId;
 	}
 
-	public void setUsersId(Integer UsersId) {
+	public void setUsersId(Integer usersId) {
 		this.usersId = usersId;
 	}
 

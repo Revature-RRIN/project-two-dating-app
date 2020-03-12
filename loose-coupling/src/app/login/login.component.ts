@@ -24,4 +24,8 @@ export class LoginComponent implements OnInit {
       alert("Invalid credentials");
     }
   }
+  register(): void {
+      alert("Register");
+  }
+
 }

@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table
@@ -32,6 +34,7 @@ public class Users {
 	@Column
 	private String username;
 	@Column
+	//@JsonIgnore?
 	private String pass;
 	@Column
 	private String firstname;

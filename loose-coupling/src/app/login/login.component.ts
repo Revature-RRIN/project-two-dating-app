@@ -9,19 +9,23 @@ import { MatDialog } from "@angular/material/dialog";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router){
+  constructor(private router: Router) {
   }
 
   username: string;
   password: string;
 
-  ngOnInit(): void {}
-  
+  ngOnInit(): void { }
+
   login(): void {
     if (this.username == "admin" && this.password == "pass") {
       this.router.navigate(["user"]);
     } else {
       alert("Invalid credentials");
     }
+  }
+
+  register(): void {
+    alert("Registering");
   }
 }

@@ -24,7 +24,6 @@ public class Answers {
 	// Need @ManyToOne mapping for user?? Given answers have a user that provided
 	// the answers??
 
-	// NOT 1ST NORMAL FORM!!... NEED TO CHANGE
 	// RICHARD WANTS ADMIN TO BE ABLE TO ADD QUESTIONS
 
 	public Answers() {

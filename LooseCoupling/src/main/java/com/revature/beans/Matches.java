@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,8 +28,12 @@ public class Matches {
 	@GeneratedValue (generator="matches", strategy=GenerationType.SEQUENCE)
 	private Integer matchesId;
 	@Column
-	private Integer maleId;
+	@OneToOne
+	@JoinColumn (name="users_id")
+	private Integer maleId; 
 	@Column
+	@OneToOne
+	@JoinColumn (name="users_id")
 	private Integer femaleId;
 	@Column
 	private Integer statusId;
@@ -39,7 +44,7 @@ public class Matches {
 	private Set<Messages> matchMessages;
 	//Should Match have two Users field (ex: private Users user1), or are IDs enough?
 	
-	//Need @OneToMany mapping to users (as a set), as well as IDs??
+	
 		//OneToOne for each user...
 	//Need @OneToOne mapping to status, given match has a status... or does statusId field cover it??
 	

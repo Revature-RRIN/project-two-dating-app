@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,8 +19,12 @@ public class Messages {
 	@GeneratedValue(generator = "messages", strategy = GenerationType.SEQUENCE)
 	private Integer messagesId;
 	@Column(name = "sender_id")
+	@OneToOne
+	@JoinColumn (name="users_id")
 	private Integer senderId;
 	@Column(name = "receiver_id")
+	@OneToOne
+	@JoinColumn (name="users_id")
 	private Integer receiverId;
 	@Column
 	private String remark;

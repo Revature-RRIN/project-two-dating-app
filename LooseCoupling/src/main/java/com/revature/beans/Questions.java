@@ -23,10 +23,10 @@ public class Questions {
 	private Integer questionId;
 	@Column
 	private String question;
-	@OneToMany (mappedBy="questions")
-	@JoinTable(name="user_answers",
-	joinColumns=@JoinColumn(name="questions_id"),
-	inverseJoinColumns=@JoinColumn(name="answers_id"))
+	//@OneToMany (mappedBy="questions")
+	//@JoinTable(name="user_answers",
+	//joinColumns=@JoinColumn(name="questions_id"),
+	//inverseJoinColumns=@JoinColumn(name="answers_id"))
 	private Set<Answers> ans;
 	
 	

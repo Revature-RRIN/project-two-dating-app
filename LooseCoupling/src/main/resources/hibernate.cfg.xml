@@ -4,9 +4,9 @@
 	<session-factory>
 		<!-- JDBC set up -->
 		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL</property>
-		<property name="hibernate.connection.username">Loose_Coupling</property>
-		<property name="hibernate.connection.password">password111</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.username">admin</property>
+		<property name="hibernate.connection.password">password</property>
 
 		<!-- Hibernate set up -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
@@ -24,6 +24,7 @@
 		<mapping class="com.revature.beans.Matches" />
 		<mapping class="com.revature.beans.Messages" />
 		<mapping class="com.revature.beans.Status" />
-		<mapping class="com.revature.beans.Users" />				
+		<mapping class="com.revature.beans.Users" />
+		<mapping class="com.revature.beans.Questions" />				
 	</session-factory>
 </hibernate-configuration>

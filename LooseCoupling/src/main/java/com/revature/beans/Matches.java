@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,8 +32,10 @@ public class Matches {
 	private Integer femaleId;
 	@Column
 	private Integer statusId;
-	@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
+	//@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
 	//@JoinColumn??
+	@Column
+	@ElementCollection(targetClass=Integer.class)
 	private Set<Messages> matchMessages;
 	//Should Match have two Users field (ex: private Users user1), or are IDs enough?
 	

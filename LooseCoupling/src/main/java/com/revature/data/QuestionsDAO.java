@@ -1,4 +1,4 @@
-package com.revature.data.hibernate;
+package com.revature.data;
 
 import java.util.Set;
 

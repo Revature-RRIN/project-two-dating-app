@@ -1,10 +1,9 @@
-package com.revature.data.hibernate;
+package com.revature.services;
 
 import java.util.Set;
-
 import com.revature.beans.Questions;
 
-public interface QuestionsDAO {
+public interface QuestionsService {
 	public Integer addQuestion(Questions q); 
 	public Set<Questions> getAllQuestions(); 
 	public void deleteQuestions(Questions q);

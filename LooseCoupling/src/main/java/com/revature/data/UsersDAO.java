@@ -1,15 +1,9 @@
 package com.revature.data;
 
-import java.util.Set;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Users;
 
-public interface UsersDAO {
-	public Integer addUser(Users u);
-	public Users getUser(Users u);
-	public Users getUserByUandP(String username, String password);
-	public Users getUserById(Integer id);
-	public Set<Users> getAllUsers();
-	public void updateUser(Users u);
-	public void deleteUser(Users u);
-}
+@Repository
+public interface UsersDAO extends JpaRepository<Users, Integer>{}

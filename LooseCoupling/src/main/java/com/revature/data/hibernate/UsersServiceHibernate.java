@@ -1,4 +1,4 @@
-package com.revature.services;
+package com.revature.data.hibernate;
 
 import java.util.Set;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.beans.Users;
 import com.revature.data.UsersDAO;
-import com.revature.data.hibernate.UsersHibernate;
+import com.revature.services.UsersService;
 
 @Service
 public class UsersServiceHibernate implements UsersService{

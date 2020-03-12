@@ -1,17 +1,9 @@
 package com.revature.data;
 
-import java.util.Set;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Matches;
-import com.revature.beans.Users;
 
-public interface MatchesDAO {
-	public Integer addMatch(Matches m);
-	public Matches getMatchById(int id);
-	public Set<Matches> getAllMatches();
-	public Set<Matches> getMatchesByUser(Users u);
-	//getMatchByMessage? 
-	//getMatchByStatus?
-	public void updateMatch(Matches m);
-	public void deleteMatch(Matches m);
-}
+@Repository
+public interface MatchesDAO extends JpaRepository<Matches, Integer>{}

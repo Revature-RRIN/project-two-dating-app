@@ -10,11 +10,11 @@ import org.hibernate.query.Query;
 
 import com.revature.beans.Answers;
 import com.revature.beans.Users;
-import com.revature.data.AnswersDAO;
+import com.revature.data.plsacked;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class AnswersHibernate implements AnswersDAO{
+public class AnswersHibernate implements AnswersService{
 	private HibernateUtil hu = HibernateUtil.getInstance();
 
 	public Integer addAnswer(Answers a) {

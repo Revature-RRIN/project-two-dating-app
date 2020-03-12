@@ -2,6 +2,12 @@ package com.revature.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,12 +19,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Users;
+import com.revature.data.hibernate.UsersServiceHibernate;
 import com.revature.services.UsersService;
 
 @RestController
 @RequestMapping(value="/login")
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
+	public static void main (String[] args) {
+		UsersService us = new UsersServiceHibernate();
+        Users u = us.getUser("user", "pass");
+        System.out.println(u.getFirstname());
+	}
 
 	@Autowired
 	private UsersService us;

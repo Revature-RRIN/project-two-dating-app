@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,8 +25,10 @@ public class Status {
 	private Integer statusId;
 	@Column(name = "status_state")
 	private String statusState;
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name="matchesId")
+	//@OneToOne (cascade = CascadeType.ALL)
+	//@JoinColumn (name="matchesId")
+	@Column
+	@ElementCollection(targetClass=Integer.class)
 	private Set<Matches> matchByStatus;
 	
 	//Need @OneToOne for matches (b/c each status refers to a match, and each match has a status)??

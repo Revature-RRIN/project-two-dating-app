@@ -24,6 +24,7 @@
 		<mapping class="com.revature.beans.Matches" />
 		<mapping class="com.revature.beans.Messages" />
 		<mapping class="com.revature.beans.Status" />
-		<mapping class="com.revature.beans.Users" />				
+		<mapping class="com.revature.beans.Users" />
+		<mapping class="com.revature.beans.Questions" />				
 	</session-factory>
 </hibernate-configuration>

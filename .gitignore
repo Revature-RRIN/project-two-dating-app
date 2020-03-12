@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# connection stuff
+/src/main/resources/hibernate.cfg
+
 # Log file
 *.log
 

@@ -13,13 +13,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Users;
+import com.revature.data.hibernate.UsersHibernate;
+import com.revature.data.hibernate.UsersServiceHibernate;
 import com.revature.services.UsersService;
 
 @RestController
 @RequestMapping(value="/login")
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
-
+	
+	public static void main(String[] args)	{
+		UsersService us = new UsersServiceHibernate();
+		Users u = us.getUser("username", "pass");
+		System.out.println(u.getFirstname());
+	}
+	
+	
 	@Autowired
 	private UsersService us;
 	/*@Autowired

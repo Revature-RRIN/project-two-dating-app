@@ -49,15 +49,15 @@ public class Users {
 	private String location;
 	@Column
 	private String banned;
-	@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinTable (name="MATCH_USER",
-		joinColumns=@JoinColumn(name="users_id"),
-		inverseJoinColumns=@JoinColumn(name="matches_id"))
+//	@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+//	@JoinTable (name="MATCH_USER",
+//		joinColumns=@JoinColumn(name="users_id"),
+//		inverseJoinColumns=@JoinColumn(name="matches_id"))
 	private Set<Matches> userMatches;
-	@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinTable (name="MESSAGES_USER",
-		joinColumns=@JoinColumn(name="users_id"),
-		inverseJoinColumns=@JoinColumn(name="messages_id"))
+//	@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+//	@JoinTable (name="MESSAGES_USER",
+//		joinColumns=@JoinColumn(name="users_id"),
+//		inverseJoinColumns=@JoinColumn(name="messages_id"))
 	private Set<Messages> userMessages;
 	
 	//Need @OneToMany mapping for answers (as a set)?? Or does the cumulative "score" field suffice??

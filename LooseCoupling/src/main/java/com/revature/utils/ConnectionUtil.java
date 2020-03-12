@@ -1,4 +1,4 @@
-package com.revature.utils;
+/*package com.revature.utils;
 
 
 import java.io.InputStream;
@@ -44,3 +44,4 @@ public class ConnectionUtil {
 		return conn;
 	}
 }
+*/

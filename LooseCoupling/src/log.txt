@@ -1,0 +1,52 @@
+2020-03-11 22:53:09 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 22:53:09 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 22:53:10 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 22:53:10 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 22:55:32 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 22:55:32 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 22:55:33 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 22:55:33 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 22:57:39 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 22:57:40 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 22:57:40 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 22:57:40 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 22:58:41 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 22:58:41 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 22:58:42 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 22:58:42 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 23:01:45 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 23:01:45 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 23:01:46 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 23:01:46 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 23:01:46 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-noah.cprsqw8rojcv.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-11 23:01:46 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-11 23:01:46 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-11 23:01:46 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-11 23:01:48 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-11 23:03:53 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 23:03:53 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 23:03:54 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 23:03:54 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 23:03:54 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-noah.cprsqw8rojcv.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-11 23:03:54 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-11 23:03:54 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-11 23:03:54 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-11 23:03:56 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-11 23:04:45 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 23:04:45 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 23:04:45 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 23:04:46 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 23:04:46 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-noah.cprsqw8rojcv.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-11 23:04:46 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-11 23:04:46 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-11 23:04:46 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-11 23:04:48 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-11 23:08:22 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-11 23:08:22 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-11 23:08:23 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-11 23:08:23 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-11 23:08:23 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-noah.cprsqw8rojcv.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-11 23:08:23 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-11 23:08:23 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-11 23:08:23 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-11 23:08:25 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect

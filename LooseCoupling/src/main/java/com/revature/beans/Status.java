@@ -24,8 +24,8 @@ public class Status {
 	private Integer statusId;
 	@Column(name = "status_state")
 	private String statusState;
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name="matchesId")
+//	@OneToOne (cascade = CascadeType.ALL)
+//	@JoinColumn (name="matchesId")
 	private Set<Matches> matchByStatus;
 	
 	//Need @OneToOne for matches (b/c each status refers to a match, and each match has a status)??

@@ -8,6 +8,13 @@ drop table matches cascade constraints;
 --drop table admini cascade constraints;
 drop table users cascade constraints;
 
+drop sequence users_seq;
+drop sequence matches_seq;
+drop sequence status_seq;
+drop sequence messages_seq;
+drop sequence questions_seq;
+drop sequence answers_seq;
+drop sequence user_answer_seq;
 
 
 create table users (
@@ -107,6 +114,23 @@ create sequence messages_seq start with 1 increment by 1 minvalue 1 cache 2;
 create sequence questions_seq start with 1 increment by 1 minvalue 1 cache 2;
 create sequence answers_seq start with 1 increment by 1 minvalue 1 cache 2;
 create sequence user_answer_seq start with 1 increment by 1 minvalue 1 cache 2;
+
+    users_id number (3) primary key,
+    usertype number (2),
+    username varchar2 (20),
+    pass varchar2 (20),
+    firstname varchar2 (20),
+    lastname varchar2 (20),
+--    profilepic blob,
+    score number (3),
+    age number (3),
+    gender number (1),
+    location varchar2 (30),
+    banned varchar2 (8)
+
+
+insert into users (users_id, usertype, username, pass, firstname, lastname, score, age, gender, location, banned)
+values (1, 1, 'username', 'pass', 'Tester', 'Last', 1, 21, 1, 'Here', 'No');
 
 commit;
 

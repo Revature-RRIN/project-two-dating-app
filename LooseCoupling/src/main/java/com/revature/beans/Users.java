@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -36,9 +37,9 @@ public class Users {
 	private String firstname;
 	@Column
 	private String lastname;
-	@Column
+	//@Column
 	//DON'T GO BLOB ROUTE! S3 INTEGRATION
-	private Blob profilepic;
+	//private Blob profilepic;
 	@Column
 	private Integer score;
 	@Column
@@ -49,15 +50,19 @@ public class Users {
 	private String location;
 	@Column
 	private String banned;
-	@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	/*@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable (name="MATCH_USER",
 		joinColumns=@JoinColumn(name="users_id"),
-		inverseJoinColumns=@JoinColumn(name="matches_id"))
+		inverseJoinColumns=@JoinColumn(name="matches_id"))*/
+	@Column
+	@ElementCollection(targetClass=Integer.class)
 	private Set<Matches> userMatches;
-	@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	/*@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable (name="MESSAGES_USER",
 		joinColumns=@JoinColumn(name="users_id"),
-		inverseJoinColumns=@JoinColumn(name="messages_id"))
+		inverseJoinColumns=@JoinColumn(name="messages_id"))*/
+	@Column
+	@ElementCollection(targetClass=Integer.class)
 	private Set<Messages> userMessages;
 	
 	//Need @OneToMany mapping for answers (as a set)?? Or does the cumulative "score" field suffice??
@@ -92,7 +97,7 @@ public class Users {
 		this.pass = pass;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.profilepic = profilepic;
+		//this.profilepic = profilepic;
 		this.score = score;
 		this.age = age;
 		this.gender = gender;
@@ -150,13 +155,13 @@ public class Users {
 		this.lastname = lastname;
 	}
 
-	public Blob getProfilepic() {
+	/*/public Blob getProfilepic() {
 		return profilepic;
 	}
 
 	public void setProfilepic(Blob profilepic) {
 		this.profilepic = profilepic;
-	}
+	}*/
 
 	public Integer getScore() {
 		return score;

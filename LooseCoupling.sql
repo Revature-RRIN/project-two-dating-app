@@ -108,5 +108,7 @@ create sequence questions_seq start with 1 increment by 1 minvalue 1 cache 2;
 create sequence answers_seq start with 1 increment by 1 minvalue 1 cache 2;
 create sequence user_answer_seq start with 1 increment by 1 minvalue 1 cache 2;
 
+insert into users (users_id, usertype, username, pass, firstname, lastname, score, age, gender, location, banned) values (1, 1, 'user', 'pass', 'R', 'X', 1, 1, 1, 'z', 'y');
+
 commit;
 

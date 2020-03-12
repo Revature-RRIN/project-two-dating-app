@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# Hibernate cfg file
+/src/main/resources/
+
 # Log file
 *.log
 

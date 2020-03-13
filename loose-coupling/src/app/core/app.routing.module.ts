@@ -6,17 +6,13 @@ import { LoginComponent } from "../login/login.component";
 import { RegisterComponent } from "../register/register.component";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { WelcomeComponent } from "../welcome/welcome.component";
-
-
+import { ProfileComponent } from "../profile/profile.component"
 
 const routes: Routes = [
   { path: "user", component: UserComponent },
   { path: "login", component: WelcomeComponent },
   { path: "", component: WelcomeComponent },
-  { path: "", component: RegisterComponent },
-  { path: "", component: LoginComponent },
-  { path: "", component: NavbarComponent }
-  
+  { path: "profile", component: ProfileComponent },
   
 
 ];

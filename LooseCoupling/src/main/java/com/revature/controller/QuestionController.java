@@ -2,6 +2,7 @@ package com.revature.controller;
 
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Questions;
 import com.revature.services.QuestionService;
-import com.revature.services.QuestionServiceHibernate;
 
 @RestController
 @RequestMapping(value="/questions")
 @CrossOrigin(origins="http://localhost:4200")
 public class QuestionController {
 	
-	private QuestionService qs = new QuestionServiceHibernate();
+	@Autowired
+	private QuestionService qs;
 	
 	@GetMapping()
 	public ResponseEntity<Set<Questions>> getAllQuestions() {

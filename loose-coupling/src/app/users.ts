@@ -1,3 +1,6 @@
+import { Matches } from './matches';
+import { Messages } from './messages';
+
 export class Users {
     usersId : number;
 	usertype : number;
@@ -10,6 +13,8 @@ export class Users {
 	gender : number;
 	location : string;
 	banned : string;
+	userMatches : Matches [];
+	userMessages : Messages [];
 	//private Set<Matches> userMatches;
 	//private Set<Messages> userMessages;
 }

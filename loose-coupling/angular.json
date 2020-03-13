@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "loose-coupling"
+  "defaultProject": "loose-coupling",
+  "cli": {
+    "analytics": false
+  }
 }

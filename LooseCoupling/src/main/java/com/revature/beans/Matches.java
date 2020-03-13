@@ -48,7 +48,7 @@ public class Matches {
 		//OneToOne for each user...
 	//Need @OneToOne mapping to status, given match has a status... or does statusId field cover it??
 	
-	//RICHARD DIDN'T LIKE MALE-FEMALE EXCLUSIVITY...
+	//RICHARD DIDN'T LIKE MALE-FEMALE EXCLUSIVITY
 	
 	public Matches() {
 		super();

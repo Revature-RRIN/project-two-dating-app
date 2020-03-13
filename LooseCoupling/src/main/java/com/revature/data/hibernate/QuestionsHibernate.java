@@ -61,5 +61,13 @@ public class QuestionsHibernate implements QuestionsDAO{
 			s.close();
 		}
 	}
+	
+	@Override
+	public Questions getQuestionById(Integer i) {
+		Session s = hu.getSession();
+		Questions b = s.get(Questions.class, i);
+		s.close();
+		return b;
+	}
 
 }

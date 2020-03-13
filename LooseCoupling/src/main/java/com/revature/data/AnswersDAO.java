@@ -11,4 +11,5 @@ public interface AnswersDAO {
 	public Set<Answers> getAllAnswers(); //...might need for Services layer	
 	public void updateAnswer(Answers a);
 	public void deleteAnswers(Answers a);
+	public Answers getAnswersById(Integer i); //needed for update.
 }

@@ -21,6 +21,7 @@
 		
 		<!-- BEANS PROPERLY MAPPED?? HOW TO DOUBLE-CHECK FULLY QUALIFIED CLASS NAME? -->
 		<mapping class="com.revature.beans.Answers" />
+		<mapping class="com.revature.beans.LoginInfo" />
 		<mapping class="com.revature.beans.Matches" />
 		<mapping class="com.revature.beans.Messages" />
 		<mapping class="com.revature.beans.Status" />

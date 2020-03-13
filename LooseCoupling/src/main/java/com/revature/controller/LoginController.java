@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.beans.Users;
 import com.revature.data.hibernate.UsersServiceHibernate;
 import com.revature.services.UsersService;
+import com.revature.beans.LoginInfo;
 
 @RestController
 @RequestMapping(value="/login")
@@ -40,21 +41,21 @@ public class LoginController {
 	private EmployeeService es;*/
 	
 	@GetMapping
-	public ResponseEntity<Users> login(HttpSession session) {
-		Users l = (Users) session.getAttribute("loggedUser");
+	public ResponseEntity<LoginInfo> login(HttpSession session) {
+		LoginInfo l = (LoginInfo) session.getAttribute("loggedUser");
 		if(l == null)
 			return ResponseEntity.status(401).build();
 		return ResponseEntity.ok(l);
 	}
 	
 	@PostMapping
-	public ResponseEntity<Users> login(@RequestParam("user") String username, 
+	public ResponseEntity<LoginInfo> login(@RequestParam("user") String username, 
 			@RequestParam("pass") String password, HttpSession session) {
-		Users c = us.getUser(username,  password);
-		if(c==null) {
+		Users u = us.getUser(username,  password);
+		if(u==null) {
 			return ResponseEntity.status(401).build();
 		}
-		Users loggedUser = new Users(username, password);
+		LoginInfo loggedUser = new LoginInfo(u);
 		session.setAttribute("loggedUser", loggedUser);
 		return ResponseEntity.ok(loggedUser);
 	}

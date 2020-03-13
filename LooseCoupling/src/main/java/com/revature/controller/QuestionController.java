@@ -34,7 +34,7 @@ public class QuestionController {
 	}
 	
 	
-	@DeleteMapping(value="{bookId}")
+	@DeleteMapping(value="{questionId}")
 	public ResponseEntity<Void> deleteQuestions(@PathVariable("questionId") Integer id) {
 		qs.deleteQuestions(qs.getQuestionById(id));
 		return ResponseEntity.noContent().build();

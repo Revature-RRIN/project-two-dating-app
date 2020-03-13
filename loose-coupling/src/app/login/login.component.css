@@ -1,0 +1,13 @@
+.example-card {
+  text-align: right;
+}
+.example-full-width {
+  text-align: right;
+  position: relative;
+  left: 55%;
+}
+
+.loginHeader  {
+position: relative;
+left: 88%;
+}

@@ -16,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -53,20 +54,29 @@ public class Users {
 	private String location;
 	@Column
 	private String banned;
+	
 	/*@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable (name="MATCH_USER",
 		joinColumns=@JoinColumn(name="users_id"),
 		inverseJoinColumns=@JoinColumn(name="matches_id"))*/
-	@Column
-	@ElementCollection(targetClass=Integer.class)
+	
+	@Transient
 	private Set<Matches> userMatches;
+	
 	/*@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable (name="MESSAGES_USER",
 		joinColumns=@JoinColumn(name="users_id"),
 		inverseJoinColumns=@JoinColumn(name="messages_id"))*/
+	
 	@Column
 	@ElementCollection(targetClass=Integer.class)
 	private Set<Messages> userMessages;
+	
+	//^^SENT VS RECEIVED MESSAGES AS INDIVUDAL SET FIELDS
+	
+	//RETRIEVE MATCHES AND USERS SEPERATELY ON FRONT-END; AND THEN PUT MATCHES INTO THE USER
+	
+	
 	
 	//Need @OneToMany mapping for answers (as a set)?? Or does the cumulative "score" field suffice??
 		//...Will we ever need to retrieve answers individually??

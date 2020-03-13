@@ -29,20 +29,20 @@ public class Matches {
 	private Integer matchesId;
 	@Column
 	@OneToOne
-	@JoinColumn (name="users_id")
-	private Integer maleId; 
+	@JoinColumn (name="user1_id")
+	private Users user1Id; 
 	@Column
 	@OneToOne
-	@JoinColumn (name="users_id")
-	private Integer femaleId;
+	@JoinColumn (name="user2_id")
+	private Users user2Id;
 	@Column
-	private Integer statusId;
+	private Status matchStatus;
 	//@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
 	//@JoinColumn??
 	@Column
 	@ElementCollection(targetClass=Integer.class)
 	private Set<Messages> matchMessages;
-	//Should Match have two Users field (ex: private Users user1), or are IDs enough?
+	//Should Match have two Users field (ex: private Users user1), or are IDs enough? YES!!!
 	
 	
 		//OneToOne for each user...
@@ -59,12 +59,12 @@ public class Matches {
 		this.matchesId = matchesId;
 	}
 
-	public Matches(Integer matchesId, Integer maleId, Integer femaleId, Integer statusId, Set<Messages> matchMessages) {
+	public Matches(Integer matchesId, Users user1Id, Users user2Id, Status matchStatus, Set<Messages> matchMessages) {
 		super();
 		this.matchesId = matchesId;
-		this.maleId = maleId;
-		this.femaleId = femaleId;
-		this.statusId = statusId;
+		this.user1Id = user1Id;
+		this.user2Id = user2Id;
+		this.matchStatus = matchStatus;
 		this.matchMessages = matchMessages;
 	}
 
@@ -76,28 +76,28 @@ public class Matches {
 		this.matchesId = matchesId;
 	}
 
-	public Integer getMaleId() {
-		return maleId;
+	public Users getUser1Id() {
+		return user1Id;
 	}
 
-	public void setMaleId(Integer maleId) {
-		this.maleId = maleId;
+	public void setMaleId(Users user1Id) {
+		this.user1Id = user1Id;
 	}
 
-	public Integer getFemaleId() {
-		return femaleId;
+	public Users getUser2Id() {
+		return user2Id;
 	}
 
-	public void setFemaleId(Integer femaleId) {
-		this.femaleId = femaleId;
+	public void setUser2Id(Users user2Id) {
+		this.user2Id = user2Id;
 	}
 
-	public Integer getStatusId() {
-		return statusId;
+	public Status getMatchStatus() {
+		return matchStatus;
 	}
 
-	public void setStatusId(Integer statusId) {
-		this.statusId = statusId;
+	public void setStatusId(Status matchStatus) {
+		this.matchStatus = matchStatus;
 	}
 	
 	public Set<Messages> getMatchMessages() {
@@ -112,11 +112,11 @@ public class Matches {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((femaleId == null) ? 0 : femaleId.hashCode());
-		result = prime * result + ((maleId == null) ? 0 : maleId.hashCode());
+		result = prime * result + ((user2Id == null) ? 0 : user2Id.hashCode());
+		result = prime * result + ((user1Id == null) ? 0 : user1Id.hashCode());
 		result = prime * result + ((matchMessages == null) ? 0 : matchMessages.hashCode());
 		result = prime * result + ((matchesId == null) ? 0 : matchesId.hashCode());
-		result = prime * result + ((statusId == null) ? 0 : statusId.hashCode());
+		result = prime * result + ((matchStatus == null) ? 0 : matchStatus.hashCode());
 		return result;
 	}
 
@@ -129,15 +129,15 @@ public class Matches {
 		if (getClass() != obj.getClass())
 			return false;
 		Matches other = (Matches) obj;
-		if (femaleId == null) {
-			if (other.femaleId != null)
+		if (user2Id == null) {
+			if (other.user2Id != null)
 				return false;
-		} else if (!femaleId.equals(other.femaleId))
+		} else if (!user2Id.equals(other.user2Id))
 			return false;
-		if (maleId == null) {
-			if (other.maleId != null)
+		if (user1Id == null) {
+			if (other.user1Id != null)
 				return false;
-		} else if (!maleId.equals(other.maleId))
+		} else if (!user1Id.equals(other.user1Id))
 			return false;
 		if (matchMessages == null) {
 			if (other.matchMessages != null)
@@ -149,18 +149,18 @@ public class Matches {
 				return false;
 		} else if (!matchesId.equals(other.matchesId))
 			return false;
-		if (statusId == null) {
-			if (other.statusId != null)
+		if (matchStatus == null) {
+			if (other.matchStatus != null)
 				return false;
-		} else if (!statusId.equals(other.statusId))
+		} else if (!matchStatus.equals(other.matchStatus))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Matches [matchesId=" + matchesId + ", maleId=" + maleId + ", femaleId=" + femaleId + ", statusId="
-				+ statusId + ", matchMessages=" + matchMessages + "]";
+		return "Matches [matchesId=" + matchesId + ", user1Id=" + user1Id + ", user2Id=" + user2Id + ", matchStatus="
+				+ matchStatus + ", matchMessages=" + matchMessages + "]";
 	}
 	
 }

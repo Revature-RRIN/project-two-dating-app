@@ -43,8 +43,8 @@ create table users (
 
 create table matches (
     matches_id number (3) primary key,
-    male_id number (3),
-    female_id number (3),
+    user1_id number (3),
+    user2_id number (3),
     status_id number (3),
     constraint fk_male_id foreign key (male_id) references users (users_id),
     constraint fk_female_id foreign key (female_id) references users (users_id)
@@ -90,6 +90,7 @@ create table answers (
     constraint fk_which_question_id foreign key (which_question_id) references questions (question_id)
 );
 
+--might have to add primary key
 create table user_answer (
     q_id number (2),
     u_id number (3),

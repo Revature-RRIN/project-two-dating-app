@@ -1,7 +1,10 @@
+import { Users } from './users';
+import { Status } from './status';
+
 export class Matches {
   matchesId: number;
-  maleId: number;
-  femaleId: number;
-  statusId: number;
+  user1Id: Users;
+  user2Id: Users;
+  matchStatus: Status;
   matchMessages: number;
 }

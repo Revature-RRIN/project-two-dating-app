@@ -1,6 +1,8 @@
+import { Users } from './users';
+
 export class Messages {
   messagesId: number;
-  senderId: number;
-  receiverId: number;
+  sender: Users;
+  receiver: Users;
   remark: string;
 }

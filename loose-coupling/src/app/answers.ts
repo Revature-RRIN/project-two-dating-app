@@ -1,5 +1,7 @@
+import { Questions } from './questions';
+
 export class Answers {
     answersId : number;
-    whichQuestionId : number;
+    whichQuestionId : Questions;
     response : number;
 }

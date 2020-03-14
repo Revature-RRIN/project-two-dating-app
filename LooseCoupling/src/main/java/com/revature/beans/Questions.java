@@ -3,6 +3,7 @@ package com.revature.beans;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,7 @@ public class Questions {
 	//@JoinTable(name="user_answers",
 	//joinColumns=@JoinColumn(name="questions_id"),
 	//inverseJoinColumns=@JoinColumn(name="answers_id"))
+	@ElementCollection(targetClass=Integer.class)
 	private Set<Answers> ans;
 	
 	

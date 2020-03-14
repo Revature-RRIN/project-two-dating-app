@@ -28,12 +28,12 @@ public class Matches {
 	@GeneratedValue (generator="matches", strategy=GenerationType.SEQUENCE)
 	private Integer matchesId;
 	@Column
-	@OneToOne
-	@JoinColumn (name="users_id")
+	//@OneToOne
+	//@JoinColumn (name="users_id")
 	private Integer maleId; 
 	@Column
-	@OneToOne
-	@JoinColumn (name="users_id")
+	//@OneToOne
+	//@JoinColumn (name="users_id")
 	private Integer femaleId;
 	@Column
 	private Integer statusId;

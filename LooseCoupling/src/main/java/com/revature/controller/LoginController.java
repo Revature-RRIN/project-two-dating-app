@@ -19,8 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Users;
-import com.revature.data.hibernate.UsersServiceHibernate;
+
 import com.revature.services.UsersService;
+import com.revature.services.UsersServiceHibernate;
 import com.revature.beans.LoginInfo;
 
 @RestController

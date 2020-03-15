@@ -7,12 +7,17 @@ import { RegisterComponent } from "../register/register.component";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { WelcomeComponent } from "../welcome/welcome.component";
 import { ProfileComponent } from "../profile/profile.component"
+import { QuestionsComponent } from '../questions/questions.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: "user", component: UserComponent },
   { path: "login", component: WelcomeComponent },
   { path: "", component: WelcomeComponent },
   { path: "profile", component: ProfileComponent },
+  { path: "questions", component: QuestionsComponent },
+  { path: "dashboard", component: DashboardComponent }
+  
   
 
 ];

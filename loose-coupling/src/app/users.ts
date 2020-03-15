@@ -14,7 +14,8 @@ export class Users {
 	location : string;
 	banned : string;
 	userMatches : Matches [];
-	userMessages : Messages [];
+	sentMessages : Messages [];
+	receivedMessages : Messages [];
 	//private Set<Matches> userMatches;
 	//private Set<Messages> userMessages;
 }

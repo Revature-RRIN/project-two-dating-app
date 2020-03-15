@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     if (this.newUsername != undefined && this.newPassword != undefined) { 
+      //NEED TO EVENTUALLY REMOVE THE ALERT BELOW
     alert(this.newUsername + " is username, and " + this.newPassword + " is password.");
     this.router.navigate(["profile"]);
     }

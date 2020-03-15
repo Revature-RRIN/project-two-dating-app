@@ -46,8 +46,8 @@ create table matches (
     user1_id number (3),
     user2_id number (3),
     status_id number (3),
-    constraint fk_male_id foreign key (male_id) references users (users_id),
-    constraint fk_female_id foreign key (female_id) references users (users_id)
+    constraint fk_user1_id foreign key (user1_id) references users (users_id),
+    constraint fk_user2_id foreign key (user2_id) references users (users_id)
 );
 
 create table status (
@@ -92,6 +92,7 @@ create table answers (
 
 --might have to add primary key
 create table user_answer (
+    user_answer_id number (3) primary key,
     q_id number (2),
     u_id number (3),
     a_id number (2),

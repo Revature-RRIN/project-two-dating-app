@@ -9,7 +9,7 @@ import { Users } from '../users';
 
 export class UserComponent implements OnInit {
 
-  constructor(users: Users) { }
+  constructor(user: Users) { }
 
   ngOnInit(): void {
   }

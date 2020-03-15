@@ -27,7 +27,7 @@
   
   <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-title>Create a Profile</mat-card-title>
+      <mat-card-title>Create Profile</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <form class="example-form">
@@ -38,20 +38,19 @@
                 <input
                   matInput
                   placeholder="First Name"
-                  [(ngModel)]="users.firstname"
+                  [(ngModel)]="user.firstname"
                   name="firstname"
                   required
                 />
               </mat-form-field>
             </td>
-          </tr>
-          <tr>
+          
             <td>
               <mat-form-field class="example-full-width">
                 <input
                   matInput
                   placeholder="Last Name"
-                  [(ngModel)]="users.lastname"
+                  [(ngModel)]="user.lastname"
                   name="lastname"
                   required
                 />
@@ -60,19 +59,15 @@
           </tr>
           <tr>
             <td>
-              <mat-form-field class="example-full-width">
-                <form action="upload.php" method ="POST" encType="multipart/form-data"
+              <mat-form-field class="example-full-width" action="upload.php" method ="POST" encType="multipart/form-data"
                 handler = "https://lc-profile-bucket.s3.us-east-2.amazonaws.com">
-                  Select image to upload:
+                  Upload your desired profile picture:
                   <input
-                    matInput
                     type = file name = profilePic id = profilePic
-                  />
+                  /> 
                   <input 
-                    matInput
                     type="submit" value="Upload Image" name="submit"
                   />
-                </form>
               </mat-form-field>
             </td>
           </tr>
@@ -82,7 +77,7 @@
                 <input
                   matInput
                   placeholder="Age"
-                  [(ngModel)]="users.age"
+                  [(ngModel)]="user.age"
                   name="age"
                   required
                 />
@@ -95,7 +90,7 @@
                 <input
                   matInput
                   placeholder="Gender"
-                  [(ngModel)]="users.gender"
+                  [(ngModel)]="user.gender"
                   name="gender"
                   required
                 />
@@ -109,7 +104,7 @@
                 <input                    
                   matInput
                   placeholder="Location"
-                  [(ngModel)]="users.location"
+                  [(ngModel)]="user.location"
                   name="location"
                   required
                 />                

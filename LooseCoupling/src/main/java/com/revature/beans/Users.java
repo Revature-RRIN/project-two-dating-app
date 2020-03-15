@@ -68,9 +68,11 @@ public class Users {
 		joinColumns=@JoinColumn(name="users_id"),
 		inverseJoinColumns=@JoinColumn(name="messages_id"))*/
 	
-	@Column
+
 	@ElementCollection(targetClass=Integer.class)
-	private Set<Messages> userMessages;
+	private Set<Messages> sentMessages;
+	
+	private Set<Messages> receivedMessages;
 	
 	//^^SENT VS RECEIVED MESSAGES AS INDIVUDAL SET FIELDS
 	
@@ -85,6 +87,8 @@ public class Users {
 		//from .hascode(), .equals(), and .toString()
 	
 	
+	
+
 	public Users() {
 		super();
 	}
@@ -102,7 +106,7 @@ public class Users {
 
 	public Users(Integer usersId, Integer usertype, String username, String pass, String firstname, String lastname,
 			Blob profilepic, Integer score, Integer age, Integer gender, String location, String banned, 
-			Set<Matches> userMatches, Set<Messages> userMessages) {
+			Set<Matches> userMatches, Set<Messages> sentMessages, Set<Messages> receivedMessages) {
 		super();
 		this.usersId = usersId;
 		this.usertype = usertype;
@@ -117,7 +121,8 @@ public class Users {
 		this.location = location;
 		this.banned = banned;
 		this.userMatches = userMatches;
-		this.userMessages = userMessages;
+		this.sentMessages = sentMessages;
+		this.receivedMessages = receivedMessages;
 	}
 
 	public Integer getUsersId() {
@@ -224,12 +229,20 @@ public class Users {
 		this.userMatches = userMatches;
 	}
 
-	public Set<Messages> getUserMessages() {
-		return userMessages;
+	public Set<Messages> getSentMessages() {
+		return sentMessages;
 	}
 
-	public void setUserMessages(Set<Messages> userMessages) {
-		this.userMessages = userMessages;
+	public void setSentMessages(Set<Messages> sentMessages) {
+		this.sentMessages = sentMessages;
+	}
+
+	public Set<Messages> getReceivedMessages() {
+		return receivedMessages;
+	}
+
+	public void setReceivedMessages(Set<Messages> receivedMessages) {
+		this.receivedMessages = receivedMessages;
 	}
 
 	@Override
@@ -243,8 +256,10 @@ public class Users {
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
 		result = prime * result + ((location == null) ? 0 : location.hashCode());
 		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
+		result = prime * result + ((receivedMessages == null) ? 0 : receivedMessages.hashCode());
 		result = prime * result + ((score == null) ? 0 : score.hashCode());
-//		result = prime * result + ((userMatches == null) ? 0 : userMatches.hashCode());
+		result = prime * result + ((sentMessages == null) ? 0 : sentMessages.hashCode());
+		result = prime * result + ((userMatches == null) ? 0 : userMatches.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		result = prime * result + ((usersId == null) ? 0 : usersId.hashCode());
 		result = prime * result + ((usertype == null) ? 0 : usertype.hashCode());
@@ -295,16 +310,26 @@ public class Users {
 				return false;
 		} else if (!pass.equals(other.pass))
 			return false;
+		if (receivedMessages == null) {
+			if (other.receivedMessages != null)
+				return false;
+		} else if (!receivedMessages.equals(other.receivedMessages))
+			return false;
 		if (score == null) {
 			if (other.score != null)
 				return false;
 		} else if (!score.equals(other.score))
 			return false;
-//		if (userMatches == null) {
-//			if (other.userMatches != null)
-//				return false;
-//		} else if (!userMatches.equals(other.userMatches))
-//			return false;
+		if (sentMessages == null) {
+			if (other.sentMessages != null)
+				return false;
+		} else if (!sentMessages.equals(other.sentMessages))
+			return false;
+		if (userMatches == null) {
+			if (other.userMatches != null)
+				return false;
+		} else if (!userMatches.equals(other.userMatches))
+			return false;
 		if (username == null) {
 			if (other.username != null)
 				return false;
@@ -327,7 +352,8 @@ public class Users {
 	public String toString() {
 		return "Users [usersId=" + usersId + ", usertype=" + usertype + ", username=" + username + ", pass=" + pass
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", score=" + score + ", age=" + age
-				+ ", gender=" + gender + ", location=" + location + ", banned=" + banned + "]";
+				+ ", gender=" + gender + ", location=" + location + ", banned=" + banned + ", userMatches="
+				+ userMatches + ", sentMessages=" + sentMessages + ", receivedMessages=" + receivedMessages + "]";
 	}
 	
 }

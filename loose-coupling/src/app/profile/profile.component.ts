@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../users';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -8,13 +9,12 @@ import { Users } from '../users';
 })
 export class ProfileComponent implements OnInit {
   user: Users;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  //NEED TO ADD ROUTER FUNCTIONALITY TO THE BELOW METHOD SO USER
-  //GETS ROUTED TO THE QUESTIONS/QUIZLET PAGE AFTER SUBMITTING PROFILE INFO
-  //...NEED QUESTIONS COMPONENT
-  submit(): void {}
+  submit(): void {
+    this.router.navigate(["questions"]);
+  }
 }

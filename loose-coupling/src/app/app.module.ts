@@ -12,14 +12,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './profile/profile.component';
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
-=======
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuestionsComponent } from './questions/questions.component';
->>>>>>> 6217d70e6215d706715e6cf848aeb95c590af00a
 
 @NgModule({
   declarations: [
@@ -41,7 +38,7 @@ import { QuestionsComponent } from './questions/questions.component';
     AppRoutingModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [FlexLayoutModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

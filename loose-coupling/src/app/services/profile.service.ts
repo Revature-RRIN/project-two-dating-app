@@ -19,7 +19,7 @@ export class ProfileService {
         private http: HttpClient
     ) {}
 
-    //updating user information after they click the submit button
+    //updating user information once they click the submit button
     submit (firstname: string, lastname: string, age: number,
          gender: number, location: string): Observable<Currentuser> {
              if (firstname && lastname && age && gender && location) {

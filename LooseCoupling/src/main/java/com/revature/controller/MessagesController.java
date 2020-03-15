@@ -33,11 +33,6 @@ public class MessagesController {
 		return ResponseEntity.ok(ms.getMessageById(id));
 	}
 	
-	@GetMapping()
-	public ResponseEntity<Set<Messages>> getMessageByUser(Users u) {
-		return ResponseEntity.ok(ms.getMessageByUser(u));
-	}
-	
 	@PostMapping
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
 		return ResponseEntity.status(201).body(ms.addMessage(msg));

@@ -30,11 +30,6 @@ public class MatchesController {
 		return ResponseEntity.ok(ms.getMatchById(id));
 	}
 	
-	@GetMapping()
-	public ResponseEntity<Set<Matches>> getMatchByUser(Users u) {
-		return ResponseEntity.ok(ms.getMatchesByUser(u));
-	}
-	
 	@PostMapping
 	public ResponseEntity<Integer> addMatch(@RequestBody Matches m) {
 		return ResponseEntity.status(201).body(ms.addMatch(m));

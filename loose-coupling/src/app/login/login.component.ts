@@ -1,31 +1,43 @@
-import { Component, OnInit } from "@angular/core";
-
-import { Router } from "@angular/router";
-import { MatDialog } from "@angular/material/dialog";
+import { Component, OnInit } from '@angular/core';
+import { Currentuser } from '../classes/currentuser';
+import { UsersService } from '../services/users.service';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router){
+  public loggedUser: Currentuser;
+  public username: string;
+  public password: string;
+
+  constructor(/*private usersService: UsersService*/) { }
+
+  ngOnInit() {
+/*    this.usersService.login(null, null).subscribe(
+      resp => {
+        this.loggedUser = resp;
+      },
+      error => {
+        this.loggedUser = null;
+      }
+    );*/
   }
 
-  username: string;
-  password: string;
-
-  ngOnInit(): void {}
-  
-
-  // change this setup to rxie branch's?
-  login(): void {
-    if (this.username == "admin" && this.password == "pass") {
-      this.router.navigate(["profile"]);
-    } else {
-      alert("Invalid credentials");
-    }
+  login() {
+/*    this.usersService.login(this.username, this.password).subscribe(
+      resp => {
+        this.loggedUser = resp;
+      }
+    );*/
   }
 
-
+  logout() {
+/*    this.usersService.logout().subscribe(
+      resp => {
+        this.loggedUser = null;
+      }
+    );*/
+  }
 }

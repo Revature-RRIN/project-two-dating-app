@@ -11,3 +11,7 @@
 position: relative;
 left: 88%;
 }
+
+.containLogin {
+  max-width: 50%;
+}

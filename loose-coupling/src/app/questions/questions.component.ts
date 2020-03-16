@@ -21,4 +21,11 @@ export class QuestionsComponent implements OnInit {
     /////////////////////
     this.router.navigate(["user"]);
   }
+
+
+  questionSubmission()  {
+    
+  }
+
+
 }

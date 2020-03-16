@@ -1,43 +1,29 @@
-<mat-card class="example-card">
-  <mat-card-header class="loginHeader">
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="example-form">
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Username"
-                [(ngModel)]="username"
-                name="username"
-                required
-              />
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Password"
-                [(ngModel)]="password"
-                type="password"
-                name="password"
-                required
-              />
-            </mat-form-field>
-          </td>
-        </tr>
-      </table>
-    </form>
-
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
-  </mat-card-actions>
-
-</mat-card>
+<div class="containLogin">
+<ng-container *ngIf="!loggedUser; else logged">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      Username:
+      <input id="username" type="text" [(ngModel)]="username">
+    </li>
+    <li class="nav-item">
+      Password:
+      <input id="password" type="password" [(ngModel)]="password" (keydown.enter)="login()">
+    </li>
+    <li class="nav-item">
+      <button id="loginButton" class="btn btn-primary" (click)="login()">Login</button>
+    </li>
+  </ul>
+</ng-container>
+<ng-template #logged>
+  <ul class="navbar-nav mr-auto">    
+    <li class="nav-item">
+      <div *ngIf="loggedUser">
+          <span id="welcome">Welcome!</span>
+      </div>
+    </li>  
+    <li class="nav-item">  
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</ng-template>
+</div>

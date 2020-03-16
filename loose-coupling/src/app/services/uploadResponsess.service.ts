@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { UrlService } from '../url.service';
-import { Answers } from '../answers';
-import { Questions } from '../questions';
+import { UrlService } from '../services/url.service';
+import { Answers } from '../Classes/answers';
+import { Questions } from '../Classes/questions';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 

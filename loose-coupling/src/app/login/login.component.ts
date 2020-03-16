@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   
+
+  // change this setup to rxie branch's?
   login(): void {
     if (this.username == "admin" && this.password == "pass") {
       this.router.navigate(["profile"]);

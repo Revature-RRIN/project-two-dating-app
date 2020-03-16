@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { UrlService } from '../url.service';
+import { UrlService } from '../services/url.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Users } from '../users';
 import { Observable } from 'rxjs';

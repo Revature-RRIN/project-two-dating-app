@@ -16,12 +16,7 @@ import com.revature.services.UsersServiceHibernate;
 @RequestMapping(value="/signup")
 @CrossOrigin(origins="http://localhost:4200")
 public class SignupController {
-	public static void main(String[] args) {
-		UsersService us = new UsersServiceHibernate();
-		Users u2 = new Users("test4","pass","aron","cal",2,3,"a");
-		System.out.println(us.addUser(u2));
-		
-	}
+	
 	
 	@Autowired
 	private UsersService us;

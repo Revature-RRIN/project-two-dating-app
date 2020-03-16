@@ -17,6 +17,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { CustomMaterialModule } from './material/material.module';
 import { SignupComponent } from './shared/signup/signup.component';
 import { SignupService } from './shared/services/signup.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ProfileService } from './shared/services/profile.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { SignupService } from './shared/services/signup.service';
     UserComponent,
     LoginComponent,
     ProfileComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent,
+    QuestionsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,10 @@ import { SignupService } from './shared/services/signup.service';
     CustomMaterialModule,
     SharedModule
   ], 
-  providers: [SignupService],
+  providers: [
+    SignupService,
+    ProfileService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

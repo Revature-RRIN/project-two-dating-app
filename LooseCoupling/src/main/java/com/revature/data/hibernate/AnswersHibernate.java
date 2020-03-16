@@ -92,5 +92,13 @@ public class AnswersHibernate implements AnswersDAO{
 			s.close();
 		}
 	}
+	
+	@Override
+	public Answers getAnswersById(Integer i) {
+		Session s = hu.getSession();
+		Answers a = s.get(Answers.class, i);
+		s.close();
+		return a;
+	}
 
 }

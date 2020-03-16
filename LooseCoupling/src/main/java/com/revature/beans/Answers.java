@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -16,15 +19,19 @@ public class Answers {
 	@SequenceGenerator(name = "answers", sequenceName = "answers_seq", allocationSize = 1)
 	@GeneratedValue(generator = "answers", strategy = GenerationType.SEQUENCE)
 	private Integer answersId;
-	@Column(name = "which_question_id")
-	private Integer whichQuestionId;
+	@ManyToOne
+	@JoinColumn(name = "which_question_id")
+	private Questions whichQuestion;
 	@Column
 	private Integer response;
-
+	
+	//QUESTION; NOT ID!!
+	
 	// Need @ManyToOne mapping for user?? Given answers have a user that provided
 	// the answers??
 
 	// RICHARD WANTS ADMIN TO BE ABLE TO ADD QUESTIONS
+	
 
 	public Answers() {
 		super();
@@ -35,10 +42,10 @@ public class Answers {
 		this.answersId = answersId;
 	}
 
-	public Answers(Integer answersId, Integer whichQuestionId, Integer response) {
+	public Answers(Integer answersId, Questions whichQuestion, Integer response) {
 		super();
 		this.answersId = answersId;
-		this.whichQuestionId = whichQuestionId;
+		this.whichQuestion = whichQuestion;
 		this.response = response;
 	}
 
@@ -50,12 +57,12 @@ public class Answers {
 		this.answersId = answersId;
 	}
 
-	public Integer getWhichQuestionId() {
-		return whichQuestionId;
+	public Questions getWhichQuestion() {
+		return whichQuestion;
 	}
 
-	public void setWhichQuestionId(Integer whichQuestionId) {
-		this.whichQuestionId = whichQuestionId;
+	public void setWhichQuestionId(Questions whichQuestion) {
+		this.whichQuestion = whichQuestion;
 	}
 
 	public Integer getResponse() {
@@ -72,7 +79,7 @@ public class Answers {
 		int result = 1;
 		result = prime * result + ((answersId == null) ? 0 : answersId.hashCode());
 		result = prime * result + ((response == null) ? 0 : response.hashCode());
-		result = prime * result + ((whichQuestionId == null) ? 0 : whichQuestionId.hashCode());
+		result = prime * result + ((whichQuestion == null) ? 0 : whichQuestion.hashCode());
 		return result;
 	}
 
@@ -95,17 +102,17 @@ public class Answers {
 				return false;
 		} else if (!response.equals(other.response))
 			return false;
-		if (whichQuestionId == null) {
-			if (other.whichQuestionId != null)
+		if (whichQuestion == null) {
+			if (other.whichQuestion != null)
 				return false;
-		} else if (!whichQuestionId.equals(other.whichQuestionId))
+		} else if (!whichQuestion.equals(other.whichQuestion))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Answers [answersId=" + answersId + ", whichQuestionId=" + whichQuestionId + ", response=" + response
+		return "Answers [answersId=" + answersId + ", whichQuestion=" + whichQuestion + ", response=" + response
 				+ "]";
 	}
 

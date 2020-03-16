@@ -31,7 +31,7 @@ export class UsersService {
         map(resp => {
           const user: Currentuser = resp as Currentuser;
           if (user) {
-            this.users = user.users;
+            this.users = user.user;
           }
           return user;
         })

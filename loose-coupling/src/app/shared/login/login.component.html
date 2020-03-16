@@ -17,7 +17,7 @@
     <ul class="navbar-nav mr-auto">    
       <li class="nav-item">
         <div *ngIf="loggedUser">
-            <span id="welcome">Welcome!</span>
+          <span id="welcome">Welcome! {{loggedUser.user.firstname + " " + loggedUser.user.lastname}}</span>
         </div>
       </li>  
       <li class="nav-item">  

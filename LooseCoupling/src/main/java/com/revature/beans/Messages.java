@@ -18,17 +18,14 @@ public class Messages {
 	@SequenceGenerator(name = "messages", sequenceName = "messages_seq", allocationSize = 1)
 	@GeneratedValue(generator = "messages", strategy = GenerationType.SEQUENCE)
 	private Integer messagesId;
-	@Column(name = "sender_id")
-	//@OneToOne
-	//@JoinColumn (name="users_id")
-	private Integer senderId;
-	@Column(name = "receiver_id")
-	//@OneToOne
-	//@JoinColumn (name="users_id")
-	private Integer receiverId;
+	@OneToOne
+	@JoinColumn (name="sender_id")
+	private Users sender;
+	@OneToOne
+	@JoinColumn (name="receiver_id")
+	private Users receiver;
 	@Column
 	private String remark;
-	//Should Messages have two Users fields (ex: private Users user1) or are IDs enough?
 	
 	//NEEDS two OneToOne mappings for each sender and receiver
 
@@ -44,11 +41,11 @@ public class Messages {
 	}
 
 
-	public Messages(Integer messagesId, Integer senderId, Integer receiverId, String remark) {
+	public Messages(Integer messagesId, Users sender, Users receiver, String remark) {
 		super();
 		this.messagesId = messagesId;
-		this.senderId = senderId;
-		this.receiverId = receiverId;
+		this.sender = sender;
+		this.receiver = receiver;
 		this.remark = remark;
 	}
 
@@ -61,20 +58,20 @@ public class Messages {
 		this.messagesId = messagesId;
 	}
 
-	public Integer getSenderId() {
-		return senderId;
+	public Users getSender() {
+		return sender;
 	}
 
-	public void setSenderId(Integer senderId) {
-		this.senderId = senderId;
+	public void setSenderId(Users sender) {
+		this.sender = sender;
 	}
 
-	public Integer getReceiverId() {
-		return receiverId;
+	public Users getReceiver() {
+		return receiver;
 	}
 
-	public void setReceiverId(Integer receiverId) {
-		this.receiverId = receiverId;
+	public void setReceiver(Users receiver) {
+		this.receiver = receiver;
 	}
 
 	public String getRemark() {
@@ -91,9 +88,9 @@ public class Messages {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((messagesId == null) ? 0 : messagesId.hashCode());
-		result = prime * result + ((receiverId == null) ? 0 : receiverId.hashCode());
+		result = prime * result + ((receiver == null) ? 0 : receiver.hashCode());
 		result = prime * result + ((remark == null) ? 0 : remark.hashCode());
-		result = prime * result + ((senderId == null) ? 0 : senderId.hashCode());
+		result = prime * result + ((sender == null) ? 0 : sender.hashCode());
 		return result;
 	}
 
@@ -111,27 +108,27 @@ public class Messages {
 				return false;
 		} else if (!messagesId.equals(other.messagesId))
 			return false;
-		if (receiverId == null) {
-			if (other.receiverId != null)
+		if (receiver == null) {
+			if (other.receiver != null)
 				return false;
-		} else if (!receiverId.equals(other.receiverId))
+		} else if (!receiver.equals(other.receiver))
 			return false;
 		if (remark == null) {
 			if (other.remark != null)
 				return false;
 		} else if (!remark.equals(other.remark))
 			return false;
-		if (senderId == null) {
-			if (other.senderId != null)
+		if (sender == null) {
+			if (other.sender != null)
 				return false;
-		} else if (!senderId.equals(other.senderId))
+		} else if (!sender.equals(other.sender))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Messages [messagesId=" + messagesId + ", senderId=" + senderId + ", receiverId=" + receiverId
+		return "Messages [messagesId=" + messagesId + ", senderId=" + sender + ", receiverId=" + receiver
 				+ ", remark=" + remark + "]";
 	}
 

@@ -2,7 +2,6 @@ package com.revature.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,7 +13,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,17 +28,14 @@ import com.revature.services.UsersServiceHibernate;
 import com.revature.beans.LoginInfo;
 
 @RestController
-@RequestMapping(value="/login")
+//@RequestMapping(value="/login")
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
-	
-	private Logger log = Logger.getLogger(LoginController.class);
-	
-	public static void main (String[] args) {
+	/*public static void main (String[] args) {
 		UsersService us = new UsersServiceHibernate();
-        Users u = us.getUser("test", "pass");
+        Users u = us.getUser("user", "pass");
         System.out.println(u.getFirstname());
-	}
+	}*/
 
 	@Autowired
 	private UsersService us;
@@ -45,29 +44,34 @@ public class LoginController {
 	@Autowired
 	private EmployeeService es;*/
 	
-	@GetMapping
+	@GetMapping(value="/login")
 	public ResponseEntity<LoginInfo> login(HttpSession session) {
 		LoginInfo l = (LoginInfo) session.getAttribute("loggedUser");
-		log.trace("Get before if statement");
 		if(l == null)
 			return ResponseEntity.status(401).build();
 		return ResponseEntity.ok(l);
 	}
 	
-	@PostMapping
+	@PostMapping(value="/login")
 	public ResponseEntity<LoginInfo> login(@RequestParam("user") String username, 
 			@RequestParam("pass") String password, HttpSession session) {
 		Users u = us.getUser(username,  password);
 		if(u==null) {
 			return ResponseEntity.status(401).build();
 		}
-		log.trace(u.getFirstname());
 		LoginInfo loggedUser = new LoginInfo(u);
 		session.setAttribute("loggedUser", loggedUser);
 		return ResponseEntity.ok(loggedUser);
 	}
 	
-	@DeleteMapping
+	@PutMapping(value="/login/{usersId}")
+	public ResponseEntity<Users> updateUser(@PathVariable("usersId") Integer id, @RequestBody Users u) {
+		us.updateUser(u);
+		return ResponseEntity.ok(us.getUserById(id));
+	}
+
+	
+	@DeleteMapping(value="/login")
 	public ResponseEntity<Void> logout(HttpSession session) {
 		session.invalidate();
 		return ResponseEntity.noContent().build();

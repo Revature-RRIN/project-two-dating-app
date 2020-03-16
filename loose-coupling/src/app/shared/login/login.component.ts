@@ -12,32 +12,32 @@ export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
 
-  constructor(/*private usersService: UsersService*/) { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-/*    this.usersService.login(null, null).subscribe(
+    this.usersService.login(null, null).subscribe(
       resp => {
         this.loggedUser = resp;
       },
       error => {
         this.loggedUser = null;
       }
-    );*/
+    );
   }
 
   login() {
-/*    this.usersService.login(this.username, this.password).subscribe(
+    this.usersService.login(this.username, this.password).subscribe(
       resp => {
         this.loggedUser = resp;
       }
-    );*/
+    );
   }
 
   logout() {
-/*    this.usersService.logout().subscribe(
+    this.usersService.logout().subscribe(
       resp => {
         this.loggedUser = null;
       }
-    );*/
+    );
   }
 }

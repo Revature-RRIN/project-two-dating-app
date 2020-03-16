@@ -69,9 +69,9 @@ public class Users {
 		inverseJoinColumns=@JoinColumn(name="messages_id"))*/
 	
 
-	@ElementCollection(targetClass=Integer.class)
+	@Transient
 	private Set<Messages> sentMessages;
-	
+	@Transient
 	private Set<Messages> receivedMessages;
 	
 	//^^SENT VS RECEIVED MESSAGES AS INDIVUDAL SET FIELDS

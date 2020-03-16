@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -27,15 +28,14 @@ public class Matches {
 	@SequenceGenerator (name="matches", sequenceName="matches_seq", allocationSize=1)
 	@GeneratedValue (generator="matches", strategy=GenerationType.SEQUENCE)
 	private Integer matchesId;
-	@Column
 	@OneToOne
 	@JoinColumn (name="user1_id")
 	private Users user1Id; 
-	@Column
 	@OneToOne
 	@JoinColumn (name="user2_id")
 	private Users user2Id;
-	@Column
+	@ManyToOne
+	@JoinColumn(name="status_id")
 	private Status matchStatus;
 	//@OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
 	//@JoinColumn??

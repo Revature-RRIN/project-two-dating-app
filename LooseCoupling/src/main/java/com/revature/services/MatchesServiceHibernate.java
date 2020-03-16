@@ -2,11 +2,14 @@ package com.revature.services;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.beans.Matches;
 import com.revature.beans.Users;
 import com.revature.data.MatchesDAO;
 import com.revature.data.hibernate.MatchesHibernate;
 
+@Service
 public class MatchesServiceHibernate implements MatchesService{
 	private MatchesDAO md = new MatchesHibernate();
 	

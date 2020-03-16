@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Users } from '../Classes/users';
+import { Users } from '../shared/classes/users';
 import { Router } from "@angular/router";
-import { UploadResponsesService } from '../services/uploadResponsess.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-questions',
@@ -26,6 +25,5 @@ export class QuestionsComponent implements OnInit {
   questionSubmission()  {
     
   }
-
 
 }

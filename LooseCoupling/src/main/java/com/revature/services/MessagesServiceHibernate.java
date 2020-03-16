@@ -2,6 +2,8 @@ package com.revature.services;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.beans.Matches;
 import com.revature.beans.Messages;
 import com.revature.beans.Status;
@@ -9,6 +11,7 @@ import com.revature.beans.Users;
 import com.revature.data.MessagesDAO;
 import com.revature.data.hibernate.MessagesHibernate;
 
+@Service
 public class MessagesServiceHibernate implements MessagesService{
 	private MessagesDAO md = new MessagesHibernate();
 	

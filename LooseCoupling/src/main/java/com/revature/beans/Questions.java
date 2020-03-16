@@ -3,12 +3,14 @@ package com.revature.beans;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -23,10 +25,11 @@ public class Questions {
 	private Integer questionId;
 	@Column
 	private String question;
-	//@OneToMany (mappedBy="questions")
-	//@JoinTable(name="user_answers",
-	//joinColumns=@JoinColumn(name="questions_id"),
-	//inverseJoinColumns=@JoinColumn(name="answers_id"))
+	@ManyToMany
+	@JoinTable(name="user_answer",
+	joinColumns=@JoinColumn(name="q_id"),
+	inverseJoinColumns=@JoinColumn(name="a_id"))
+	//@ElementCollection(targetClass=Integer.class)
 	private Set<Answers> ans;
 	
 	

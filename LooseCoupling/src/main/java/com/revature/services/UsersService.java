@@ -5,7 +5,7 @@ import java.util.Set;
 import com.revature.beans.Users;
 
 public interface UsersService {
-	public void addUser(Users u);
+	public Users addUser(Users u);
 	public Users getUser(String username, String pass);
 	public Users getUserById(int id);
 	public Set<Users> getAllUsers();

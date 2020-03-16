@@ -15,13 +15,16 @@ import { ProfileComponent } from './profile/profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomMaterialModule } from './material/material.module';
+import { SignupComponent } from './shared/signup/signup.component';
+import { SignupService } from './shared/services/signup.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -31,8 +34,8 @@ import { CustomMaterialModule } from './material/material.module';
     AppRoutingModule,
     CustomMaterialModule,
     SharedModule
-  ],
-  providers: [],
+  ], 
+  providers: [SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

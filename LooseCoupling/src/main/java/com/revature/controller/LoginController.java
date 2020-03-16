@@ -2,6 +2,7 @@ package com.revature.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -28,9 +29,12 @@ import com.revature.beans.LoginInfo;
 @RequestMapping(value="/login")
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
+	
+	private Logger log = Logger.getLogger(LoginController.class);
+	
 	public static void main (String[] args) {
 		UsersService us = new UsersServiceHibernate();
-        Users u = us.getUser("user", "pass");
+        Users u = us.getUser("test", "pass");
         System.out.println(u.getFirstname());
 	}
 
@@ -44,6 +48,7 @@ public class LoginController {
 	@GetMapping
 	public ResponseEntity<LoginInfo> login(HttpSession session) {
 		LoginInfo l = (LoginInfo) session.getAttribute("loggedUser");
+		log.trace("Get before if statement");
 		if(l == null)
 			return ResponseEntity.status(401).build();
 		return ResponseEntity.ok(l);
@@ -56,6 +61,7 @@ public class LoginController {
 		if(u==null) {
 			return ResponseEntity.status(401).build();
 		}
+		log.trace(u.getFirstname());
 		LoginInfo loggedUser = new LoginInfo(u);
 		session.setAttribute("loggedUser", loggedUser);
 		return ResponseEntity.ok(loggedUser);

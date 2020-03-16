@@ -13,7 +13,7 @@ export class UsersService {
     'Content-Type': 'application/x-www-form-urlencoded'
   });
   private users: Users;
-
+  
   constructor(
     private url: UrlService,
     private http: HttpClient
@@ -21,6 +21,7 @@ export class UsersService {
 
   login(username: string, password: string): Observable<Currentuser> {
     if (username && password) {
+      
       // we are attempting to log in
       const body = `user=${username}&pass=${password}`;
       return this.http.post(this.appUrl, body, {
@@ -40,9 +41,8 @@ export class UsersService {
       return this.http.get(this.appUrl, {withCredentials: true}).pipe(
         map( resp => {
           const user: Currentuser = resp as Currentuser;
-          if (user) {
-            this.users = user.users;
-          }
+         
+          console.log(user);  
           return user;
         })
       );
@@ -55,8 +55,8 @@ export class UsersService {
         return success;
       })
     );
-  }
-
+  }  
+ 
   getUser(): Users {
     return this.users;
   }
@@ -68,4 +68,10 @@ export class UsersService {
   isCustomer(): boolean {
     return (this.customer !== undefined && this.customer !== null);
   }*/
-}
+
+ 
+
+  }
+
+
+

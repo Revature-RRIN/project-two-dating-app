@@ -12,8 +12,8 @@ import com.revature.data.hibernate.UsersHibernate;
 public class UsersServiceHibernate implements UsersService{
 	private UsersDAO ud = new UsersHibernate();
 	
-	public void addUser(Users u) {
-		ud.addUser(u);
+	public Users addUser(Users u) {
+		return ud.getUserById(ud.addUser(u));
 	}
 
 	public Users getUser(String username, String pass) {

@@ -26,7 +26,7 @@ export class UploadResponsesService {
     getAnswer(whichQuestionId: number): Observable<Answers> {
         const url: string = this.appUrl + '/' + whichQuestionId;
         return this.http.get(url, {withCredentials: true}).pipe(
-          map(resp => resp as Answers)
+          map(resp => resp as Answers) //does this line work? Does 'as Answers' specify which question is being answered?
         );
       }
       updateAnswers(answers: Answers): Observable<Answers> {

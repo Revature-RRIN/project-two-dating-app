@@ -22,7 +22,7 @@ export class ProfileService {
     //updating user information once they click the submit button
     submit (firstname: string, lastname: string, age: number,
          gender: number, location: string): Observable<Currentuser> {
-             if (firstname && lastname && age && gender && location) {
+             if (((firstname && lastname) && age) && (gender && location)) {
                 const body = `firstname=${firstname}&lastname=${lastname}&
                     age=${age}&gender=${gender}&location=${location}`;
                 return this.http.put(this.appUrl, body, {

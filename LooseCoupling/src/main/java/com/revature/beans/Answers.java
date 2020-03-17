@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -16,7 +19,8 @@ public class Answers {
 	@SequenceGenerator(name = "answers", sequenceName = "answers_seq", allocationSize = 1)
 	@GeneratedValue(generator = "answers", strategy = GenerationType.SEQUENCE)
 	private Integer answersId;
-	@Column(name = "which_question_id")
+	@ManyToOne
+	@JoinColumn(name = "which_question_id")
 	private Questions whichQuestion;
 	@Column
 	private Integer response;

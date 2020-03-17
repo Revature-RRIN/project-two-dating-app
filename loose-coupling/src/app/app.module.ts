@@ -4,25 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
+import { LoginComponent } from './shared/login/login.component';
 import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component';
-import { UsersService } from './services/users.service';
-import { LoginComponent } from './login/login.component';
-import { SharedModule } from './shared.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { QuestionsComponent } from './questions/questions.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CustomMaterialModule } from './material/material.module';
+import { SignupComponent } from './shared/signup/signup.component';
+import { SignupService } from './shared/services/signup.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MessageService } from './services/message.service';
-import { ProfileService } from './services/profile.service';
-import { UrlService } from './services/url.service';
-import { UploadResponsesService } from './services/uploadResponsess.service';
-import { RegisterService } from './services/register.service';
+import { QuestionsComponent } from './questions/questions.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ProfileService } from './shared/services/profile.service';
 
 @NgModule({
   declarations: [
@@ -30,26 +28,23 @@ import { RegisterService } from './services/register.service';
     UserComponent,
     LoginComponent,
     ProfileComponent,
-    RegisterComponent,
-    NavbarComponent,
-    QuestionsComponent,
+    SignupComponent,
     DashboardComponent,
-    UserComponent
+    QuestionsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
+    CustomMaterialModule,
     SharedModule
   ], 
   providers: [
-    MessageService,
-    ProfileService,
-    UrlService,
-    RegisterService,
-    UploadResponsesService,
-    UsersService
+    SignupService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })

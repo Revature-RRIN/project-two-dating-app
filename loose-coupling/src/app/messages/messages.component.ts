@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Messages } from '../shared/classes/messages';
 import { MessageService } from '../shared/services/message.service';
+import { Currentuser } from '../shared/classes/currentuser';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { MessageService } from '../shared/services/message.service';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
+  public loggedUser: Currentuser;
   @Input() messages: Messages;
   @Output() submitted = new EventEmitter<Messages>();
 
@@ -19,7 +21,11 @@ export class MessagesComponent implements OnInit {
   }
 
   displayMessages() {
-
+this.messageService.viewMessages(this.loggedUser.user.username).subscribe(
+  resp=>  {
+    this.messages = resp;
+  }
+)
   }
 
   sendMessage(): void {

@@ -26,7 +26,7 @@ import com.revature.data.hibernate.UsersServiceHibernate;
 import com.revature.services.UsersService;
 
 @RestController
-@RequestMapping(value="/login")
+
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
 	public static void main (String[] args) {
@@ -42,7 +42,7 @@ public class LoginController {
 	@Autowired
 	private EmployeeService es;*/
 	
-	@GetMapping
+	@GetMapping(value="/login")
 	public ResponseEntity<Users> login(HttpSession session) {
 		Users l = (Users) session.getAttribute("loggedUser");
 		if(l == null)
@@ -50,7 +50,7 @@ public class LoginController {
 		return ResponseEntity.ok(l);
 	}
 	
-	@PostMapping
+	@PostMapping(value="/login")
 	public ResponseEntity<Users> login(@RequestParam("user") String username, 
 			@RequestParam("pass") String password, HttpSession session) {
 		Users c = us.getUser(username,  password);
@@ -62,14 +62,14 @@ public class LoginController {
 		return ResponseEntity.ok(loggedUser);
 	}
 	
-	@PutMapping(value="{usersId}")
+	@PutMapping(value="/login/{usersId}")
 	public ResponseEntity<Users> updateUser(@PathVariable("usersId") Integer id, @RequestBody Users u) {
 		us.updateUser(u);
 		return ResponseEntity.ok(us.getUserById(id));
 	}
 
 	
-	@DeleteMapping
+	@DeleteMapping(value="/login")
 	public ResponseEntity<Void> logout(HttpSession session) {
 		session.invalidate();
 		return ResponseEntity.noContent().build();

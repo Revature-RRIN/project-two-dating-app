@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(): void {
+  updateProfile() {
     this.router.navigate(["questions"]);
   }
 }

@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { UrlService } from '../url.service';
-import { Answers } from '../answers';
-import { Questions } from '../questions';
+import { UrlService } from 'src/app/shared/url.service';
+import { Answers } from 'src/app/shared/classes/answers';
+import { Questions } from 'src/app/shared/classes/questions';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 
 @Injectable()
 export class UploadResponsesService {
-  private appUrl = this.urlService.getUrl() + 'books';
+  private appUrl = this.urlService.getUrl() + 'answers';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });

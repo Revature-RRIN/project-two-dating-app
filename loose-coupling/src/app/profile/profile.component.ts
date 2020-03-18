@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../users';
+import { Users } from '../shared/classes/users';
 import { Router } from "@angular/router";
-import { ProfileService } from '../services/profile.service';
+import { ProfileService } from 'src/app/shared/services/createprofile.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +11,7 @@ import { ProfileService } from '../services/profile.service';
 export class ProfileComponent implements OnInit {
   user: Users;
   constructor(private router: Router,
-              private profile: ProfileService) { }
+    private profile: ProfileService) { }
 
   ngOnInit(): void {
   }

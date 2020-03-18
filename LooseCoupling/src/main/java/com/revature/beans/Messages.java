@@ -18,11 +18,9 @@ public class Messages {
 	@SequenceGenerator(name = "messages", sequenceName = "messages_seq", allocationSize = 1)
 	@GeneratedValue(generator = "messages", strategy = GenerationType.SEQUENCE)
 	private Integer messagesId;
-	@Column(name = "sender_id")
 	@OneToOne
 	@JoinColumn (name="sender_id")
 	private Users sender;
-	@Column(name = "receiver_id")
 	@OneToOne
 	@JoinColumn (name="receiver_id")
 	private Users receiver;

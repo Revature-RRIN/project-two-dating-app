@@ -1,0 +1,38 @@
+
+  <div class="container border">
+    <ng-container>
+      <div class="row">
+        <span class="col">First: </span>
+        <input class="col" type="text" [(ngModel)]="users.firstname">
+      </div>
+      <div class="row">
+        <span class="col">Last: </span>
+        <input class="col" type="text" [(ngModel)]="users.lastname">
+      </div>
+      <div class="row">
+        <span class="col">username: </span>
+        <input class="col" type="text" [(ngModel)]="users.username">
+      </div>
+      <div class="row">
+        <span class="col">password: </span>
+        <input class="col" type="password" [(ngModel)]="users.pass">
+      </div>
+      <div class="row">
+        <span class="col">gender: </span>
+        <input class="col" type="text" [(ngModel)]="users.gender">
+      </div>
+      <div class="row">
+        <span class="col">age: </span>
+        <input class="col" type="text" [(ngModel)]="users.age">
+      </div>
+      <div class="row">
+        <span class="col">location: </span>
+        <input class="col" type="text" [(ngModel)]="users.location">
+      </div>
+      
+      <button class="row btn btn-primary" (click)="signup()">Submit</button>
+    </ng-container>
+  
+  </div>
+    
+

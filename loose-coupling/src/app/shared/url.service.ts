@@ -10,3 +10,4 @@ export class UrlService {
     return UrlService.MONOLITH_URL;
   }
 }
+     

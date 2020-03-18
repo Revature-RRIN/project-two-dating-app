@@ -28,46 +28,24 @@ import com.revature.services.UsersServiceHibernate;
 import com.revature.beans.LoginInfo;
 
 @RestController
-<<<<<<< HEAD
-
-=======
-//@RequestMapping(value="/login")
->>>>>>> 664576358821d88791e3ae4db4fb5dace6fac682
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
-	/*public static void main (String[] args) {
-		UsersService us = new UsersServiceHibernate();
-        Users u = us.getUser("user", "pass");
-        System.out.println(u.getFirstname());
-	}*/
 
 	@Autowired
 	private UsersService us;
-	/*@Autowired
-	private UserService cs;
-	@Autowired
-	private EmployeeService es;*/
+	
 	
 	@GetMapping(value="/login")
-<<<<<<< HEAD
-	public ResponseEntity<Users> login(HttpSession session) {
-		Users l = (Users) session.getAttribute("loggedUser");
-=======
 	public ResponseEntity<LoginInfo> login(HttpSession session) {
 		LoginInfo l = (LoginInfo) session.getAttribute("loggedUser");
->>>>>>> 664576358821d88791e3ae4db4fb5dace6fac682
 		if(l == null)
 			return ResponseEntity.status(401).build();
 		return ResponseEntity.ok(l);
 	}
 	
 	@PostMapping(value="/login")
-<<<<<<< HEAD
-	public ResponseEntity<Users> login(@RequestParam("user") String username, 
-=======
 	public ResponseEntity<LoginInfo> login(@RequestParam("user") String username, 
->>>>>>> 664576358821d88791e3ae4db4fb5dace6fac682
-			@RequestParam("pass") String password, HttpSession session) {
+		@RequestParam("pass") String password, HttpSession session) {
 		Users u = us.getUser(username,  password);
 		if(u==null) {
 			return ResponseEntity.status(401).build();

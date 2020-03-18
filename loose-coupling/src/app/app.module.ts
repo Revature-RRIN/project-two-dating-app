@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileService } from './shared/services/profile.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProfileService } from './shared/services/profile.service';
     SignupComponent,
     DashboardComponent,
     QuestionsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

@@ -21,13 +21,18 @@ export class MessagesComponent implements OnInit {
   }
 
   displayMessages() {
-this.messageService.viewMessages(this.loggedUser.user.username).subscribe(
+this.messageService.viewMessages(this.loggedUser.user).subscribe(
   resp=>  {
     this.messages = resp;
   }
 )
   }
-
+/*
+  messagesId: number;
+  senderId: number;
+  receiverId: number;
+  remark: string;
+*/
   sendMessage(): void {
   this.messageService.sendMessage(this.messages).subscribe(
     messages => {

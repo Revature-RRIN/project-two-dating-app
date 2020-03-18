@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { UrlService } from '../services/url.service';
+import { UrlService } from '../url.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Users } from '../users';
+import { Users } from '../classes/users';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Currentuser } from '../currentuser';
+import { Currentuser } from '../classes/currentuser';
 
 @Injectable()
 export class ProfileService {

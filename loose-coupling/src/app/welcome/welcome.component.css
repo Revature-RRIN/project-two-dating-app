@@ -1,5 +1,51 @@
-.container {
-    min-height: 100%;
-    width: 100%;
+
+.login  {
+  position: fixed;
+  width: 17%;
+  left: 20%;
+  top: 50%;
+  line-height: 150%;
+  box-shadow: 1px 1px 3px #565554;
+  padding: 10px 5px 10px 0px;
+}
+
+.signup {
+  position: fixed;
+  width: 15%;
+  right: 10%;
+  top: 20%;
+  line-height: 150%;
+  box-shadow: 1px 1px 3px #565554;
+  padding: 15px 0px 15px 15px;
   }
-  
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    right: 25%;
+    bottom: 0%;
+  }
+
+
+.loginButton    {
+          font-family: Century Gothic, sans-serif;
+          font-size: 18px;
+          padding: 0;
+          border: none;
+          background: none;
+          position: fixed;
+          padding-left: 25%;
+          padding-top: 20%;
+                }
+
+.signButton {
+                  font-family: Century Gothic, sans-serif;
+                  font-size: 18px;
+                  padding: 0;
+                  border: none;
+                  background: none;
+                  position: fixed;
+                  padding-left: 75%;
+                  padding-top: 10%;
+           }

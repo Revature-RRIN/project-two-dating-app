@@ -1,123 +1,41 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>Loose Coupling</span>
-      <span class="example-fill-remaining-space"></span>
-      <span class="align-center"></span>
-      <span class="example-spacer"></span>
-      <button mat-button>About</button>
-      <button mat-button>Contact</button>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voicemail</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
-      </mat-menu>
-    </mat-toolbar-row></mat-toolbar>
+<div class="container border">
+  <ng-container>
+    <div class="row">
+      <span class="col">First: </span>
+      <input class="col" type="text" [(ngModel)]="users.firstname">
+    </div>
+    <div class="row">
+      <span class="col">Last: </span>
+      <input class="col" type="text" [(ngModel)]="users.lastname">
+    </div>
+    <div class="row">
+      <span class="col">gender: </span>
+      <input class="col" type="text" [(ngModel)]="users.gender">
+    </div>
+    <div class="row">
+      <span class="col">age: </span>
+      <input class="col" type="text" [(ngModel)]="users.age">
+    </div>
+    <div class="row">
+      <span class="col">location: </span>
+      <input class="col" type="text" [(ngModel)]="users.location">
+    </div>
+    <button class="row btn btn-primary" (click)="updateProfile()">Submit</button>
+  </ng-container>
 
-  
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Create Profile</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <form class="example-form">
-        <table class="example-full-width" cellspacing="0">
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input
-                  matInput
-                  placeholder="First Name"
-                  [(ngModel)]="users.firstname"
-                  name="firstname"
-                  required
-                />
-              </mat-form-field>
-            </td>
-          
-            <td>
-              <mat-form-field class="example-full-width">
-                <input
-                  matInput
-                  placeholder="Last Name"
-                  [(ngModel)]="users.lastname"
-                  name="lastname"
-                  required
-                />
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width" action="upload.php" method ="POST" encType="multipart/form-data"
-                handler = "https://lc-profile-bucket.s3.us-east-2.amazonaws.com">
-                  Upload your desired profile picture:
-                  <input
-                    type = file name = profilePic id = profilePic
-                  /> 
-                  <input 
-                    type="submit" value="Upload Image" name="submit"
-                  />
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input
-                  matInput
-                  placeholder="Age"
-                  [(ngModel)]="users.age"
-                  name="age"
-                  required
-                />
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-                <input
-                  matInput
-                  placeholder="Gender"
-                  [(ngModel)]="users.gender"
-                  name="gender"
-                  required
-                />
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width">
-               <!--HOW TO TURN INTO SELECT/DROPDOWN MENU W/ PREDEFINED LOCATIONS-->
-                <input                    
-                  matInput
-                  placeholder="Location"
-                  [(ngModel)]="users.location"
-                  name="location"
-                  required
-                />                
-              </mat-form-field>
-            </td>
-          </tr>
-          <!--NEED PROFILE PIC SELECTION FIELD-->
-        </table>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <!--DOES SUBMIT TRIGGER UPLOAD IMAGE BUTTON?-->
-      <button mat-raised-button (click)="updateProfile()" color="primary">Submit</button>
-    </mat-card-actions>
-  </mat-card>
+</div>
+
+  <!-- <tr>
+    <td>
+      <mat-form-field class="example-full-width" action="upload.php" method ="POST" encType="multipart/form-data"
+        handler = "https://lc-profile-bucket.s3.us-east-2.amazonaws.com">
+          Upload your desired profile picture:
+          <input
+            type = file name = profilePic id = profilePic
+          /> 
+          <input 
+            type="submit" value="Upload Image" name="submit"
+          />
+      </mat-form-field>
+    </td>
+  </tr> -->

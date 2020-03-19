@@ -30,6 +30,8 @@ public class SignupController {
 		System.out.println(u1);	
 		System.out.println(u2);
 		
+	
+		
 		
 	}
 	
@@ -43,6 +45,9 @@ public class SignupController {
 	
 	@PutMapping(value="/profile/{usersId}")
 	public ResponseEntity<Users> updateUser(@PathVariable("usersId") Integer id, @RequestBody Users u) {
-		return ResponseEntity.ok(us.updateUser(u));
+		System.out.println(u);
+		us.updateUser(u);
+		return ResponseEntity.ok(us.getUserById(id));
+
 	}
 }

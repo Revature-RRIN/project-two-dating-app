@@ -85,6 +85,7 @@ public class UsersHibernate implements UsersDAO{
 	}
 
 	public Users updateUser(Users u) {
+		System.out.println(u);
 		Session s = hu.getSession();
 		Transaction tx = null;
 		try {
@@ -99,6 +100,7 @@ public class UsersHibernate implements UsersDAO{
 		} finally {
 			s.close();
 		}
+		System.out.println(u);
 		return u;
 	}
 

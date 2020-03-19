@@ -32,6 +32,7 @@ export class UsersService {
           const user: Currentuser = resp as Currentuser;
           if (user) {
             this.users = user.user;
+          
           }
           return user;
         })
@@ -41,7 +42,6 @@ export class UsersService {
       return this.http.get(this.appUrl, {withCredentials: true}).pipe(
         map( resp => {
           const user: Currentuser = resp as Currentuser;
-         
           console.log(user);  
           return user;
         })

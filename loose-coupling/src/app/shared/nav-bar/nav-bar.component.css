@@ -1,0 +1,25 @@
+nav {
+  background-color: #565554;
+  height: 75px;
+  box-shadow: black;
+  background-image: linear-gradient(#565554,#6f6e6d, #565554);
+}
+
+.badge-primary  {
+  color: #f6f5ae;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #f24236;
+  }
+
+li  {
+  text-align: center;
+  font-size: 500%;
+  color: #f6f5ae;
+  text-shadow: 1px 1px 3px #3b3b3a;
+  font-family: Century Gothic, sans-serif;
+}

@@ -1,14 +1,26 @@
 <router-outlet></router-outlet>
 
-
-<app-nav-bar></app-nav-bar>
-
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.1%" fxLayoutAlign="center">
-    <span fxFlex="50%">
-        <app-login></app-login>
-    </span>
-
-    <span fxFlex="50%">
-        <app-signup></app-signup>
-    </span>
+<div class="navbar">
+    <app-nav-bar></app-nav-bar>
 </div>
+
+<div class="login" *ngIf="isLogClicked; else logButton">
+    <app-login></app-login>
+</div>
+
+<ng-template #logButton>
+    <button class= "loginButton" (click)=showLogin()>login </button>
+</ng-template>
+
+
+<a class="image">
+    <img src="assets/hearts.png">
+</a>
+
+<div class="signup"  *ngIf="isSignClicked; else signButton">
+    <app-signup></app-signup>
+</div>
+
+<ng-template #signButton>
+    <button class= "signButton" (click)=showSignup()>sign up</button>
+</ng-template>

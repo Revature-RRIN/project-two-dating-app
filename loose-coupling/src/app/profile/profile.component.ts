@@ -9,7 +9,7 @@ import { ProfileService } from 'src/app/shared/services/createprofile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: Users;
+  users: Users;
   constructor(private router: Router,
     private profile: ProfileService) { }
 

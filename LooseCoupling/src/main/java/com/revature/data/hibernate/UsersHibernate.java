@@ -84,7 +84,7 @@ public class UsersHibernate implements UsersDAO{
 		return usersSet;
 	}
 
-	public void updateUser(Users u) {
+	public Users updateUser(Users u) {
 		Session s = hu.getSession();
 		Transaction tx = null;
 		try {
@@ -99,6 +99,7 @@ public class UsersHibernate implements UsersDAO{
 		} finally {
 			s.close();
 		}
+		return u;
 	}
 
 	public void deleteUser(Users u) {

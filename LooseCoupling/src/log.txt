@@ -191,3 +191,131 @@ java.lang.NullPointerException
 2020-03-13 16:16:44 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
 2020-03-13 16:16:49 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2020-03-13 16:16:49 TRACE UsersHibernate:42 - Users [usersId=null, usertype=null, username=user, pass=pass, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null]
+2020-03-18 21:13:09 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:13:10 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:13:10 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:13:10 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:13:11 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:13:11 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:13:11 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:13:11 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:13:12 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:13:14 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:13:14 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:14:01 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:14:01 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:14:02 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:14:02 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:14:02 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:14:02 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:14:02 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:14:02 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:14:04 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:14:05 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:14:06 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:16:06 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:16:06 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:16:07 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:16:07 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:16:07 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:16:07 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:16:07 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:16:07 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:16:09 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:16:12 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:16:13 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:19:15 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:19:16 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:19:16 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:19:17 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:19:17 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:19:17 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:19:17 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:19:17 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:19:18 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:19:20 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:19:20 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:38:53 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:38:53 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:38:54 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:38:54 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:38:54 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:38:54 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:38:54 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:38:54 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:38:56 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:38:58 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:38:59 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:38:59 ERROR ErrorTracker:62 - line 1:60: unexpected token: and
+2020-03-18 21:38:59 ERROR ErrorTracker:57 - line 1:60: unexpected token: and
+line 1:60: unexpected token: and
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.updateStatement(HqlBaseParser.java:257)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:181)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:155)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:600)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:709)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:809)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:109)
+	at com.revature.data.hibernate.UsersHibernate.updateUser(UsersHibernate.java:92)
+	at com.revature.services.UsersServiceHibernate.updateUser(UsersServiceHibernate.java:36)
+	at com.revature.controller.SignupController.main(SignupController.java:26)
+2020-03-18 21:41:09 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:41:09 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:41:09 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:41:10 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:41:10 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:41:10 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:41:10 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:41:10 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:41:12 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:41:16 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:41:17 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:44:05 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:44:05 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:44:05 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:44:06 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:44:06 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:44:06 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:44:06 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:44:06 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:44:07 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:44:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:44:10 TRACE UsersHibernate:42 - Users [usersId=1, usertype=null, username=null, pass=null, firstname=null, lastname=null, score=null, age=null, gender=null, location=null, banned=null, userMatches=null, sentMessages=null, receivedMessages=null]
+2020-03-18 21:50:01 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:50:01 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:50:01 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:50:02 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:50:02 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:50:02 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:50:02 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:50:02 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:50:04 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:50:07 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-18 21:50:08 ERROR UsersHibernate:14 - class org.hibernate.TransientObjectException: The given object has a null identifier: com.revature.beans.Users
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 257: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 53: org.hibernate.event.internal.DefaultUpdateEventListener
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 224: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 38: org.hibernate.event.internal.DefaultUpdateEventListener
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 640: org.hibernate.internal.SessionImpl
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 633: org.hibernate.internal.SessionImpl
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 628: org.hibernate.internal.SessionImpl
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 92: com.revature.data.hibernate.UsersHibernate
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 36: com.revature.services.UsersServiceHibernate
+2020-03-18 21:50:08 WARN  UsersHibernate:16 - 27: com.revature.controller.SignupController
+2020-03-18 21:55:05 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-18 21:55:05 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-18 21:55:06 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-18 21:55:06 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-18 21:55:06 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-18 21:55:06 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-18 21:55:06 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-18 21:55:06 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-18 21:55:09 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-18 21:55:13 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]

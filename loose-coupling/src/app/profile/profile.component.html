@@ -24,6 +24,7 @@
         </button>
       </mat-menu>
     </mat-toolbar-row></mat-toolbar>
+
   
   <mat-card class="example-card">
     <mat-card-header>
@@ -38,7 +39,7 @@
                 <input
                   matInput
                   placeholder="First Name"
-                  [(ngModel)]="user.firstname"
+                  [(ngModel)]="users.firstname"
                   name="firstname"
                   required
                 />
@@ -50,7 +51,7 @@
                 <input
                   matInput
                   placeholder="Last Name"
-                  [(ngModel)]="user.lastname"
+                  [(ngModel)]="users.lastname"
                   name="lastname"
                   required
                 />
@@ -77,7 +78,7 @@
                 <input
                   matInput
                   placeholder="Age"
-                  [(ngModel)]="user.age"
+                  [(ngModel)]="users.age"
                   name="age"
                   required
                 />
@@ -90,7 +91,7 @@
                 <input
                   matInput
                   placeholder="Gender"
-                  [(ngModel)]="user.gender"
+                  [(ngModel)]="users.gender"
                   name="gender"
                   required
                 />
@@ -104,7 +105,7 @@
                 <input                    
                   matInput
                   placeholder="Location"
-                  [(ngModel)]="user.location"
+                  [(ngModel)]="users.location"
                   name="location"
                   required
                 />                

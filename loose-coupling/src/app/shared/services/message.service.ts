@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Messages } from '../classes/messages'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Currentuser } from '../classes/currentuser';
+import { Users } from '../classes/users';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,8 @@ export class MessageService {
     private http: HttpClient
   ) { }
 
-  sendMessage(remark: Messages): Observable<Messages> {
-    const body = JSON.stringify(remark);
+  sendMessage(message: Messages): Observable<Messages> {
+    const body = JSON.stringify(message);
     return this.http.post(this.appUrl, body,
       { headers: this.headers }).pipe(
         map(resp => resp as Messages));
@@ -28,8 +30,8 @@ export class MessageService {
 
 
 
-  viewMessages(username: string): Observable<Messages>  {
-//    const body = `user=${username}`;
+  viewMessages(users:Users): Observable<Messages>  {
+const body = JSON.stringify(users);
     return this.http.get(this.appUrl, {headers: this.headers}).pipe(
       map(resp => {
         const message: Messages = resp as Messages;

@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
     private profile: ProfileService) { }
 
   ngOnInit(): void {
+    this.users = new Users();
   }
 
   updateProfile() {

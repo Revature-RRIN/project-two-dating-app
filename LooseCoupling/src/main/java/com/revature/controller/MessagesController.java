@@ -29,8 +29,8 @@ public class MessagesController {
 	private MessagesService ms;
 	
 	@GetMapping()
-	public ResponseEntity<Messages> getMessageById(Integer id) {
-		return ResponseEntity.ok(ms.getMessageById(id));
+	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u, Users u2) {
+		return ResponseEntity.ok(ms.getConversationByUsers(u, u2));
 	}
 	
 	@PostMapping

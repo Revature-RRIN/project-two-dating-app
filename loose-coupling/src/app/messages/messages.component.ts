@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Messages } from '../shared/classes/messages';
 import { MessageService } from '../shared/services/message.service';
 import { Currentuser } from '../shared/classes/currentuser';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class MessagesComponent implements OnInit {
   @Input() messages: Messages;
   @Output() submitted = new EventEmitter<Messages>();
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService,
+    private router: Router) { }
 
   ngOnInit(): void {
     
@@ -51,4 +53,7 @@ this.messageService.viewMessages(this.loggedUser.user).subscribe(
     }
   );
 }
+  returnProfile(): void {
+    this.router.navigate(["user"]); 
+  }
 }

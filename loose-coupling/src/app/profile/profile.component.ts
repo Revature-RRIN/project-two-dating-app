@@ -21,9 +21,17 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     
     
-    this.users = this.us.getUser(); //NEED ANYWHERE THE USER IS REFERRED TO!!!
+    this.users = this.us.getUser(); //NEED ANYWHERE THE LOGGED-IN USER IS REFERRED TO...EVERYWHERE!!!
     
   }
+
+  // if(this.users.gender == 'Male') {
+  //   this.users.gender == 1
+  // } else if (this.users.gender == "Female") {
+  //   this.users.gender == 2
+  // } else {
+  //   this.users.gender == 3
+  // }
 
   updateProfile() {
     this.profile.updateProfile(this.users).subscribe(

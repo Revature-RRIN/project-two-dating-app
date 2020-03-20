@@ -2,7 +2,7 @@
 *.class
 
 # Hibernate cfg file
-/src/main/resources/
+/src/main/resources/hibernate.cfg.xml
 
 # Log file
 *.log

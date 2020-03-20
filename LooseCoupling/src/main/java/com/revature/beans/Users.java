@@ -125,6 +125,15 @@ public class Users {
 		this.receivedMessages = receivedMessages;
 	}
 
+	public Users(String firstname, String lastname, Integer age, Integer gender, String location) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.age = age;
+		this.gender = gender;
+		this.location = location;
+	}
+
 	public Integer getUsersId() {
 		return usersId;
 	}

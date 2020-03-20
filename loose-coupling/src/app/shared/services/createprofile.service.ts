@@ -9,9 +9,9 @@ import { Currentuser } from '../classes/currentuser';
 
 @Injectable()
 export class ProfileService {
-    private appUrl  = this.url.getUrl() + 'createprofile';
+    private appUrl  = this.url.getUrl() + 'profile';
     private headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     });
     private user: Users;  
 
@@ -20,8 +20,10 @@ export class ProfileService {
         private http: HttpClient
     ) {}
 
+
     getProfile(id: number): Observable<Users> {
-      const url: string = this.appUrl + '/' + id;
+      console.log(this.user);
+      const url: string = this.appUrl;
       return this.http.get(url, {withCredentials: true}).pipe(
         map(resp => resp as Users)
       );

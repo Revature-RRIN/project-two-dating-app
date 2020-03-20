@@ -14,6 +14,13 @@ export class MessagesComponent implements OnInit {
   @Input() messages: Messages;
   @Output() submitted = new EventEmitter<Messages>();
 
+  messageList: Messages[];
+
+
+  messageArray = ['Hey jenny', 'hey frank', 'will you go out with me', 'no my parents say im not old enough to date', 'ok bye', 'ok by'];
+
+
+
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
@@ -33,7 +40,7 @@ b. For EACH user I match with, generate a new "Conversation" component, which ha
   displayMessages() {
 this.messageService.viewMessages(this.loggedUser.user).subscribe(
   resp=>  {
-    this.messages = resp;
+    this.messageList = resp;
   }
 )
   }

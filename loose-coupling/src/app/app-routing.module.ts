@@ -5,7 +5,9 @@ import { SignupComponent } from './shared/signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessagesComponent } from './messages/messages.component';
 import { QuestionsComponent } from './questions/questions.component';
+
 
 const routes: Routes = [
 
@@ -14,8 +16,8 @@ const routes: Routes = [
   {path: "", component: WelcomeComponent},
   {path: "signup", component: SignupComponent},
   {path: "dashboard", component: DashboardComponent},
+  {path: "messages", component: MessagesComponent},
   {path: "questions", component: QuestionsComponent}
-
 ];
 
 @NgModule({

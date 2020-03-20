@@ -5,6 +5,7 @@ import { SignupComponent } from './shared/signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: "profile", component: ProfileComponent},
   {path: "", component: WelcomeComponent},
   {path: "signup", component: SignupComponent},
-  {path: "dashboard", component: DashboardComponent}
+  {path: "dashboard", component: DashboardComponent},
+  {path: "messages", component: MessagesComponent}
 
 ];
 

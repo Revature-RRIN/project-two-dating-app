@@ -13,6 +13,7 @@ import { UsersService } from '../shared/services/users.service';
 })
 export class MessagesComponent implements OnInit {
   private message: Messages;
+  condition: boolean = false;
 
 
   users: Users;

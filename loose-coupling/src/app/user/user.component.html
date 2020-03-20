@@ -10,7 +10,9 @@
     <p>{{users.location}}</p>
 </div>
 
-
+<div *ngIf="clickedMessage" class = "messagePopup">
+<app-messages></app-messages>
+</div>
 
 <!--
 <div *ngIf="users.id != 1 && users.id != null">

@@ -1,4 +1,14 @@
 .messagePopup   {
     max-width: 200px;
     max-height: 400px;
+    box-shadow: 1px 1px 3px black;
+    padding: 10px;
+}
+
+.rightSide  {
+    text-align: right;
+}
+
+.leftSide   {
+    text-align: left;
 }

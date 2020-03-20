@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Messages } from '../shared/classes/messages';
 import { MessageService } from '../shared/services/message.service';
-import { Currentuser } from '../shared/classes/currentuser';
 import { Router } from '@angular/router';
 import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
@@ -13,22 +12,34 @@ import { UsersService } from '../shared/services/users.service';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
-  public loggedUser: Currentuser;
+  private message: Messages;
+
+
+  users: Users;
   @Input() messages: Messages;
   @Output() submitted = new EventEmitter<Messages>();
+  remark: string;
 
   constructor(private messageService: MessageService,
-    private router: Router) { }
-  messageList: Messages[];
+    private router: Router, private us : UsersService) {
 
+      this.message = {
+      messagesId: 0,
+      remark: 'null',
+      senderId: 0,
+      receiverId: 0
+      }
+    }
+
+
+
+
+  messageList: Messages[];
 
   messageArray = ['Hey jenny', 'hey frank', 'will you go out with me', 'no my parents say im not old enough to date', 'ok bye', 'ok by'];
 
-
-
-
-
   ngOnInit(): void {
+    this.users = this.us.getUser();
   }
 
 
@@ -44,7 +55,7 @@ put together
 
 
   displayMessages() {
-this.messageService.viewMessages(this.loggedUser.user).subscribe(
+this.messageService.viewMessages(this.users).subscribe(
   resp=>  {
     this.messageList = resp;
   }
@@ -57,6 +68,9 @@ this.messageService.viewMessages(this.loggedUser.user).subscribe(
   remark: string;
 */
   sendMessage(): void {
+    this.message.remark = this.remark;
+    this.message.senderId = 1;//this.users.usersId;
+//  this.message.receiverId = "matched user id";
   this.messageService.sendMessage(this.messages).subscribe(
     messages => {
       this.messages = messages;

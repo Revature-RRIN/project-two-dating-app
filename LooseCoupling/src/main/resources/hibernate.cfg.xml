@@ -4,9 +4,9 @@
 	<session-factory>
 		<!-- JDBC set up -->
 		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL</property>
-		<property name="hibernate.connection.username">Loose_Coupling</property>
-		<property name="hibernate.connection.password">password111</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@ramydb.cbdeil3fme5d.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.username">loosecoupling</property>
+		<property name="hibernate.connection.password">p4ssw0rd</property>
 
 		<!-- Hibernate set up -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>

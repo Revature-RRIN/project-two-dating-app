@@ -3,6 +3,16 @@
 </div>
 
 <div class="container">
+
+
+<ul>
+    <li *ngFor="let q of questions">
+      {{ q.question }}
+    </li>
+  </ul>
+
+
+<!--<div class="container">
     <h3>Answer personality questions:</h3>
     <div class="formgroup">
         <br>
@@ -18,7 +28,7 @@
     <div class="formgroup">
         <br>
         <p>Given the options listed, what is your preferred pasttime?</p> <br>
-        <select class="form-control" id="grade">
+        <select class="form-control" id="grade" >
             <option value="1">Arts and Crafts</option>
             <option value="2">Being outdoors</option>
             <option value="3">Watching TV and Sports</option>
@@ -38,4 +48,4 @@
     </div>
     <hr>
 
-    <button type="submit" (click)="questionSubmission()" id="submit">Submit</button>
+    <button type="submit" (click)="questionSubmission()" id="submit">Submit</button>-->

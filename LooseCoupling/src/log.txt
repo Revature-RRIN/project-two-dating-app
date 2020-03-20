@@ -329,3 +329,419 @@ line 1:60: unexpected token: and
 2020-03-19 15:28:10 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
 2020-03-19 15:28:11 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
 2020-03-19 15:28:13 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:06:05 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:06:05 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:06:06 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:06:06 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:06:06 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:06:06 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:06:06 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:06:06 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:06:07 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:06:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:07:55 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:07:55 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:07:55 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:07:55 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:07:55 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:07:55 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:07:55 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:07:55 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:07:56 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:07:58 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:08:06 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:08:06 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:08:07 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:08:07 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:08:07 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:08:07 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:08:07 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:08:07 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:08:08 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:08:11 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:08:35 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:08:35 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:08:36 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:08:36 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:08:36 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:08:36 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:08:36 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:08:36 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:08:37 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:08:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:09:26 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:09:26 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:09:26 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:09:27 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:09:27 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:09:27 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:09:27 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:09:27 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:09:28 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:09:30 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:14:17 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:14:17 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:14:17 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:14:17 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:14:17 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:14:17 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:14:17 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:14:17 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:14:19 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:14:21 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:14:57 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:14:57 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:14:58 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:14:58 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:14:58 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:14:58 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:14:58 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:14:58 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:14:59 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:15:02 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:15:55 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:15:55 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:15:56 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:15:56 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:15:56 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:15:56 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:15:56 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:15:56 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:15:57 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:16:00 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:16:14 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:16:14 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:16:14 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:16:15 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:16:15 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:16:15 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:16:15 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:16:15 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:16:16 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:16:18 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:16:37 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:16:37 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:16:38 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:16:38 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:16:38 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:16:38 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:16:38 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:16:38 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:16:39 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:16:42 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:16:53 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:16:53 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:16:53 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:16:54 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:16:54 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:16:54 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:16:54 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:16:54 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:16:55 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:16:57 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 21:17:14 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 21:17:14 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 21:17:14 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 21:17:14 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 21:17:14 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 21:17:14 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 21:17:14 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 21:17:14 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 21:17:15 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 21:17:18 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:05:06 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:05:06 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:05:07 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:05:07 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:05:07 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:05:07 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:05:07 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:05:07 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:05:08 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:09:12 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:09:12 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:09:12 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:09:13 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:09:13 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:09:13 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:09:13 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:09:13 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:09:14 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:09:52 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:09:52 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:09:52 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:09:52 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:09:52 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:09:52 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:09:52 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:09:52 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:09:53 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:09:56 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:09:56 ERROR MatchesHibernate:14 - class org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private java.lang.Integer com.revature.beans.Status.statusId] by reflection for persistent property [com.revature.beans.Status#statusId] : 1
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 75: org.hibernate.property.access.spi.GetterFieldImpl
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 223: org.hibernate.tuple.entity.AbstractEntityTuplizer
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 5073: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 4773: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 294: org.hibernate.engine.internal.ForeignKeys
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 230: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 110: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 75: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 115: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 125: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 289: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 263: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 250: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 343: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 292: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 198: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 140: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 193: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 38: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 178: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 32: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 618: org.hibernate.internal.SessionImpl
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 33: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 120: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:09:56 WARN  MatchesHibernate:16 - 24: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:09:56 WARN  SqlExceptionHelper:137 - SQL Error: 904, SQLState: 42000
+2020-03-19 22:09:56 ERROR SqlExceptionHelper:142 - ORA-00904: "MATCHES0_"."USER1_ID": invalid identifier
+
+2020-03-19 22:09:56 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-03-19 22:15:38 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:15:38 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:15:38 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:15:39 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:15:39 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:15:39 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:15:39 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:15:39 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:15:40 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:15:43 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:15:43 ERROR MatchesHibernate:14 - class org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private java.lang.Integer com.revature.beans.Status.statusId] by reflection for persistent property [com.revature.beans.Status#statusId] : 1
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 75: org.hibernate.property.access.spi.GetterFieldImpl
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 223: org.hibernate.tuple.entity.AbstractEntityTuplizer
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 5073: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 4773: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 294: org.hibernate.engine.internal.ForeignKeys
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 230: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 110: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 75: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 115: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 125: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 289: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 263: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 250: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 343: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 292: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 198: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 140: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 193: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 38: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 178: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 32: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 618: org.hibernate.internal.SessionImpl
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 33: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 120: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:15:43 WARN  MatchesHibernate:16 - 24: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:17:22 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:17:22 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:17:23 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:17:23 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:17:23 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:17:23 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:17:23 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:17:23 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:17:24 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:17:26 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:17:27 ERROR MatchesHibernate:14 - class org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private java.lang.Integer com.revature.beans.Status.statusId] by reflection for persistent property [com.revature.beans.Status#statusId] : 1
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 75: org.hibernate.property.access.spi.GetterFieldImpl
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 223: org.hibernate.tuple.entity.AbstractEntityTuplizer
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 5073: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 4773: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 294: org.hibernate.engine.internal.ForeignKeys
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 230: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 110: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 75: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 115: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 125: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 289: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 263: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 250: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 343: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 292: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 198: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 140: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 193: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 38: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 178: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 32: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 618: org.hibernate.internal.SessionImpl
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 33: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 120: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:17:27 WARN  MatchesHibernate:16 - 24: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:17:56 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:17:56 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:17:56 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:17:56 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:17:56 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:17:56 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:17:56 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:17:56 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:17:57 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:17:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:17:59 ERROR MatchesHibernate:14 - class org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private java.lang.Integer com.revature.beans.Status.statusId] by reflection for persistent property [com.revature.beans.Status#statusId] : 1
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 75: org.hibernate.property.access.spi.GetterFieldImpl
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 223: org.hibernate.tuple.entity.AbstractEntityTuplizer
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 5073: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 4773: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 294: org.hibernate.engine.internal.ForeignKeys
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 230: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 110: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 75: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 115: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 125: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 289: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 263: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 250: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 343: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 292: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 198: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 140: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 193: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 38: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 178: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 32: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 618: org.hibernate.internal.SessionImpl
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 34: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 121: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:17:59 WARN  MatchesHibernate:16 - 25: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:28:12 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:28:12 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:28:12 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:28:13 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:28:13 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:28:13 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:28:13 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:28:13 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:28:14 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:28:17 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:28:18 ERROR MatchesHibernate:14 - class org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private java.lang.Integer com.revature.beans.Status.statusId] by reflection for persistent property [com.revature.beans.Status#statusId] : 1
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 75: org.hibernate.property.access.spi.GetterFieldImpl
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 223: org.hibernate.tuple.entity.AbstractEntityTuplizer
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 5073: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 4773: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 294: org.hibernate.engine.internal.ForeignKeys
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 230: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 110: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 75: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 115: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 125: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 289: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 263: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 250: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 343: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 292: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 198: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 140: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 193: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 38: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 178: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 32: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 618: org.hibernate.internal.SessionImpl
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 33: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 120: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:28:18 WARN  MatchesHibernate:16 - 24: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:28:18 WARN  SqlExceptionHelper:137 - SQL Error: 904, SQLState: 42000
+2020-03-19 22:28:18 ERROR SqlExceptionHelper:142 - ORA-00904: "STATUS1_"."STATE": invalid identifier
+
+2020-03-19 22:28:18 INFO  DefaultLoadEventListener:116 - HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-03-19 22:34:48 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:34:48 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:34:48 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:34:48 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:34:48 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:34:48 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:34:48 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:34:48 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:34:50 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:34:52 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-19 22:34:53 ERROR MatchesHibernate:14 - class org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [private java.lang.Integer com.revature.beans.Status.statusId] by reflection for persistent property [com.revature.beans.Status#statusId] : 1
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 75: org.hibernate.property.access.spi.GetterFieldImpl
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 223: org.hibernate.tuple.entity.AbstractEntityTuplizer
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 5073: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 4773: org.hibernate.persister.entity.AbstractEntityPersister
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 294: org.hibernate.engine.internal.ForeignKeys
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 230: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 110: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 75: org.hibernate.engine.internal.ForeignKeys$Nullifier
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 115: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 125: org.hibernate.action.internal.AbstractEntityInsertAction
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 289: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 263: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 250: org.hibernate.engine.spi.ActionQueue
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 343: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 292: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 198: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 140: org.hibernate.event.internal.AbstractSaveEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 193: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 38: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 178: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 32: org.hibernate.event.internal.DefaultSaveEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 75: org.hibernate.event.internal.DefaultSaveOrUpdateEventListener
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 108: org.hibernate.event.service.internal.EventListenerGroupImpl
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 618: org.hibernate.internal.SessionImpl
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 33: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 120: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:34:53 WARN  MatchesHibernate:16 - 24: com.revature.data.hibernate.MatchesHibernate
+2020-03-19 22:48:06 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-19 22:48:07 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-19 22:48:07 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-19 22:48:07 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-19 22:48:07 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-19 22:48:07 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-19 22:48:07 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-19 22:48:07 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-19 22:48:09 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-19 22:48:12 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-20 10:59:28 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-20 10:59:29 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-20 10:59:29 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-20 10:59:29 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-20 10:59:29 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-20 10:59:29 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-20 10:59:29 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-20 10:59:29 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-20 10:59:31 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-20 10:59:34 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-20 11:00:20 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-20 11:00:20 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-20 11:00:20 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-20 11:00:20 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-20 11:00:20 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001.cjgudv69wz9l.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-20 11:00:20 INFO  pooling:124 - HHH10001001: Connection properties: {user=admin, password=****}
+2020-03-20 11:00:20 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-20 11:00:20 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-20 11:00:22 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-20 11:00:25 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]

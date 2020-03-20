@@ -2,9 +2,18 @@
 <div class="messagePopup">
 
 
-<li *ngFor="let message of messageArray">
-   {{message}}
-  </li>
+  
+
+
+<ul *ngFor="let specificMessage of messageArray">
+   {{specificMessage}}
+</ul>
+
+
+  <div class="messager">
+<input class="col" type="text" (keydown.enter)="sendMessage()" [(ngModel)]="remark">
+<button class="row btn btn-primary" (click)="sendMessage()">Submit</button>
+</div>
 
 
 </div>

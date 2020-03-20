@@ -22,6 +22,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileService } from './shared/services/createprofile.service';
 import { MessagesComponent } from './messages/messages.component';
+import { QuestionService } from './shared/services/question.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MessagesComponent } from './messages/messages.component';
     DashboardComponent,
     QuestionsComponent,
     WelcomeComponent,
-    MessagesComponent
+    MessagesComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { MessagesComponent } from './messages/messages.component';
   ], 
   providers: [
     SignupService,
-    ProfileService
+    ProfileService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })

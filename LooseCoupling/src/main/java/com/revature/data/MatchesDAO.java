@@ -14,4 +14,5 @@ public interface MatchesDAO {
 	//getMatchByStatus?
 	public void updateMatch(Matches m);
 	public void deleteMatch(Matches m);
+	public Matches matchCompatibleUser(Users u1);
 }

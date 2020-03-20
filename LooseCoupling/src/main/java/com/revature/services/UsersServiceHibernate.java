@@ -41,4 +41,9 @@ public class UsersServiceHibernate implements UsersService{
 		
 	}
 
+	@Override
+	public Users findCompatibleUser(Users u) {
+		return ud.getCompatibleUser(u);
+	}
+
 }

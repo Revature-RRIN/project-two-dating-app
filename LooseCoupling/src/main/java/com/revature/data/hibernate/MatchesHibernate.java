@@ -9,8 +9,10 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import com.revature.beans.Matches;
+import com.revature.beans.Status;
 import com.revature.beans.Users;
 import com.revature.data.MatchesDAO;
+import com.revature.data.StatusDAO;
 import com.revature.data.UsersDAO;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
@@ -20,7 +22,7 @@ public class MatchesHibernate implements MatchesDAO{
 		MatchesDAO md = new MatchesHibernate();
 		UsersDAO ud = new UsersHibernate();
 		Users u1 = new Users();
-		u1 = ud.getUserById(1);
+		u1 = ud.getUserById(4);
 		md.matchCompatibleUser(u1);
 	}
 	private HibernateUtil hu = HibernateUtil.getInstance();
@@ -110,12 +112,15 @@ public class MatchesHibernate implements MatchesDAO{
 
 	@Override
 	public Matches matchCompatibleUser(Users u1) {
+		StatusDAO sd = new StatusHibernate();
+		Status s = sd.getStatusById(1);
 		UsersDAO ud = new UsersHibernate();
 		Users u2 = ud.getCompatibleUser(u1);
 		MatchesDAO md = new MatchesHibernate();
 		Matches m = new Matches();
 		m.setUser1(u1);
 		m.setUser2(u2);
+		m.setMatchStatus(s);
 		int matchId = md.addMatch(m);
 		return md.getMatchById(matchId);
 	}

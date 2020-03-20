@@ -29,13 +29,13 @@ export class MessageService {
   }
 
 
-
-  viewMessages(users:Users): Observable<Messages>  {
+//stringify both the loggedin user, and the user that you are matched with
+  viewMessages(users:Users): Observable<Messages[]>  {
 const body = JSON.stringify(users);
     return this.http.get(this.appUrl, {headers: this.headers}).pipe(
       map(resp => {
-        const message: Messages = resp as Messages;
-        return message;
+        const messageList: Messages[] = resp as Messages[];
+        return messageList;
       }));
       }
   }

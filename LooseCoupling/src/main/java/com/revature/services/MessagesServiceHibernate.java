@@ -53,8 +53,12 @@ public class MessagesServiceHibernate implements MessagesService{
 
 	@Override
 	public Set<Messages> getConversationByUsers(Users u, Users u2) {
+<<<<<<< HEAD
+		return md.getConversationByUsers(u, u2);
+=======
 		// TODO Auto-generated method stub
 		return null;
+>>>>>>> d084d2d8e16d663e7f28bdbbac478ae7081101f1
 	}
 
 }

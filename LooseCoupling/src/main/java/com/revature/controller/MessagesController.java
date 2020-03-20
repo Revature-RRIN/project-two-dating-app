@@ -22,20 +22,19 @@ import com.revature.services.MessagesService;
 
 
 @RestController
-@RequestMapping(value="/messages")
 @CrossOrigin(origins="http://localhost:4200")
 public class MessagesController {
 	@Autowired
 	private MessagesService ms;
 	
-	@GetMapping()
+	@GetMapping(value="/usermessages")
 	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u, Users u2) {
 		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
 		returnThis.addAll(ms.getConversationByUsers(u2, u));
 		return ResponseEntity.ok(returnThis);
 	}
 	
-	@PostMapping
+	@PostMapping(value="/usermessages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}

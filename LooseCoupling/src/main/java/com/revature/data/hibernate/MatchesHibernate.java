@@ -114,9 +114,8 @@ public class MatchesHibernate implements MatchesDAO{
 		Users u2 = ud.getCompatibleUser(u1);
 		MatchesDAO md = new MatchesHibernate();
 		Matches m = new Matches();
-		m.setUser1Id(u1.getUsersId());
-		m.setUser2Id(u2.getUsersId());
-		m.setMatchStatus(1);
+		m.setUser1(u1);
+		m.setUser2(u2);
 		int matchId = md.addMatch(m);
 		return md.getMatchById(matchId);
 	}

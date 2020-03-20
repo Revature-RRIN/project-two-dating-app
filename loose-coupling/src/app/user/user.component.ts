@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 
 export class UserComponent implements OnInit {
   users: Users
+  clickedMessage: boolean = false;
+
   constructor(private us : UsersService,
     private router: Router) { }
 
@@ -23,6 +25,6 @@ export class UserComponent implements OnInit {
   }
 
   viewMessages(): void {
-    this.router.navigate(["messages"])
+    this.clickedMessage = true;
   }
 }

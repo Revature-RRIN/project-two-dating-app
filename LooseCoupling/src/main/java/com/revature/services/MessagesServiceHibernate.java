@@ -51,4 +51,9 @@ public class MessagesServiceHibernate implements MessagesService{
 		md.deleteMessage(msg);
 	}
 
+	@Override
+	public Set<Messages> getConversationByUsers(Users u, Users u2) {
+		return md.getConversationByUsers(u, u2);
+	}
+
 }

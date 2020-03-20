@@ -20,7 +20,8 @@ import { SignupService } from './shared/services/signup.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ProfileService } from './shared/services/profile.service';
+import { ProfileService } from './shared/services/createprofile.service';
+import { MessagesComponent } from './messages/messages.component';
 import { QuestionService } from './shared/services/question.service';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { QuestionService } from './shared/services/question.service';
     SignupComponent,
     DashboardComponent,
     QuestionsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

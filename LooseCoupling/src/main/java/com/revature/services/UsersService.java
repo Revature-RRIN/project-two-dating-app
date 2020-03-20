@@ -9,6 +9,7 @@ public interface UsersService {
 	public Users getUser(String username, String pass);
 	public Users getUserById(int id);
 	public Set<Users> getAllUsers();
-	public void updateUser(Users u);
+	public Users updateUser(Users u);
 	public void deleteUser(Users u);
+	public Users findCompatibleUser(Users u);
 }

@@ -4,7 +4,11 @@ import { LoginComponent } from './shared/login/login.component';
 import { SignupComponent } from './shared/signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessagesComponent } from './messages/messages.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { UserComponent } from './user/user.component';
+
 
 const routes: Routes = [
 
@@ -12,7 +16,10 @@ const routes: Routes = [
   {path: "profile", component: ProfileComponent},
   {path: "", component: WelcomeComponent},
   {path: "signup", component: SignupComponent},
-  {path: "questions", component: QuestionsComponent}
+  {path: "dashboard", component: DashboardComponent},
+  {path: "questions", component: QuestionsComponent},
+  {path: "user", component: UserComponent},
+  {path: "messages", component: MessagesComponent}
 
 ];
 

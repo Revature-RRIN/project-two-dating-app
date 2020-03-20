@@ -20,21 +20,12 @@ import com.revature.services.UsersService;
 import com.revature.beans.LoginInfo;
 
 @RestController
-//@RequestMapping(value="/login")
 @CrossOrigin(origins="http://localhost:4200")
 public class LoginController {
-	/*public static void main (String[] args) {
-		UsersService us = new UsersServiceHibernate();
-        Users u = us.getUser("user", "pass");
-        System.out.println(u.getFirstname());
-	}*/
 
 	@Autowired
 	private UsersService us;
-	/*@Autowired
-	private UserService cs;
-	@Autowired
-	private EmployeeService es;*/
+	
 	
 	@GetMapping(value="/login")
 	public ResponseEntity<LoginInfo> login(HttpSession session) {
@@ -46,7 +37,7 @@ public class LoginController {
 	
 	@PostMapping(value="/login")
 	public ResponseEntity<LoginInfo> login(@RequestParam("user") String username, 
-			@RequestParam("pass") String password, HttpSession session) {
+		@RequestParam("pass") String password, HttpSession session) {
 		Users u = us.getUser(username,  password);
 		if(u==null) {
 			return ResponseEntity.status(401).build();

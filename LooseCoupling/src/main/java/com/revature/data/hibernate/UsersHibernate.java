@@ -14,7 +14,13 @@ import com.revature.data.UsersDAO;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class UsersHibernate implements UsersDAO{
+public class UsersHibernate implements UsersDAO {
+	public static void main(String[] args) {
+		UsersDAO ud = new UsersHibernate();
+		Users u = ud.getUserById(5);
+		ud.getCompatibleUser(u);
+	}
+	
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	private Logger log = Logger.getLogger(UsersHibernate.class);
 
@@ -25,7 +31,7 @@ public class UsersHibernate implements UsersDAO{
 			tx = s.beginTransaction();
 			s.save(u);
 			tx.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			if (tx != null) {
 				tx.rollback();
 			}
@@ -35,16 +41,16 @@ public class UsersHibernate implements UsersDAO{
 		}
 		return u.getUsersId();
 	}
-	
+
 	public Users getUser(Users u) {
 		Session s = hu.getSession();
 		Users u2;
 		log.trace(u);
-		if(u.getUsersId()!=null && u.getUsersId()!=0) {
-			//this means we're going to retrieve by id
+		if (u.getUsersId() != null && u.getUsersId() != 0) {
+			// this means we're going to retrieve by id
 			u2 = s.get(Users.class, u.getUsersId());
 		} else {
-			//this means we're getting by user/pass
+			// this means we're getting by user/pass
 			String query = "from Users u2 where u2.username=:username and u2.pass=:pass";
 			Query<Users> q = s.createQuery(query, Users.class);
 			q.setParameter("username", u.getUsername());
@@ -84,14 +90,15 @@ public class UsersHibernate implements UsersDAO{
 		return usersSet;
 	}
 
-	public void updateUser(Users u) {
+	public Users updateUser(Users u) {
+		System.out.println(u);
 		Session s = hu.getSession();
 		Transaction tx = null;
 		try {
 			tx = s.beginTransaction();
 			s.update(u);
 			tx.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			if (tx != null) {
 				tx.rollback();
 			}
@@ -99,6 +106,8 @@ public class UsersHibernate implements UsersDAO{
 		} finally {
 			s.close();
 		}
+		System.out.println(u);
+		return u;
 	}
 
 	public void deleteUser(Users u) {
@@ -108,7 +117,7 @@ public class UsersHibernate implements UsersDAO{
 			tx = s.beginTransaction();
 			s.delete(u);
 			tx.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			if (tx != null) {
 				tx.rollback();
 			}
@@ -116,6 +125,25 @@ public class UsersHibernate implements UsersDAO{
 		} finally {
 			s.close();
 		}
+	}
+
+	@Override
+	public Users getCompatibleUser(Users u) {
+		int diff = Integer.MAX_VALUE;
+		int index = 0;
+		UsersDAO ud = new UsersHibernate();
+		Set<Users> usersSet = ud.getAllUsers();
+		for (Users user : usersSet) {
+			if (!(user.getUsersId() == u.getUsersId())) {
+				if (Math.abs((user.getScore() - u.getScore()) )< diff) {
+					diff = Math.abs((user.getScore() - u.getScore()));
+					index = user.getUsersId();
+				}
+                    
+			}	
+		}
+		System.out.println("The best match is... " + ud.getUserById(index).getFirstname());
+		return ud.getUserById(index);
 	}
 
 }

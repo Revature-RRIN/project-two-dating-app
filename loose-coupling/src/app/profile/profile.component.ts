@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../shared/classes/users';
-import { Router } from "@angular/router";
-import { ProfileService } from 'src/app/shared/services/profile.service';
+import { Router, ActivatedRoute } from "@angular/router";
+import { ProfileService } from 'src/app/shared/services/createprofile.service';
+import { Currentuser } from '../shared/classes/currentuser';
+import { UsersService } from '../shared/services/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,16 +11,38 @@ import { ProfileService } from 'src/app/shared/services/profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: Users;
+  users: Users;
   constructor(private router: Router,
-    private profile: ProfileService) { }
+    private route: ActivatedRoute,
+    private profile: ProfileService,
+    private us : UsersService
+    ) { }
 
   ngOnInit(): void {
+    
+    
+    this.users = this.us.getUser(); //NEED ANYWHERE THE LOGGED-IN USER IS REFERRED TO...EVERYWHERE!!!
+    
   }
 
-  //NEED TO ADD ROUTER FUNCTIONALITY TO THE BELOW METHOD SO USER
-    //GETS ROUTED TO THEIR PROFILE (USER) PAGE AFTER SUBMITTING PROFILE INFO
-  submit(): void {
-    this.router.navigate(["questions"]);
-  }
+  // if(this.users.gender == 'Male') {
+  //   this.users.gender == 1
+  // } else if (this.users.gender == "Female") {
+  //   this.users.gender == 2
+  // } else {
+  //   this.users.gender == 3
+  // }
+
+  updateProfile() {
+    this.profile.updateProfile(this.users).subscribe(
+      users => {
+        this.users = users;
+        this.router.navigate(["questions"])
+      }
+    );
+    // this.profile.updateProfile(this.users).subscribe((data)=>{
+  //     this.router.navigate(["questions"])
+  //   // });
+   }
 }
+

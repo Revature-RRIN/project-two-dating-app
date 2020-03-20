@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProfileService } from './profile.service';
+import { ProfileService } from './createprofile.service';
 
 describe('ProfileService', () => {
   let service: ProfileService;

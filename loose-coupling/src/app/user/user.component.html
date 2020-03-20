@@ -1,3 +1,6 @@
+<div class="navbar">
+    <app-nav-bar></app-nav-bar>
+</div>
 
 <button class="row btn btn-primary" (click)="editProfile()">Edit Profile</button>
 <!--NEED MATCHES BUTTON BELOW TO ROUTE TO MATCHES... NO COMPONENT CURRENTLY-->
@@ -5,7 +8,7 @@
 <button class="row btn btn-primary" (click)="viewMessages()">View Messages</button>
 
 <div>
-    <p>Welcome {{users.firstname}} {{users.lastname}}!</p>
+    <h3>Welcome {{users.firstname}} {{users.lastname}}!</h3>
     <p>{{users.age}}</p> 
     <p>{{users.location}}</p>
 </div>

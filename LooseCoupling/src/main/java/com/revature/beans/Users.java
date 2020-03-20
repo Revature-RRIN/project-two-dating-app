@@ -49,7 +49,7 @@ public class Users {
 	@Column
 	private Integer age;
 	@Column
-	private Integer gender;
+	private String gender;
 	@Column
 	private String location;
 	@Column
@@ -105,7 +105,7 @@ public class Users {
 	}
 
 	public Users(Integer usersId, Integer usertype, String username, String pass, String firstname, String lastname,
-			Blob profilepic, Integer score, Integer age, Integer gender, String location, String banned, 
+			Blob profilepic, Integer score, Integer age, String gender, String location, String banned, 
 			Set<Matches> userMatches, Set<Messages> sentMessages, Set<Messages> receivedMessages) {
 		super();
 		this.usersId = usersId;
@@ -125,7 +125,7 @@ public class Users {
 		this.receivedMessages = receivedMessages;
 	}
 
-	public Users(String firstname, String lastname, Integer age, Integer gender, String location) {
+	public Users(String firstname, String lastname, Integer age, String gender, String location) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -206,11 +206,11 @@ public class Users {
 		this.age = age;
 	}
 
-	public Integer getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Integer gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

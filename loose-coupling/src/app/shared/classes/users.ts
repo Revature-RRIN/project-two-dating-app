@@ -10,7 +10,7 @@ export class Users {
 	lastname : string;
 	score : number;
 	age : number;
-	gender : number;
+	gender : string;
 	location : string;
 	banned : string;
 	userMatches : Matches [];

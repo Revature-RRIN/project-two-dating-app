@@ -2,7 +2,7 @@
 .login  {
   position: fixed;
   width: 17%;
-  left: 20%;
+  right: 10%;
   top: 50%;
   line-height: 150%;
   box-shadow: 1px 1px 3px #565554;

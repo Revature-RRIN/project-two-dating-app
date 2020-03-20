@@ -51,4 +51,10 @@ public class MessagesServiceHibernate implements MessagesService{
 		md.deleteMessage(msg);
 	}
 
+	@Override
+	public Set<Messages> getConversationByUsers(Users u, Users u2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

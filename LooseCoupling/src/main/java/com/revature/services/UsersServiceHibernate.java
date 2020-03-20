@@ -32,9 +32,8 @@ public class UsersServiceHibernate implements UsersService{
 		return ud.getAllUsers();
 	}
 
-	public void updateUser(Users u) {
-		ud.updateUser(u);
-		
+	public Users updateUser(Users u) {
+		return ud.updateUser(u);	
 	}
 
 	public void deleteUser(Users u) {

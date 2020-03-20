@@ -1,6 +1,16 @@
-<p>Welcome!</p>
-<img src="https://lc-profile-bucket.s3.us-east-2.amazonaws.com/hanmburglar.jpg" 
-        alt="Profile Pic placed here"/>
+
+<button class="row btn btn-primary" (click)="editProfile()">Edit Profile</button>
+<!--NEED MATCHES BUTTON BELOW TO ROUTE TO MATCHES... NO COMPONENT CURRENTLY-->
+<button class="row btn btn-primary">View Matches</button>
+<button class="row btn btn-primary" (click)="viewMessages()">View Messages</button>
+
+<div>
+    <p>Welcome {{users.firstname}} {{users.lastname}}!</p>
+    <p>{{users.age}}</p> 
+    <p>{{users.location}}</p>
+</div>
+
+
 
 <!--
 <div *ngIf="users.id != 1 && users.id != null">

@@ -1,6 +1,7 @@
 import { Users } from '../shared/classes/users';
 import { Router } from "@angular/router";
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../shared/services/users.service';
 
 @Component({
   selector: 'app-questions',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  users: Users;
+  constructor(private router: Router,
+    private us : UsersService) { }
 
   ngOnInit(): void {
+    this.users = this.us.getUser();
   }
 
   submit(): void {
@@ -23,7 +26,7 @@ export class QuestionsComponent implements OnInit {
 
 
   questionSubmission()  {
-    
+    this.router.navigate(["user"]);    
   }
 
 }

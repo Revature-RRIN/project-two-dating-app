@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileService } from './shared/services/profile.service';
+import { QuestionService } from './shared/services/question.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ProfileService } from './shared/services/profile.service';
   ], 
   providers: [
     SignupService,
-    ProfileService
+    ProfileService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })

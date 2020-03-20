@@ -30,7 +30,9 @@ public class MessagesController {
 	
 	@GetMapping()
 	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u, Users u2) {
-		return ResponseEntity.ok(ms.getConversationByUsers(u, u2));
+		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
+		returnThis.addAll(ms.getConversationByUsers(u2, u));
+		return ResponseEntity.ok(returnThis);
 	}
 	
 	@PostMapping

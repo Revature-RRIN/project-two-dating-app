@@ -13,6 +13,7 @@ import { UsersService } from '../shared/services/users.service';
 })
 export class MessagesComponent implements OnInit {
   private message: Messages;
+  condition: boolean = false;
 
 
   users: Users;
@@ -70,8 +71,8 @@ this.messageService.viewMessages(this.users).subscribe(
   sendMessage(): void {
     this.message.remark = this.remark;
     this.message.senderId = 1;//this.users.usersId;
-//  this.message.receiverId = "matched user id";
-  this.messageService.sendMessage(this.messages).subscribe(
+  this.message.receiverId = 2;//"matched user id";
+  this.messageService.sendMessage(this.message).subscribe(
     messages => {
       this.messages = messages;
       this.submitted.emit(messages);

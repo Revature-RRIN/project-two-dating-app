@@ -35,18 +35,15 @@ export class MessagesComponent implements OnInit {
       }
     }
 
-
-
-
   messageList: Messages[];
 
-  messageArray = ['Hey jenny', 'hey frank', 'will you go out with me', 'no my parents say im not old enough to date', 'ok bye', 'ok by'];
-  
   ngOnInit(): void {
 //    this.users = this.us.getUser();
 
+//what I'll need                    ^^^
+//fake login cuz its easier for now vvv
 
-this.us.login('user2', 'pass').subscribe(
+this.us.login('admin', 'pass').subscribe(
   resp => {
     this.currentUser = resp;
   }

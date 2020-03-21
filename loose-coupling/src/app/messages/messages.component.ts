@@ -28,7 +28,7 @@ export class MessagesComponent implements OnInit {
     private router: Router, private us : UsersService) {
 
       this.message = {
-      messagesId: 0,
+      messagesId: null,
       remark: 'null',
       senderId: null,
       receiverId: null
@@ -41,7 +41,7 @@ export class MessagesComponent implements OnInit {
   messageList: Messages[];
 
   messageArray = ['Hey jenny', 'hey frank', 'will you go out with me', 'no my parents say im not old enough to date', 'ok bye', 'ok by'];
-
+  
   ngOnInit(): void {
 //    this.users = this.us.getUser();
 
@@ -65,7 +65,7 @@ put together
 
 
   displayMessages() {
-this.messageService.viewMessages(this.users).subscribe(
+this.messageService.viewMessages(this.currentUser.user).subscribe(
   resp=>  {
     this.messageList = resp;
   }

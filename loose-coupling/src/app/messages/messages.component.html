@@ -4,7 +4,7 @@
 <button class="row btn btn-primary" (click)="reportUser()">Report User</button>
 
 
-<ul *ngFor="let specificMessage of messageArray">
+<ul *ngFor="let specificMessage of messageList">
   <div *ngIf="condition; then thenBlock; else elseBlock"></div>
   <ng-template #thenBlock><div class="leftSide">{{specificMessage}}</div></ng-template>
 <ng-template #elseBlock><div class="rightSide">{{specificMessage}}</div></ng-template>

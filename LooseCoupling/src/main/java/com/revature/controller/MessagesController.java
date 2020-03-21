@@ -19,6 +19,8 @@ import com.revature.beans.Messages;
 import com.revature.beans.Users;
 import com.revature.services.MatchesService;
 import com.revature.services.MessagesService;
+import com.revature.services.UsersService;
+import com.revature.services.UsersServiceHibernate;
 
 
 @RestController

@@ -27,8 +27,8 @@ export class MessagesComponent implements OnInit {
       this.message = {
       messagesId: 0,
       remark: 'null',
-      senderId: 0,
-      receiverId: 0
+      senderId: null,
+      receiverId: null
       }
     }
 
@@ -70,8 +70,8 @@ this.messageService.viewMessages(this.users).subscribe(
 */
   sendMessage(): void {
     this.message.remark = this.remark;
-    this.message.senderId = 1;//this.users.usersId;
-  this.message.receiverId = 2;//"matched user id";
+    this.message.senderId = this.users;//this.users;
+  this.message.receiverId = this.users;//"matched user";
   this.messageService.sendMessage(this.message).subscribe(
     messages => {
       this.messages = messages;

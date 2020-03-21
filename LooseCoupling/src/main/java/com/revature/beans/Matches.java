@@ -39,8 +39,9 @@ public class Matches {
 	private Status matchStatus;
 	// @OneToMany (fetch=FetchType.EAGER, mappedBy="matches")
 	// @JoinColumn??
-	@Column
-	@ElementCollection(targetClass = Integer.class)
+	//@Column
+	//@ElementCollection(targetClass = Integer.class)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "messagesId", cascade = CascadeType.ALL)
 	private Set<Messages> matchMessages;
 
 	// Should Match have two Users field (ex: private Users user1), or are IDs

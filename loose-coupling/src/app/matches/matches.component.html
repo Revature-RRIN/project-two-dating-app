@@ -1,5 +1,17 @@
-<ul>
-  <li *ngFor="let m of matches">
-    {{ m.match }}
-  </li>
-</ul>
+<p>{{ users.firstname }}</p>
+<table border="1">
+  <tr>
+    <th>Match</th>
+    <th>User 1</th>
+    <th>User 2</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let m of matches">
+    <ng-container *ngIf="users.usersId == m.user1.usersId || users.usersId == m.user2.usersId">
+      <td>{{ m.matchesId }}</td>
+      <td>{{ m.user1.firstname }}</td>
+      <td>{{ m.user2.firstname }}</td>
+      <td>{{ m.matchStatus.statusState }}</td>
+    </ng-container>
+  </tr>
+</table>

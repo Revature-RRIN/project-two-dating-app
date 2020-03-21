@@ -6,10 +6,12 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -27,8 +29,9 @@ public class Status {
 	private String statusState;
 	//@OneToOne (cascade = CascadeType.ALL)
 	//@JoinColumn (name="matchesId")
-	@Column
-	@ElementCollection(targetClass=Integer.class)
+	//@Column
+	//@ElementCollection(targetClass=Integer.class)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "matchesId", cascade = CascadeType.ALL)
 	private Set<Matches> matchByStatus;
 	
 	//Need @OneToOne for matches (b/c each status refers to a match, and each match has a status)??

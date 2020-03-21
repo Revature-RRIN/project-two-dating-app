@@ -3,6 +3,7 @@ import { Users } from '../shared/classes/users';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatchesService } from '../shared/services/matches.service';
 import { UsersService } from '../shared/services/users.service';
+import { Matches } from '../shared/classes/matches';
 
 @Component({
   selector: 'app-matches',
@@ -10,6 +11,7 @@ import { UsersService } from '../shared/services/users.service';
   styleUrls: ['./matches.component.css']
 })
 export class MatchesComponent implements OnInit {
+  matches:Matches[];
   users: Users;
 
   constructor(private router: Router,
@@ -19,9 +21,10 @@ export class MatchesComponent implements OnInit {
 
   ngOnInit(): void {
     this.users = this.us.getUser();
+    console.log(this.users);
     this.match.getMatches().subscribe(
       matches => {
-        this.match = matches;
+        this.matches = matches;
       }
     );
   }

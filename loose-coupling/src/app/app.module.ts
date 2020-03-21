@@ -26,6 +26,7 @@ import { QuestionService } from './shared/services/question.service';
 import { AdminComponent } from './admin/admin.component';
 import { BanUsersComponent } from './ban-users/ban-users.component';
 import { MatchesComponent } from './matches/matches.component';
+import { MatchesService } from './shared/services/matches.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { MatchesComponent } from './matches/matches.component';
   providers: [
     SignupService,
     ProfileService,
-    QuestionService
+    QuestionService,
+    MatchesService
   ],
   bootstrap: [AppComponent]
 })

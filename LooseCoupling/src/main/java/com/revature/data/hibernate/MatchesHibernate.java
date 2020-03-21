@@ -24,9 +24,9 @@ public class MatchesHibernate implements MatchesDAO{
 		UsersDAO ud = new UsersHibernate();
 		Users u1 = new Users();
 		u1 = ud.getUserById(3);
-		m = md.matchCompatibleUser(u1);
+		m = md.matchCompatibleUser(u1); 
 		md.acceptMatch(m);
-		md.rejectMatch(m);
+		System.out.println(md.getAllMatches());
 	}
 	private HibernateUtil hu = HibernateUtil.getInstance();
 
@@ -68,9 +68,9 @@ public class MatchesHibernate implements MatchesDAO{
 
 	public Set<Matches> getMatchesByUser(Users u) {
 		Session s = hu.getSession();
-		String query = "FROM Matches m where :users = some elements(m.users)";
+		String query = "FROM Matches m WHERE m.user1 = :user1";
 		Query<Matches> q = s.createQuery(query, Matches.class);
-		q.setParameter("users", u);
+		q.setParameter("user1", u);
 		List<Matches> matchList = q.getResultList();
 		Set<Matches> matchSet = new HashSet<Matches>();
 		matchSet.addAll(matchList);

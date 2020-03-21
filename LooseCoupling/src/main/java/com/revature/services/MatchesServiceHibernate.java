@@ -55,4 +55,9 @@ public class MatchesServiceHibernate implements MatchesService {
 
 	}
 
+	@Override
+	public Set<Matches> getAllMatches() {
+		return md.getAllMatches();
+	}
+
 }

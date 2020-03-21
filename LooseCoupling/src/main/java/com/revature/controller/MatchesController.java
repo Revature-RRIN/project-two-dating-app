@@ -24,9 +24,14 @@ public class MatchesController {
 	@Autowired
 	private MatchesService ms;
 	
-	@GetMapping(value="/matches")
+	@GetMapping(value="/matches/{matchId}")
 	public ResponseEntity<Matches> getMatchById(Integer id) {
 		return ResponseEntity.ok(ms.getMatchById(id));
+	}
+	
+	@GetMapping(value="/matches")
+	public ResponseEntity<Set<Matches>> getMatches() {
+		return ResponseEntity.ok(ms.getAllMatches());
 	}
 	
 	@PostMapping(value="/matches")

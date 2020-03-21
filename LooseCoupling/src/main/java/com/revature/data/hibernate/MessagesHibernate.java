@@ -34,20 +34,25 @@ public class MessagesHibernate implements MessagesDAO{
 	
 	public Integer addMessage(Messages msg) {
 		Session s = hu.getSession();
+		System.out.println("Session was got BEEP");
 		Transaction tx = null;
 		try {
 			tx = s.beginTransaction();
 			s.save(msg);
+			System.out.println("It saved BEEP");
 			tx.commit();
+			System.out.println("It committed BEEP");
 		} catch(Exception e) {
 			if (tx != null) {
+				System.out.println("It rolled back BEEP");
 				tx.rollback();
 			}
 			LogUtil.logException(e, MessagesHibernate.class);
 		} finally {
 			s.close();
-			System.out.println(msg + " penisbreath");
+			System.out.println("It closed BEEP");
 		}
+		System.out.println("It's returning BEEP");
 		return msg.getMessagesId();
 	}
 

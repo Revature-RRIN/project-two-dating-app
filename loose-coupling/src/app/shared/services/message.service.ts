@@ -4,14 +4,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Messages } from '../classes/messages'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Currentuser } from '../classes/currentuser';
 import { Users } from '../classes/users';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  private appUrl = this.url.getUrl() + 'usermessages';
+  private appUrl = this.url.getUrl() + 'messages';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });

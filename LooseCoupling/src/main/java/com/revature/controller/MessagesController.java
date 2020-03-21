@@ -27,14 +27,14 @@ public class MessagesController {
 	@Autowired
 	private MessagesService ms;
 	
-	@GetMapping(value="/usermessages")
+	@GetMapping(value="/messages")
 	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u, Users u2) {
 		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
 		returnThis.addAll(ms.getConversationByUsers(u2, u));
 		return ResponseEntity.ok(returnThis);
 	}
 	
-	@PostMapping(value="/usermessages")
+	@PostMapping(value="/messages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}

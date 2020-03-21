@@ -76,8 +76,8 @@ this.messageService.viewMessages(this.currentUser.user).subscribe(
 */
   sendMessage(): void {
     this.message.remark = this.remark;
-    this.message.senderId = this.currentUser.user;//this.users;
-  this.message.receiverId = this.currentUser.user;//"matched user";
+    this.message.senderId = this.currentUser.user.usersId;//this.users;
+  this.message.receiverId = this.currentUser.user.usersId;//"matched user";
   this.messageService.sendMessage(this.message).subscribe(
     messages => {
       this.messages = messages;

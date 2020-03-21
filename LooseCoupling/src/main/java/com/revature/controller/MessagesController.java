@@ -39,7 +39,6 @@ public class MessagesController {
 	@PostMapping(value="/messages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
 		msg.setReceiver(msg.getSender());
-		System.out.println("POOPMESSAGE: " + msg);
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}
 

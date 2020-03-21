@@ -20,10 +20,10 @@ export class MatchesService {
       .pipe(map(resp => resp as Matches[]));
   }
 
-  signup(users: Users): Observable<Users> {
+  /*signup(users: Users): Observable<Users> {
     const body = JSON.stringify(users);
     return this.http
       .post(this.appUrl, body, { headers: this.headers, withCredentials: true })
       .pipe(map(resp => resp as Users));
-  }
+  }*/
 }

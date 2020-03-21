@@ -82,4 +82,14 @@ this.messageService.viewMessages(this.users).subscribe(
   returnProfile(): void {
     this.router.navigate(["user"]); 
   }
+
+  reportUser()  {
+    // change user status to "reported"
+    // which will then show to admin
+  }
+
+  meetUp(){
+    //move match status to - one has pressed meet up, and if both have, then meet up "text" is send FROm senderID to Receiver
+  }
+
 }

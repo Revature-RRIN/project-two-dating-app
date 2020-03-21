@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
 import { MatchesComponent } from './matches/matches.component';
 
 
@@ -21,8 +22,8 @@ const routes: Routes = [
   {path: "questions", component: QuestionsComponent},
   {path: "user", component: UserComponent},
   {path: "messages", component: MessagesComponent},
+  {path: "admin", component: AdminComponent},
   {path: "matches", component: MatchesComponent}
-
 ];
 
 @NgModule({

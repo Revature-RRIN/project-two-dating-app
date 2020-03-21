@@ -23,6 +23,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileService } from './shared/services/createprofile.service';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionService } from './shared/services/question.service';
+import { AdminComponent } from './admin/admin.component';
+import { BanUsersComponent } from './ban-users/ban-users.component';
 import { MatchesComponent } from './matches/matches.component';
 
 @NgModule({
@@ -36,6 +38,8 @@ import { MatchesComponent } from './matches/matches.component';
     QuestionsComponent,
     WelcomeComponent,
     MessagesComponent,
+    AdminComponent,
+    BanUsersComponent,
     MatchesComponent
   ],
   imports: [

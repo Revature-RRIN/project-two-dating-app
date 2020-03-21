@@ -61,17 +61,9 @@ export class UsersService {
     return this.users;
   }
 
-  //Maybe use below code for isAdmin or isMatchseeker?
-  /*isEmployee(): boolean {
-    return (this.employee !== undefined && this.employee !== null);
-  }
-  isCustomer(): boolean {
-    return (this.customer !== undefined && this.customer !== null);
-  }*/
 
- 
 
-  }
+}
 
 
 

@@ -25,12 +25,12 @@ export class ProfileComponent implements OnInit {
     
   }
 
-  // if(this.users.gender == 'Male') {
-  //   this.users.gender == 1
-  // } else if (this.users.gender == "Female") {
-  //   this.users.gender == 2
+  // if(this.users.gender == 'Male' || this.users.gender == 'male') {
+  //   this.users.gender = 1;
+  // } else if (this.users.gender == "Female" || this.users.gender == 'female') {
+  //   this.users.gender = 2;
   // } else {
-  //   this.users.gender == 3
+  //   this.users.gender = 3;
   // }
 
   updateProfile() {

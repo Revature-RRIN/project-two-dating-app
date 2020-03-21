@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Currentuser } from '../classes/currentuser';
 import { UsersService } from '../services/users.service';
 import { Router } from '@angular/router';
+import { Users } from '../classes/users';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private usersService: UsersService,
     private router: Router) { }
+    user: Users;
 
   ngOnInit() {
     this.usersService.login(null, null).subscribe(
@@ -28,10 +30,21 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     this.usersService.login(this.username, this.password).subscribe(
       resp => {
         this.loggedUser = resp;
-        this.router.navigate(["profile"])
+        
+        // this.loggedUser.user = this.user;
+        // console.log(this.loggedUser.user);
+        // console.log(this.user.usertype);
+        // if(this.user.usertype == 1) { //APP CAN'T IDENTIFY WHAT USERTYPE OF "user" IS AT THIS POINT
+        //   this.router.navigate(["admin"])
+        // } else {
+
+        this.router.navigate(["user"])
+
+        // }
       }
     );
   }

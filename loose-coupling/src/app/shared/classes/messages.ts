@@ -2,7 +2,7 @@ import { Users } from './users';
 
 export class Messages {
   messagesId: number;
-  senderId: number;
-  receiverId: number;
+  senderId: Users;
+  receiverId: Users;
   remark: string;
 }

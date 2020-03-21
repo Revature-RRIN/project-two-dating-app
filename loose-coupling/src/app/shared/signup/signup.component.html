@@ -10,24 +10,32 @@
         <input class="col" type="text" [(ngModel)]="users.lastname">
       </div>
       <div class="row">
-        <span class="col">username: </span>
+        <span class="col">Username: </span>
         <input class="col" type="text" [(ngModel)]="users.username">
       </div>
       <div class="row">
-        <span class="col">password: </span>
+        <span class="col">Password: </span>
         <input class="col" type="password" [(ngModel)]="users.pass">
       </div>
       <div class="row">
-        <span class="col">gender: </span>
+        <span class="col">Gender: </span>
         <input class="col" type="text" [(ngModel)]="users.gender">
       </div>
       <div class="row">
-        <span class="col">age: </span>
+        <span class="col">Age: </span>
         <input class="col" type="text" [(ngModel)]="users.age">
       </div>
       <div class="row">
-        <span class="col">location: </span>
+        <span class="col">Location: </span>
         <input class="col" type="text" [(ngModel)]="users.location">
+      </div>
+      <div class="row">
+        <span class="col">Sexual Preference: </span>
+        <input class="col" type="text" [(ngModel)]="users.sexPref">
+      </div>
+      <div class="row">
+        <span class="col">Age Preference: </span>
+        <input class="col" type="number" [(ngModel)]="users.agePref">
       </div>
       <button class="row btn btn-primary" (click)="signup()">Submit</button>
     </ng-container>

@@ -16,6 +16,8 @@ export class Users {
 	userMatches : Matches [];
 	sentMessages : Messages [];
 	receivedMessages : Messages [];
+	sexPref: string;
+	agePref: number;
 	//private Set<Matches> userMatches;
 	//private Set<Messages> userMessages;
 }

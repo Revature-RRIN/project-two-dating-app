@@ -21,6 +21,12 @@ export class MessageService {
   ) { }
 
   sendMessage(message: Messages): Observable<Messages> {
+    console.log(message);
+    console.log(message.messagesId);
+    console.log(message.receiverId);
+    console.log(message.remark);
+    console.log(message.senderId);
+    
     const body = JSON.stringify(message);
     return this.http.post(this.appUrl, body,
       { headers: this.headers }).pipe(

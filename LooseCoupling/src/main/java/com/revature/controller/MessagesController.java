@@ -19,6 +19,8 @@ import com.revature.beans.Messages;
 import com.revature.beans.Users;
 import com.revature.services.MatchesService;
 import com.revature.services.MessagesService;
+import com.revature.services.UsersService;
+import com.revature.services.UsersServiceHibernate;
 
 
 @RestController
@@ -36,6 +38,8 @@ public class MessagesController {
 	
 	@PostMapping(value="/messages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
+		msg.setReceiver(msg.getSender());
+		System.out.println("POOPMESSAGE: " + msg);
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}
 

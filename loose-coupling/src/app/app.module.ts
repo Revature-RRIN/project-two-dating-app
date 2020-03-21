@@ -26,6 +26,7 @@ import { QuestionService } from './shared/services/question.service';
 import { AdminComponent } from './admin/admin.component';
 import { BanUsersComponent } from './ban-users/ban-users.component';
 import { MatchesComponent } from './matches/matches.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 import { MatchesService } from './shared/services/matches.service';
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MatchesService } from './shared/services/matches.service';
     MessagesComponent,
     AdminComponent,
     BanUsersComponent,
-    MatchesComponent
+    MatchesComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

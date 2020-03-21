@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
+import { BanuserService } from '../shared/services/banuser.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +10,10 @@ import { UsersService } from '../shared/services/users.service';
 })
 export class AdminComponent implements OnInit {
   users: Users;
-  constructor(private us: UsersService) { }
+  usArr: Users[];
+
+  constructor(private us: UsersService,
+    private bus: BanuserService) { }
   isBanClicked: boolean = false;
 
   ngOnInit(): void {
@@ -21,6 +25,7 @@ export class AdminComponent implements OnInit {
   }
 
   showBan()  {
+    
     this.isBanClicked = true;
   }
 }

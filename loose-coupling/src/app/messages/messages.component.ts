@@ -4,6 +4,7 @@ import { MessageService } from '../shared/services/message.service';
 import { Router } from '@angular/router';
 import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
+import { Currentuser } from '../shared/classes/currentuser';
 
 
 @Component({
@@ -21,28 +22,33 @@ export class MessagesComponent implements OnInit {
   @Output() submitted = new EventEmitter<Messages>();
   remark: string;
 
+  currentUser: Currentuser;
+
   constructor(private messageService: MessageService,
     private router: Router, private us : UsersService) {
 
       this.message = {
-      messagesId: 0,
+      messagesId: null,
       remark: 'null',
-      senderId: 0,
-      receiverId: 0
+      senderId: null,
+      receiverId: null
       }
     }
 
-
-
-
   messageList: Messages[];
 
-  messageArray = ['Hey jenny', 'hey frank', 'will you go out with me', 'no my parents say im not old enough to date', 'ok bye', 'ok by'];
-
   ngOnInit(): void {
-    this.users = this.us.getUser();
-  }
+//    this.users = this.us.getUser();
 
+//what I'll need                    ^^^
+//fake login cuz its easier for now vvv
+
+this.us.login('admin', 'pass').subscribe(
+  resp => {
+    this.currentUser = resp;
+  }
+)
+  }
 
   /*
 a. FIND MATCHES (get all "users" I match with)
@@ -56,7 +62,7 @@ put together
 
 
   displayMessages() {
-this.messageService.viewMessages(this.users).subscribe(
+this.messageService.viewMessages(this.currentUser.user).subscribe(
   resp=>  {
     this.messageList = resp;
   }
@@ -70,8 +76,8 @@ this.messageService.viewMessages(this.users).subscribe(
 */
   sendMessage(): void {
     this.message.remark = this.remark;
-    this.message.senderId = 1;//this.users.usersId;
-  this.message.receiverId = 2;//"matched user id";
+    this.message.senderId = this.currentUser.user;//this.users;
+  this.message.receiverId = this.currentUser.user;//"matched user";
   this.messageService.sendMessage(this.message).subscribe(
     messages => {
       this.messages = messages;
@@ -82,4 +88,14 @@ this.messageService.viewMessages(this.users).subscribe(
   returnProfile(): void {
     this.router.navigate(["user"]); 
   }
+
+  reportUser()  {
+    // change user status to "reported"
+    // which will then show to admin
+  }
+
+  meetUp(){
+    //move match status to - one has pressed meet up, and if both have, then meet up "text" is send FROm senderID to Receiver
+  }
+
 }

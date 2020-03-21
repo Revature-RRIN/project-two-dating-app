@@ -16,6 +16,9 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.users = this.us.getUser();
+    if (this.users.usertype == 1) { 
+          this.router.navigate(["admin"]);
+        }
   }
 
   editProfile(): void {

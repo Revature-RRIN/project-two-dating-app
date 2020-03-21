@@ -10,16 +10,17 @@ import { UsersService } from '../shared/services/users.service';
 export class AdminComponent implements OnInit {
   users: Users;
   constructor(private us: UsersService) { }
+  isBanClicked: boolean = false;
 
   ngOnInit(): void {
     this.users = this.us.getUser();
   }
 
-  deleteUser(): void {
-    
-  }
-
   addQuestions(): void {
 
+  }
+
+  showBan()  {
+    this.isBanClicked = true;
   }
 }

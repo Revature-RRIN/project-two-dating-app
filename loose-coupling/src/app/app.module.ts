@@ -24,6 +24,7 @@ import { ProfileService } from './shared/services/createprofile.service';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionService } from './shared/services/question.service';
 import { AdminComponent } from './admin/admin.component';
+import { BanUsersComponent } from './ban-users/ban-users.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AdminComponent } from './admin/admin.component';
     QuestionsComponent,
     WelcomeComponent,
     MessagesComponent,
-    AdminComponent
+    AdminComponent,
+    BanUsersComponent
   ],
   imports: [
     BrowserModule,

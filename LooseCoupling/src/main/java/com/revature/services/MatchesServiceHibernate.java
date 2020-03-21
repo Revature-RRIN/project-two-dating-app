@@ -38,4 +38,16 @@ public class MatchesServiceHibernate implements MatchesService{
 		md.deleteMatch(m);
 	}
 
+	@Override
+	public void acceptMatch(Matches m) {
+		md.acceptMatch(m);
+		
+	}
+
+	@Override
+	public void rejectMatch(Matches m) {
+		md.rejectMatch(m);
+		
+	}
+
 }

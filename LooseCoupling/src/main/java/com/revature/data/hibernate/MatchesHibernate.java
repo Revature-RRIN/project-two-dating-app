@@ -20,10 +20,13 @@ import com.revature.utils.LogUtil;
 public class MatchesHibernate implements MatchesDAO{
 	public static void main(String[] args) {
 		MatchesDAO md = new MatchesHibernate();
+		Matches m = new Matches();
 		UsersDAO ud = new UsersHibernate();
 		Users u1 = new Users();
-		u1 = ud.getUserById(4);
-		md.matchCompatibleUser(u1);
+		u1 = ud.getUserById(3);
+		m = md.matchCompatibleUser(u1);
+		md.acceptMatch(m);
+		md.rejectMatch(m);
 	}
 	private HibernateUtil hu = HibernateUtil.getInstance();
 
@@ -112,6 +115,7 @@ public class MatchesHibernate implements MatchesDAO{
 
 	@Override
 	public Matches matchCompatibleUser(Users u1) {
+		System.out.println("Attempting to create a match between users.");
 		StatusDAO sd = new StatusHibernate();
 		Status s = sd.getStatusById(1);
 		UsersDAO ud = new UsersHibernate();
@@ -123,6 +127,33 @@ public class MatchesHibernate implements MatchesDAO{
 		m.setMatchStatus(s);
 		int matchId = md.addMatch(m);
 		return md.getMatchById(matchId);
+	}
+
+	@Override
+	public void acceptMatch(Matches m) {
+		System.out.println("Attempting to accept match.");
+		StatusDAO sd = new StatusHibernate();
+		MatchesDAO md = new MatchesHibernate();
+		if (m.getMatchStatus().getStatusId() == 1) {
+			System.out.println("Change state to 1/2 accepted.");
+			Status s = sd.getStatusById(2);
+			m.setMatchStatus(s);
+		} else if (m.getMatchStatus().getStatusId() == 2) {
+			System.out.println("Change state to 2/2 accepted.");
+			Status s = sd.getStatusById(3);
+			m.setMatchStatus(s);
+		}
+		md.updateMatch(m);
+	}
+
+	@Override
+	public void rejectMatch(Matches m) {
+		System.out.println("Attempting to reject match.");
+		StatusDAO sd = new StatusHibernate();
+		MatchesDAO md = new MatchesHibernate();
+		Status s = sd.getStatusById(4);
+		m.setMatchStatus(s);
+		md.updateMatch(m);
 	}
 
 }

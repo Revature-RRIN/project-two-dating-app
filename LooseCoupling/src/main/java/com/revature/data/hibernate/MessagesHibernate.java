@@ -36,6 +36,7 @@ public class MessagesHibernate implements MessagesDAO{
 		Session s = hu.getSession();
 		System.out.println("Session was got BEEP");
 		Transaction tx = null;
+		System.out.println("BEEP our values are: " + msg);
 		try {
 			tx = s.beginTransaction();
 			s.save(msg);
@@ -51,6 +52,7 @@ public class MessagesHibernate implements MessagesDAO{
 		} finally {
 			s.close();
 			System.out.println("It closed BEEP");
+			System.out.println("After closing our values are: " + msg);
 		}
 		System.out.println("It's returning BEEP");
 		return msg.getMessagesId();

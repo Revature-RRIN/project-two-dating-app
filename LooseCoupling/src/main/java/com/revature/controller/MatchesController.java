@@ -19,31 +19,30 @@ import com.revature.beans.Users;
 import com.revature.services.MatchesService;
 
 @RestController
-@RequestMapping(value="/matches")
 @CrossOrigin(origins="http://localhost:4200")
 public class MatchesController {
 	@Autowired
 	private MatchesService ms;
 	
-	@GetMapping()
+	@GetMapping(value="/matches")
 	public ResponseEntity<Matches> getMatchById(Integer id) {
 		return ResponseEntity.ok(ms.getMatchById(id));
 	}
 	
-	@PostMapping
+	@PostMapping(value="/matches")
 	public ResponseEntity<Integer> addMatch(@RequestBody Matches m) {
 		return ResponseEntity.status(201).body(ms.addMatch(m));
 	}
 
 	
-	@PutMapping(value="{matchId}")
+	@PutMapping(value="/matches/{matchId}")
 	public ResponseEntity<Matches> updateMatch(@PathVariable("matchId") int id, @RequestBody Matches m) {
 		// possible error handling?
 		ms.updateMatch(m);
 		return ResponseEntity.ok(ms.getMatchById(id));
 	}
 	
-	@DeleteMapping(value="{matchId}")
+	@DeleteMapping(value="/matches/{matchId}")
 	public ResponseEntity<Void> deleteMatch(@PathVariable("matchId") int id) {
 		ms.deleteMatch(ms.getMatchById(id));
 		return ResponseEntity.noContent().build();

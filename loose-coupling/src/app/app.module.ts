@@ -23,6 +23,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileService } from './shared/services/createprofile.service';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionService } from './shared/services/question.service';
+import { MatchesComponent } from './matches/matches.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { QuestionService } from './shared/services/question.service';
     DashboardComponent,
     QuestionsComponent,
     WelcomeComponent,
-    MessagesComponent
+    MessagesComponent,
+    MatchesComponent
   ],
   imports: [
     BrowserModule,

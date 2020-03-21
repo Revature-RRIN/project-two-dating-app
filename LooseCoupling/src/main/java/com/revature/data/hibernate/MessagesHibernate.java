@@ -46,6 +46,7 @@ public class MessagesHibernate implements MessagesDAO{
 			LogUtil.logException(e, MessagesHibernate.class);
 		} finally {
 			s.close();
+			System.out.println(msg + " penisbreath");
 		}
 		return msg.getMessagesId();
 	}

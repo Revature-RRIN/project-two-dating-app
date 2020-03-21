@@ -25,6 +25,14 @@
       <span class="col">Location: </span>
       <input class="col" type="text" [(ngModel)]="users.location">
     </div>
+    <div class="row">
+      <span class="col">Sexual Preference: </span>
+      <input class="col" type="text" [(ngModel)]="users.sexPref">
+    </div>
+    <div class="row">
+      <span class="col">Age Preference: </span>
+      <input class="col" type="text" [(ngModel)]="users.agePref">
+    </div>
     <button class="row btn btn-primary" (click)="updateProfile()">Submit</button>
   </ng-container>
 

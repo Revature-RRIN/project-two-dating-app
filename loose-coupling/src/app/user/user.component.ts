@@ -27,6 +27,10 @@ export class UserComponent implements OnInit {
     this.router.navigate(["profile"])
   }
 
+  viewMatches(): void {
+    this.router.navigate(["matches"])
+  }
+
   viewMessages(): void {
     this.clickedMessage = true;
   }

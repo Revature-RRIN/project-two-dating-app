@@ -18,7 +18,7 @@ export class BanUsersComponent implements OnInit {
 
   banUser(u: Users): void {
     // remove the author from the book
-  // this.users.splice(this.users.indexOf(u), 1);
+  // this.users.splice(this.users.indexOf(u), 1); 
     // this.book.authors.splice(this.book.authors.indexOf(a), 1);
   }
 

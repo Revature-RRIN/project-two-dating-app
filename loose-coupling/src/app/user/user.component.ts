@@ -60,4 +60,13 @@ export class UserComponent implements OnInit {
     )
     this.clickedMessage = true;
   }
+
+  logOut(): void {
+    this.us.logout().subscribe(
+      resp => {
+        this.users = null;
+      }
+    );
+    this.router.navigate(["login"])
+  }
 }

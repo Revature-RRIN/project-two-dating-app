@@ -6,6 +6,7 @@ import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
 import { Currentuser } from '../shared/classes/currentuser';
 import { MatchesService } from '../shared/services/matches.service';
+import { ProfileService } from '../shared/services/createprofile.service';
 
 
 @Component({
@@ -24,9 +25,10 @@ export class MessagesComponent implements OnInit {
   remark: string;
 
   currentUser: Currentuser;
+  matchedUser: Users;
 
   constructor(private messageService: MessageService,
-    private router: Router, private us: UsersService, private ms: MatchesService) {
+    private router: Router, private us: UsersService, private ms: MatchesService, private ps: ProfileService) {
 
     this.message = {
       messagesId: null,
@@ -100,12 +102,14 @@ onChanges() {
   }
 
   reportUser() {
+//    this.ps.updateProfile(this.matchedUser);
     // change user status to "reported"
     // which will then show to admin
   }
 
   meetUp() {
     //move match status to - one has pressed meet up, and if both have, then meet up "text" is send FROm senderID to Receiver
+  
   }
 
 }

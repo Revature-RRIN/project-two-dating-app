@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Users } from '../shared/classes/users';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatchesService } from '../shared/services/matches.service';
@@ -13,6 +13,7 @@ import { Matches } from '../shared/classes/matches';
 export class MatchesComponent implements OnInit {
   matches:Matches[];
   users: Users;
+  @Output() submitted = new EventEmitter<Users>();
 
   constructor(private router: Router,
     private route: ActivatedRoute,

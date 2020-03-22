@@ -67,7 +67,9 @@ put together
 
     this.messageService.viewMessages(this.currentUser.user).subscribe(
       resp => {
-        this.messageList = resp;
+        //        resp = this.messageList.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
+
+        this.messageList = resp.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
       }
     )
       //this.condition = (this.message.senderId.usersId == this.currentUser.user.usersId);

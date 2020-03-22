@@ -2,6 +2,8 @@ package com.revature.controller;
 
 import java.util.Set;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.beans.LoginInfo;
 import com.revature.beans.Matches;
 import com.revature.beans.Messages;
 import com.revature.beans.Users;
@@ -29,10 +32,10 @@ public class MessagesController {
 	@Autowired
 	private MessagesService ms;
 	
-	@GetMapping(value="/messages")
-	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u, Users u2) {
-		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
-		returnThis.addAll(ms.getConversationByUsers(u2, u));
+	@PostMapping(value="/displayMessages")
+	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u) {
+		Set<Messages> returnThis = ms.getConversationByUsers(u, u);
+		returnThis.addAll(ms.getConversationByUsers(u, u));
 		return ResponseEntity.ok(returnThis);
 	}
 	

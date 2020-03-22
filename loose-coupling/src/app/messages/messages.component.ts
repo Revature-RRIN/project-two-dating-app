@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
 import { Currentuser } from '../shared/classes/currentuser';
+import { MatchesService } from '../shared/services/matches.service';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class MessagesComponent implements OnInit {
   currentUser: Currentuser;
 
   constructor(private messageService: MessageService,
-    private router: Router, private us: UsersService) {
+    private router: Router, private us: UsersService, private ms: MatchesService) {
 
     this.message = {
       messagesId: null,
@@ -61,7 +62,9 @@ put together
 
 */
 
-
+onChanges() {
+  this.displayMessages();
+}
 
   displayMessages() {
 

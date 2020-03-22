@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { UrlService } from 'src/app/shared/url.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Messages } from '../classes/messages'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -22,10 +22,6 @@ export class MessageService {
 
   sendMessage(message: Messages): Observable<Messages> {
     console.log(message);
-    console.log(message.messagesId);
-    console.log(message.receiverId);
-    console.log(message.remark);
-    console.log(message.senderId);
     
     const body = JSON.stringify(message);
     return this.http.post(this.appUrl, body,
@@ -34,12 +30,14 @@ export class MessageService {
   }
 
 
-//stringify both the loggedin user, and the user that you are matched with
+//get both the loggedin user, and the user that you are matched with
   viewMessages(users:Users): Observable<Messages[]>  {
 const body = JSON.stringify(users);
-    return this.http.get(this.appUrl, {headers: this.headers}).pipe(
+    return this.http.post(this.url.getUrl() + "displayMessages", body, {headers: this.headers}).pipe(
+
       map(resp => {
         const messageList: Messages[] = resp as Messages[];
+        console.log(messageList);
         return messageList;
       }));
       }

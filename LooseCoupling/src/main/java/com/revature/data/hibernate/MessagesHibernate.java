@@ -21,11 +21,16 @@ public class MessagesHibernate implements MessagesDAO{
 	
 	public Set<Messages> getConversationByUsers(Users loggedUser, Users matchedUser)	{
 		Session s = hu.getSession();
-		String query = "FROM Messages msg where sender_id = :users_id AND receiver_id = :users_id2";
+		String query = "FROM Messages msg where sender_id = :a AND receiver_id = :b";
+		//		String query = "FROM Messages msg where sender_id = (:blob) AND receiver_id = :marketName";
 		Query<Messages> q = s.createQuery(query, Messages.class);
-		q.setParameter("users_id", loggedUser.getUsersId());
-		q.setParameter("users_id2", matchedUser.getUsersId());
-		List<Messages> msgList = q.getResultList();
+
+		int a = loggedUser.getUsersId();
+		int b = matchedUser.getUsersId();
+	    q.setParameter("a", a);
+	    q.setParameter("b", b);
+
+	    List<Messages> msgList = q.getResultList();
 		Set<Messages> msgSet = new HashSet<Messages>();
 		msgSet.addAll(msgList);
 		s.close();

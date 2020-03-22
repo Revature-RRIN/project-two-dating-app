@@ -4,6 +4,7 @@ import { UrlService } from "../url.service";
 import { Observable } from "rxjs";
 import { Matches } from "../classes/matches";
 import { map } from "rxjs/operators";
+import { Users } from '../classes/users';
 
 @Injectable()
 export class MatchesService {
@@ -20,10 +21,10 @@ export class MatchesService {
       .pipe(map(resp => resp as Matches[]));
   }
 
-  /*signup(users: Users): Observable<Users> {
+  findMatch(users: Users): Observable<Users> {
     const body = JSON.stringify(users);
     return this.http
       .post(this.appUrl, body, { headers: this.headers, withCredentials: true })
       .pipe(map(resp => resp as Users));
-  }*/
+  }
 }

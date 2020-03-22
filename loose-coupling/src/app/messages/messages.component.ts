@@ -25,29 +25,31 @@ export class MessagesComponent implements OnInit {
   currentUser: Currentuser;
 
   constructor(private messageService: MessageService,
-    private router: Router, private us : UsersService) {
+    private router: Router, private us: UsersService) {
 
-      this.message = {
+    this.message = {
       messagesId: null,
       remark: 'null',
       senderId: null,
       receiverId: null
-      }
     }
+  }
 
   messageList: Messages[];
 
   ngOnInit(): void {
-//    this.users = this.us.getUser();
 
-//what I'll need                    ^^^
-//fake login cuz its easier for now vvv
+    //    this.users = this.us.getUser();
 
-this.us.login('admin', 'pass').subscribe(
-  resp => {
-    this.currentUser = resp;
-  }
-)
+    //what I'll need                    ^^^
+    //fake login cuz its easier for now vvv
+
+    this.us.login('admin', 'pass').subscribe(
+      resp => {
+        this.currentUser = resp;
+      }
+    )
+
   }
 
   /*
@@ -62,39 +64,44 @@ put together
 
 
   displayMessages() {
-this.messageService.viewMessages(this.currentUser.user).subscribe(
-  resp=>  {
-    this.messageList = resp;
+
+    this.messageService.viewMessages(this.currentUser.user).subscribe(
+      resp => {
+        //        resp = this.messageList.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
+
+        this.messageList = resp.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
+      }
+    )
+      //this.condition = (this.message.senderId.usersId == this.currentUser.user.usersId);
+
   }
-)
-  }
-/*
-  messagesId: number;
-  senderId: number;
-  receiverId: number;
-  remark: string;
-*/
+  /*
+    messagesId: number;
+    senderId: number;
+    receiverId: number;
+    remark: string;
+  */
   sendMessage(): void {
     this.message.remark = this.remark;
     this.message.senderId = this.currentUser.user;//this.users;
-  this.message.receiverId = this.currentUser.user;//"matched user";
-  this.messageService.sendMessage(this.message).subscribe(
-    messages => {
-      this.messages = messages;
-      this.submitted.emit(messages);
-    }
-  );
-}
+    this.message.receiverId = this.currentUser.user;//"matched user";
+    this.messageService.sendMessage(this.message).subscribe(
+      messages => {
+        this.messages = messages;
+        this.submitted.emit(messages);
+      }
+    );
+  }
   returnProfile(): void {
-    this.router.navigate(["user"]); 
+    this.router.navigate(["user"]);
   }
 
-  reportUser()  {
+  reportUser() {
     // change user status to "reported"
     // which will then show to admin
   }
 
-  meetUp(){
+  meetUp() {
     //move match status to - one has pressed meet up, and if both have, then meet up "text" is send FROm senderID to Receiver
   }
 

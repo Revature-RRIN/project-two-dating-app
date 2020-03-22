@@ -1,28 +1,31 @@
-import { Users } from '../shared/classes/users';
-import { Router } from "@angular/router";
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { QuestionService } from '../shared/services/question.service';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Questions } from '../shared/classes/questions';
-import { UsersService } from '../shared/services/users.service';
 import { Answers } from '../shared/classes/answers';
+import { Users } from '../shared/classes/users';
+import { EventEmitter } from 'protractor';
+import { QuestionService } from '../shared/services/question.service';
+import { Router } from '@angular/router';
+import { UsersService } from '../shared/services/users.service';
 import { ProfileService } from '../shared/services/createprofile.service';
 import { Score } from '../shared/classes/score';
 
 @Component({
-  selector: 'app-questions',
-  templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+  selector: 'app-question2',
+  templateUrl: './question2.component.html',
+  styleUrls: ['./question2.component.css']
 })
-export class QuestionsComponent implements OnInit {
+export class Question2Component implements OnInit {
+
 
   @Input() questions: Questions[];
   answers  : Answers;
   users: Users;
-  @Output() submitted = new EventEmitter<Answers>();
 
   score: Score;
+  // @Output() submitted = new EventEmitter<Answers>();
 
-  constructor(private questionsServices: QuestionService,private router: Router,
+  constructor(private questionsServices: QuestionService,
+    private router: Router,
     private us : UsersService,
     private ps: ProfileService) { }
 
@@ -45,8 +48,8 @@ export class QuestionsComponent implements OnInit {
     // this.ps.updateProfile(this.users).subscribe(
     //   users => {
     //     this.users = users;
-        this.router.navigate(["question2"])
-      // }
+        this.router.navigate(["question3"])
+    //   }
     // );
     //this.router.navigate(["user"]);
   } 

@@ -1,28 +1,32 @@
-import { Users } from '../shared/classes/users';
-import { Router } from "@angular/router";
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { QuestionService } from '../shared/services/question.service';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Questions } from '../shared/classes/questions';
-import { UsersService } from '../shared/services/users.service';
 import { Answers } from '../shared/classes/answers';
+import { Users } from '../shared/classes/users';
+import { EventEmitter } from 'protractor';
+import { QuestionService } from '../shared/services/question.service';
+import { Router } from '@angular/router';
+import { UsersService } from '../shared/services/users.service';
 import { ProfileService } from '../shared/services/createprofile.service';
 import { Score } from '../shared/classes/score';
 
 @Component({
-  selector: 'app-questions',
-  templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+  selector: 'app-question3',
+  templateUrl: './question3.component.html',
+  styleUrls: ['./question3.component.css']
 })
-export class QuestionsComponent implements OnInit {
+export class Question3Component implements OnInit {
+
+ 
 
   @Input() questions: Questions[];
   answers  : Answers;
   users: Users;
-  @Output() submitted = new EventEmitter<Answers>();
+  // @Output() submitted = new EventEmitter<Answers>();
 
   score: Score;
 
-  constructor(private questionsServices: QuestionService,private router: Router,
+  constructor(private questionsServices: QuestionService,
+    private router: Router,
     private us : UsersService,
     private ps: ProfileService) { }
 
@@ -42,12 +46,12 @@ export class QuestionsComponent implements OnInit {
     }
 
   submit(): void {
-    // this.ps.updateProfile(this.users).subscribe(
-    //   users => {
-    //     this.users = users;
-        this.router.navigate(["question2"])
-      // }
-    // );
+    this.ps.updateProfile(this.users).subscribe(
+      users => {
+        this.users = users;
+        this.router.navigate(["user"])
+      }
+    );
     //this.router.navigate(["user"]);
   } 
       

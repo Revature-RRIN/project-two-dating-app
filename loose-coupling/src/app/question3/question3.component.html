@@ -16,16 +16,16 @@
     
     <h3>Answer personality questions:</h3>
     <div *ngFor="let q of questions">
-         <div class="formgroup" *ngIf="q.questionId==1">
+         <div class="formgroup" *ngIf="q.questionId==3">
         <br>
         <p>{{q.question}}</p> <br>
     
-        <select class="form-control" id="grade" [(ngModel)]="score.value">
-            <option [value]="1">Italian</option>
-            <option [value]="10">Mexican</option> 
-            <option [value]="100">Cheese burger</option>
-            <option [value]="1000">Chocolate</option>  
-        </select> 
+        <select class="form-control" id="grade" [(ngModel)]="users.score">
+            <option [value]="3">A relaxed beach getaway</option>
+            <option [value]="30">A camping trip in the Mountains</option>
+            <option [value]="300">A trip to New Orleans for Mardi Gras</option>
+            <option [value]="3000">A culture-based tour of France</option>
+        </select>
     </div>
             
       <!--  <input class="col" type="text" [(ngModel)]="answers.response">

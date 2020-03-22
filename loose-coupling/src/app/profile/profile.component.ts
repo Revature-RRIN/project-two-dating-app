@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Users } from '../shared/classes/users';
 import { Router, ActivatedRoute } from "@angular/router";
 import { ProfileService } from 'src/app/shared/services/createprofile.service';
@@ -21,6 +21,9 @@ export class ProfileComponent implements OnInit {
 
     image : any;
     AWS: any;
+
+    // @ViewChild
+    // fileInput: ElementRef;
 
   ngOnInit(): void {
     

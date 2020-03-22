@@ -18,11 +18,9 @@
           handler = "https://lc-profile-bucket.s3.us-east-2.amazonaws.com">
             Upload your desired profile picture:
             <input
-              type = file (change)="fileEvent($event)" name = profilePic id = profilePic
+              type = file (change)="fileEvent($event)" name = fileInput id = fileInput
             /> 
-            <input 
-              type="submit" value="Upload Image" name="submit"
-            />
+            
         </form>
       </div>
     <div class="row">

@@ -129,6 +129,7 @@ public class UsersHibernate implements UsersDAO {
 
 	@Override
 	public Users getCompatibleUser(Users u) {
+		System.out.println("Calculating minimum difference.");
 		int diff = Integer.MAX_VALUE;
 		int index = 0;
 		UsersDAO ud = new UsersHibernate();

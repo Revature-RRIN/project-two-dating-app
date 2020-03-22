@@ -1,5 +1,5 @@
 nav {
-  background-color: #565554;
+  background-color: #4b387e;
   height: 75px;
   box-shadow: black;
   background-image: linear-gradient(#565554,#6f6e6d, #565554);
@@ -10,6 +10,7 @@ nav {
 }
 
 ul {
+
     list-style-type: none;
     margin: 0;
     padding: 0;

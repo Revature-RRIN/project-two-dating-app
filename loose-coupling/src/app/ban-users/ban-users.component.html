@@ -1,0 +1,5 @@
+<div *ngFor="let u of usArr">
+    <!-- <app-user [users]="u"></app-user> -->
+    <p>{{u.firstname}} {{u.lastname}}</p>
+    <button class="btn btn-sm btn-danger" (click)="deleteUser(u)">X</button>
+</div>

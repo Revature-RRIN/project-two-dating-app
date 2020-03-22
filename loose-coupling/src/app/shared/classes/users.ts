@@ -10,12 +10,14 @@ export class Users {
 	lastname : string;
 	score : number;
 	age : number;
-	gender : number;
+	gender : string;
 	location : string;
 	banned : string;
 	userMatches : Matches [];
 	sentMessages : Messages [];
 	receivedMessages : Messages [];
+	sexPref: string;
+	agePref: number;
 	//private Set<Matches> userMatches;
 	//private Set<Messages> userMessages;
 }

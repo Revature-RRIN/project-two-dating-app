@@ -1,7 +1,7 @@
 export class Matches {
   matchesId: number;
-  maleId: number;
-  femaleId: number;
+  user1Id: number;
+  user2Id: number;
   statusId: number;
   matchMessages: number;
 }

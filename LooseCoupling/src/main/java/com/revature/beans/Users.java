@@ -20,74 +20,77 @@ import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 @Entity
 @Table
 //Do we need to classify (name="" field)??
 public class Users {
 	@Id
-	@Column (name="users_id")
-	@SequenceGenerator (name="users", sequenceName="users_seq", allocationSize = 1)
-	@GeneratedValue(generator="users", strategy=GenerationType.SEQUENCE)
+	@Column(name = "users_id")
+	@SequenceGenerator(name = "users", sequenceName = "users_seq", allocationSize = 1)
+	@GeneratedValue(generator = "users", strategy = GenerationType.SEQUENCE)
 	private Integer usersId;
 	@Column
 	private Integer usertype;
 	@Column
 	private String username;
 	@Column
-	//@JsonIgnore?
+	// @JsonIgnore?
 	private String pass;
 	@Column
 	private String firstname;
 	@Column
 	private String lastname;
-	//@Column
-	//DON'T GO BLOB ROUTE! S3 INTEGRATION
-	//private Blob profilepic;
+	// @Column
+	// DON'T GO BLOB ROUTE! S3 INTEGRATION
+	// private Blob profilepic;
 	@Column
 	private Integer score;
 	@Column
 	private Integer age;
 	@Column
-	private Integer gender;
+	private String gender;
 	@Column
 	private String location;
 	@Column
 	private String banned;
-	
-	/*@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinTable (name="MATCH_USER",
-		joinColumns=@JoinColumn(name="users_id"),
-		inverseJoinColumns=@JoinColumn(name="matches_id"))*/
-	
+	@Column(name = "sex_pref")
+	private String sexPref;
+	@Column(name = "age_pref")
+	private Integer agePref;
+
+	/*
+	 * @ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	 * 
+	 * @JoinTable (name="MATCH_USER", joinColumns=@JoinColumn(name="users_id"),
+	 * inverseJoinColumns=@JoinColumn(name="matches_id"))
+	 */
+
 	@Transient
 	private Set<Matches> userMatches;
-	
-	/*@ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinTable (name="MESSAGES_USER",
-		joinColumns=@JoinColumn(name="users_id"),
-		inverseJoinColumns=@JoinColumn(name="messages_id"))*/
-	
+
+	/*
+	 * @ManyToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	 * 
+	 * @JoinTable (name="MESSAGES_USER", joinColumns=@JoinColumn(name="users_id"),
+	 * inverseJoinColumns=@JoinColumn(name="messages_id"))
+	 */
 
 	@Transient
 	private Set<Messages> sentMessages;
 	@Transient
 	private Set<Messages> receivedMessages;
-	
-	//^^SENT VS RECEIVED MESSAGES AS INDIVUDAL SET FIELDS
-	
-	//RETRIEVE MATCHES AND USERS SEPERATELY ON FRONT-END; AND THEN PUT MATCHES INTO THE USER
-	
-	
-	
-	//Need @OneToMany mapping for answers (as a set)?? Or does the cumulative "score" field suffice??
-		//...Will we ever need to retrieve answers individually??
-	
-	//Need to remove recursive elements (userMatches and userMessages) 
-		//from .hascode(), .equals(), and .toString()
-	
-	
-	
+
+	// ^^SENT VS RECEIVED MESSAGES AS INDIVUDAL SET FIELDS
+
+	// RETRIEVE MATCHES AND USERS SEPERATELY ON FRONT-END; AND THEN PUT MATCHES INTO
+	// THE USER
+
+	// Need @OneToMany mapping for answers (as a set)?? Or does the cumulative
+	// "score" field suffice??
+	// ...Will we ever need to retrieve answers individually??
+
+	// Need to remove recursive elements (userMatches and userMessages)
+	// from .hascode(), .equals(), and .toString()
 
 	public Users() {
 		super();
@@ -105,8 +108,9 @@ public class Users {
 	}
 
 	public Users(Integer usersId, Integer usertype, String username, String pass, String firstname, String lastname,
-			Blob profilepic, Integer score, Integer age, Integer gender, String location, String banned, 
-			Set<Matches> userMatches, Set<Messages> sentMessages, Set<Messages> receivedMessages) {
+			Blob profilepic, Integer score, Integer age, String gender, String location, String banned,
+			Set<Matches> userMatches, Set<Messages> sentMessages, Set<Messages> receivedMessages, String sexPref,
+			Integer agePref) {
 		super();
 		this.usersId = usersId;
 		this.usertype = usertype;
@@ -114,7 +118,7 @@ public class Users {
 		this.pass = pass;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		//this.profilepic = profilepic;
+		// this.profilepic = profilepic;
 		this.score = score;
 		this.age = age;
 		this.gender = gender;
@@ -123,15 +127,20 @@ public class Users {
 		this.userMatches = userMatches;
 		this.sentMessages = sentMessages;
 		this.receivedMessages = receivedMessages;
+		this.sexPref = sexPref;
+		this.agePref = agePref;
 	}
 
-	public Users(String firstname, String lastname, Integer age, Integer gender, String location) {
+	public Users(String firstname, String lastname, Integer age, String gender, String location, String sexPref,
+			Integer agePref) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.age = age;
 		this.gender = gender;
 		this.location = location;
+		this.sexPref = sexPref;
+		this.agePref = agePref;
 	}
 
 	public Integer getUsersId() {
@@ -182,13 +191,11 @@ public class Users {
 		this.lastname = lastname;
 	}
 
-	/*/public Blob getProfilepic() {
-		return profilepic;
-	}
-
-	public void setProfilepic(Blob profilepic) {
-		this.profilepic = profilepic;
-	}*/
+	/*
+	 * /public Blob getProfilepic() { return profilepic; }
+	 * 
+	 * public void setProfilepic(Blob profilepic) { this.profilepic = profilepic; }
+	 */
 
 	public Integer getScore() {
 		return score;
@@ -206,11 +213,11 @@ public class Users {
 		this.age = age;
 	}
 
-	public Integer getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Integer gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -229,7 +236,7 @@ public class Users {
 	public void setBanned(String banned) {
 		this.banned = banned;
 	}
-	
+
 	public Set<Matches> getUserMatches() {
 		return userMatches;
 	}
@@ -254,11 +261,28 @@ public class Users {
 		this.receivedMessages = receivedMessages;
 	}
 
+	public String getSexPref() {
+		return sexPref;
+	}
+
+	public void setSexPref(String sexPref) {
+		this.sexPref = sexPref;
+	}
+
+	public Integer getAgePref() {
+		return agePref;
+	}
+
+	public void setAgePref(Integer agePref) {
+		this.agePref = agePref;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
+		result = prime * result + ((agePref == null) ? 0 : agePref.hashCode());
 		result = prime * result + ((banned == null) ? 0 : banned.hashCode());
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
@@ -268,6 +292,7 @@ public class Users {
 		result = prime * result + ((receivedMessages == null) ? 0 : receivedMessages.hashCode());
 		result = prime * result + ((score == null) ? 0 : score.hashCode());
 		result = prime * result + ((sentMessages == null) ? 0 : sentMessages.hashCode());
+		result = prime * result + ((sexPref == null) ? 0 : sexPref.hashCode());
 		result = prime * result + ((userMatches == null) ? 0 : userMatches.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		result = prime * result + ((usersId == null) ? 0 : usersId.hashCode());
@@ -288,6 +313,11 @@ public class Users {
 			if (other.age != null)
 				return false;
 		} else if (!age.equals(other.age))
+			return false;
+		if (agePref == null) {
+			if (other.agePref != null)
+				return false;
+		} else if (!agePref.equals(other.agePref))
 			return false;
 		if (banned == null) {
 			if (other.banned != null)
@@ -334,6 +364,11 @@ public class Users {
 				return false;
 		} else if (!sentMessages.equals(other.sentMessages))
 			return false;
+		if (sexPref == null) {
+			if (other.sexPref != null)
+				return false;
+		} else if (!sexPref.equals(other.sexPref))
+			return false;
 		if (userMatches == null) {
 			if (other.userMatches != null)
 				return false;
@@ -361,8 +396,9 @@ public class Users {
 	public String toString() {
 		return "Users [usersId=" + usersId + ", usertype=" + usertype + ", username=" + username + ", pass=" + pass
 				+ ", firstname=" + firstname + ", lastname=" + lastname + ", score=" + score + ", age=" + age
-				+ ", gender=" + gender + ", location=" + location + ", banned=" + banned + ", userMatches="
-				+ userMatches + ", sentMessages=" + sentMessages + ", receivedMessages=" + receivedMessages + "]";
+				+ ", gender=" + gender + ", location=" + location + ", banned=" + banned + ", sexPref=" + sexPref
+				+ ", agePref=" + agePref + ", userMatches=" + userMatches + ", sentMessages=" + sentMessages
+				+ ", receivedMessages=" + receivedMessages + "]";
 	}
-	
+
 }

@@ -1,3 +1,7 @@
+<div class="navbar">
+  <app-nav-bar></app-nav-bar>
+</div>
+
 <h2>Profile</h2>
 <div class="container border">
   <ng-container>
@@ -9,8 +13,18 @@
       <span class="col">Last: </span>
       <input class="col" type="text" [(ngModel)]="users.lastname">
     </div>
+    <div>
+        <form class="col" action="upload.php" method ="POST" encType="multipart/form-data"
+          handler = "https://lc-profile-bucket.s3.us-east-2.amazonaws.com">
+            Upload your desired profile picture:
+            <input
+              type = file (change)="fileEvent($event)" name = fileInput id = fileInput
+            /> 
+            
+        </form>
+      </div>
     <div class="row">
-      <span class="col">Aender: </span>
+      <span class="col">Gender: </span>
       <input class="col" type="text" [(ngModel)]="users.gender">
     </div>
     <div class="row">
@@ -20,6 +34,15 @@
     <div class="row">
       <span class="col">Location: </span>
       <input class="col" type="text" [(ngModel)]="users.location">
+    </div>
+
+    <div class="row">
+      <span class="col">Sexual Preference: </span>
+      <input class="col" type="text" [(ngModel)]="users.sexPref">
+    </div>
+    <div class="row">
+      <span class="col">Age Preference: </span>
+      <input class="col" type="text" [(ngModel)]="users.agePref">
     </div>
     <button class="row btn btn-primary" (click)="updateProfile()">Submit</button>
   </ng-container>

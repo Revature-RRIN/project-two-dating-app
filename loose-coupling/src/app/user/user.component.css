@@ -1,0 +1,10 @@
+.messagePopup   {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+img {height: 12em; width: 15em;}
+
+#logoutbtn {position: absolute;
+            right: 0px;}

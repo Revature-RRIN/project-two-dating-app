@@ -21,11 +21,16 @@ public class MessagesHibernate implements MessagesDAO{
 	
 	public Set<Messages> getConversationByUsers(Users loggedUser, Users matchedUser)	{
 		Session s = hu.getSession();
-		String query = "FROM Messages msg where sender_id = :users_id AND receiver_id = :users_id2";
+		String query = "FROM Messages msg where sender_id = :a AND receiver_id = :b";
+		//		String query = "FROM Messages msg where sender_id = (:blob) AND receiver_id = :marketName";
 		Query<Messages> q = s.createQuery(query, Messages.class);
-		q.setParameter("users_id", loggedUser.getUsersId());
-		q.setParameter("users_id2", matchedUser.getUsersId());
-		List<Messages> msgList = q.getResultList();
+
+		int a = loggedUser.getUsersId();
+		int b = matchedUser.getUsersId();
+	    q.setParameter("a", a);
+	    q.setParameter("b", b);
+
+	    List<Messages> msgList = q.getResultList();
 		Set<Messages> msgSet = new HashSet<Messages>();
 		msgSet.addAll(msgList);
 		s.close();
@@ -34,19 +39,27 @@ public class MessagesHibernate implements MessagesDAO{
 	
 	public Integer addMessage(Messages msg) {
 		Session s = hu.getSession();
+		System.out.println("Session was got BEEP");
 		Transaction tx = null;
+		System.out.println("BEEP our values are: " + msg);
 		try {
 			tx = s.beginTransaction();
 			s.save(msg);
+			System.out.println("It saved BEEP");
 			tx.commit();
+			System.out.println("It committed BEEP");
 		} catch(Exception e) {
 			if (tx != null) {
+				System.out.println("It rolled back BEEP");
 				tx.rollback();
 			}
 			LogUtil.logException(e, MessagesHibernate.class);
 		} finally {
 			s.close();
+			System.out.println("It closed BEEP");
+			System.out.println("After closing our values are: " + msg);
 		}
+		System.out.println("It's returning BEEP");
 		return msg.getMessagesId();
 	}
 

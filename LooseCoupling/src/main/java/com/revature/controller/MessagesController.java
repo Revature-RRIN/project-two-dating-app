@@ -2,6 +2,8 @@ package com.revature.controller;
 
 import java.util.Set;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,29 +16,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.beans.LoginInfo;
 import com.revature.beans.Matches;
 import com.revature.beans.Messages;
 import com.revature.beans.Users;
 import com.revature.services.MatchesService;
 import com.revature.services.MessagesService;
+import com.revature.services.UsersService;
+import com.revature.services.UsersServiceHibernate;
 
 
 @RestController
-@RequestMapping(value="/messages")
 @CrossOrigin(origins="http://localhost:4200")
 public class MessagesController {
 	@Autowired
 	private MessagesService ms;
 	
-	@GetMapping()
-	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u, Users u2) {
-		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
-		returnThis.addAll(ms.getConversationByUsers(u2, u));
+	@PostMapping(value="/displayMessages")
+	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u) {
+		Set<Messages> returnThis = ms.getConversationByUsers(u, u);
+		returnThis.addAll(ms.getConversationByUsers(u, u));
 		return ResponseEntity.ok(returnThis);
 	}
 	
-	@PostMapping
+	@PostMapping(value="/messages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
+		msg.setReceiver(msg.getSender());
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}
 

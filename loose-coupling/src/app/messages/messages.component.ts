@@ -4,6 +4,9 @@ import { MessageService } from '../shared/services/message.service';
 import { Router } from '@angular/router';
 import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
+import { Currentuser } from '../shared/classes/currentuser';
+import { MatchesService } from '../shared/services/matches.service';
+import { ProfileService } from '../shared/services/createprofile.service';
 
 
 @Component({
@@ -13,6 +16,7 @@ import { UsersService } from '../shared/services/users.service';
 })
 export class MessagesComponent implements OnInit {
   private message: Messages;
+  condition: boolean = false;
 
 
   users: Users;
@@ -20,28 +24,36 @@ export class MessagesComponent implements OnInit {
   @Output() submitted = new EventEmitter<Messages>();
   remark: string;
 
+  currentUser: Currentuser;
+  matchedUser: Users;
+
   constructor(private messageService: MessageService,
-    private router: Router, private us : UsersService) {
+    private router: Router, private us: UsersService, private ms: MatchesService, private ps: ProfileService) {
 
-      this.message = {
-      messagesId: 0,
+    this.message = {
+      messagesId: null,
       remark: 'null',
-      senderId: 0,
-      receiverId: 0
-      }
+      senderId: null,
+      receiverId: null
     }
-
-
-
+  }
 
   messageList: Messages[];
 
-  messageArray = ['Hey jenny', 'hey frank', 'will you go out with me', 'no my parents say im not old enough to date', 'ok bye', 'ok by'];
-
   ngOnInit(): void {
-    this.users = this.us.getUser();
-  }
 
+    //    this.users = this.us.getUser();
+
+    //what I'll need                    ^^^
+    //fake login cuz its easier for now vvv
+
+    this.us.login('admin', 'pass').subscribe(
+      resp => {
+        this.currentUser = resp;
+      }
+    )
+
+  }
 
   /*
 a. FIND MATCHES (get all "users" I match with)
@@ -52,33 +64,52 @@ put together
 
 */
 
-
+onChanges() {
+  this.displayMessages();
+}
 
   displayMessages() {
-this.messageService.viewMessages(this.users).subscribe(
-  resp=>  {
-    this.messageList = resp;
+
+    this.messageService.viewMessages(this.currentUser.user).subscribe(
+      resp => {
+        //        resp = this.messageList.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
+
+        this.messageList = resp.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
+      }
+    )
+      //this.condition = (this.message.senderId.usersId == this.currentUser.user.usersId);
+
   }
-)
-  }
-/*
-  messagesId: number;
-  senderId: number;
-  receiverId: number;
-  remark: string;
-*/
+  /*
+    messagesId: number;
+    senderId: number;
+    receiverId: number;
+    remark: string;
+  */
   sendMessage(): void {
     this.message.remark = this.remark;
-    this.message.senderId = 1;//this.users.usersId;
-//  this.message.receiverId = "matched user id";
-  this.messageService.sendMessage(this.messages).subscribe(
-    messages => {
-      this.messages = messages;
-      this.submitted.emit(messages);
-    }
-  );
-}
-  returnProfile(): void {
-    this.router.navigate(["user"]); 
+    this.message.senderId = this.currentUser.user;//this.users;
+    this.message.receiverId = this.currentUser.user;//"matched user";
+    this.messageService.sendMessage(this.message).subscribe(
+      messages => {
+        this.messages = messages;
+        this.submitted.emit(messages);
+      }
+    );
   }
+  returnProfile(): void {
+    this.router.navigate(["user"]);
+  }
+
+  reportUser() {
+//    this.ps.updateProfile(this.matchedUser);
+    // change user status to "reported"
+    // which will then show to admin
+  }
+
+  meetUp() {
+    //move match status to - one has pressed meet up, and if both have, then meet up "text" is send FROm senderID to Receiver
+  
+  }
+
 }

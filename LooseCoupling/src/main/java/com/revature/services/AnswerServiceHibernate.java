@@ -2,11 +2,14 @@ package com.revature.services;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.beans.Answers;
 import com.revature.beans.Users;
 import com.revature.data.AnswersDAO;
 import com.revature.data.hibernate.AnswersHibernate;
 
+@Service
 public class AnswerServiceHibernate implements AnswerService {
 	
 	private AnswersDAO ad = new AnswersHibernate();

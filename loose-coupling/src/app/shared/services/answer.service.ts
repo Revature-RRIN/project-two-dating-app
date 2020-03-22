@@ -13,6 +13,9 @@ export class UploadResponsesService {
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
+
+  private answer:Answers;
+
   constructor(
     private urlService: UrlService,
     private http: HttpClient
@@ -29,7 +32,7 @@ export class UploadResponsesService {
           map(resp => resp as Answers) //does this line work? Does 'as Answers' specify which question is being answered?
         );
       }
-      updateAnswers(answers: Answers): Observable<Answers> {
+      updateAnswers(answers: Answers): Observable<Answers> { 
         const body = JSON.stringify(answers);
         if (answers.answersId) {
           const url = this.appUrl + '/' + answers.answersId;
@@ -43,5 +46,9 @@ export class UploadResponsesService {
                 map(resp => resp as Answers)
             );
           }
+        }
+
+        getAns(): Answers{
+return this.answer;
         }
 }

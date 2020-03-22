@@ -17,37 +17,42 @@ import com.revature.beans.Answers;
 import com.revature.beans.Users;
 import com.revature.services.AnswerService;
 
+
+@RestController
+//@RequestMapping(value="/answers")
+@CrossOrigin(origins="http://localhost:4200")
 public class AnswersController {
 	
-	@RestController
-	@RequestMapping(value="/answers")
-	@CrossOrigin(origins="http://localhost:4200")
-	public class QuestionController {
+	
+	
 		
 		@Autowired
 		private AnswerService as;
 		
-		@GetMapping()
-		public ResponseEntity<Set<Answers>> getAllAnswers() {
-			return ResponseEntity.ok(as.getAllAnswers());
-		}
+	/*
+	 * @GetMapping() public ResponseEntity<Set<Answers>> getAllAnswers() { return
+	 * ResponseEntity.ok(as.getAllAnswers()); }
+	 * 
+	 * It gave me an error we can't have two GET mapping in one controller.
+	 */
 		
-		@GetMapping()
+		@GetMapping(value="/answers")
 		public ResponseEntity<Set<Answers>> getAnswersByUser(Users u) {
 			return ResponseEntity.ok(as.getAnswersByUser(u));
 		}
 		
-		@PostMapping
+		@PostMapping(value="/questions")
 		public ResponseEntity<Integer> addAnswers(@RequestBody Answers a) {
+			System.out.println(a);
 			return ResponseEntity.status(201).body(as.addAnswers(a));
 		}
 		
 		
-		@PutMapping(value="{answerId}")
+		@PutMapping(value="/answers/{answerId}")
 		public ResponseEntity<Answers> updateAnswers(@PathVariable("answerId") Integer id, @RequestBody Answers a) {
 	
 			as.updateAnswers(a);
 			return ResponseEntity.ok(as.getAnswersByUser(id));
 		}
 	}	
-}
+

@@ -745,3 +745,106 @@ line 1:60: unexpected token: and
 2020-03-20 11:00:20 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
 2020-03-20 11:00:22 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
 2020-03-20 11:00:25 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:29:19 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-21 17:29:20 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-21 17:29:24 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-21 17:29:28 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-21 17:29:28 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-21 17:29:28 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-21 17:29:28 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-21 17:29:28 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-21 17:29:31 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-21 17:29:37 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:29:38 WARN  SqlExceptionHelper:137 - SQL Error: 1, SQLState: 23000
+2020-03-21 17:29:38 ERROR SqlExceptionHelper:142 - ORA-00001: unique constraint (LOOSE_COUPLING.SYS_C005172) violated
+
+2020-03-21 17:29:38 ERROR QuestionsHibernate:14 - class javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 154: org.hibernate.internal.ExceptionConverterImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 181: org.hibernate.internal.ExceptionConverterImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 188: org.hibernate.internal.ExceptionConverterImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 1348: org.hibernate.internal.SessionImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 435: org.hibernate.internal.SessionImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 3221: org.hibernate.internal.SessionImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 2389: org.hibernate.internal.SessionImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 447: org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 183: org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 40: org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 281: org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 101: org.hibernate.engine.transaction.internal.TransactionImpl
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 33: com.revature.data.hibernate.QuestionsHibernate
+2020-03-21 17:29:38 WARN  QuestionsHibernate:16 - 21: com.revature.data.hibernate.QuestionsHibernate
+2020-03-21 17:35:03 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-21 17:35:04 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-21 17:35:05 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-21 17:35:06 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-21 17:35:06 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-21 17:35:06 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-21 17:35:06 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-21 17:35:06 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-21 17:35:07 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-21 17:35:11 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:35:11 WARN  SqlExceptionHelper:137 - SQL Error: 1, SQLState: 23000
+2020-03-21 17:35:11 ERROR SqlExceptionHelper:142 - ORA-00001: unique constraint (LOOSE_COUPLING.SYS_C005173) violated
+
+2020-03-21 17:35:11 ERROR AnswersHibernate:14 - class javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 154: org.hibernate.internal.ExceptionConverterImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 181: org.hibernate.internal.ExceptionConverterImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 188: org.hibernate.internal.ExceptionConverterImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 1348: org.hibernate.internal.SessionImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 435: org.hibernate.internal.SessionImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 3221: org.hibernate.internal.SessionImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 2389: org.hibernate.internal.SessionImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 447: org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 183: org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 40: org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 281: org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 101: org.hibernate.engine.transaction.internal.TransactionImpl
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 33: com.revature.data.hibernate.AnswersHibernate
+2020-03-21 17:35:11 WARN  AnswersHibernate:16 - 22: com.revature.data.hibernate.AnswersHibernate
+2020-03-21 17:36:22 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-21 17:36:23 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-21 17:36:24 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-21 17:36:24 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-21 17:36:24 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-21 17:36:24 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-21 17:36:24 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-21 17:36:24 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-21 17:36:26 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-21 17:36:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:38:48 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-21 17:38:48 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-21 17:38:49 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-21 17:38:50 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-21 17:38:50 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-21 17:38:50 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-21 17:38:50 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-21 17:38:50 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-21 17:38:51 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-21 17:38:54 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:41:55 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-21 17:41:55 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-21 17:41:56 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-21 17:41:56 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-21 17:41:56 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-21 17:41:56 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-21 17:41:56 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-21 17:41:56 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-21 17:41:58 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-21 17:42:00 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:54:08 DEBUG logging:112 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-21 17:54:08 INFO  Version:46 - HHH000412: Hibernate Core {5.4.9.Final}
+2020-03-21 17:54:09 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-21 17:54:09 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2020-03-21 17:54:10 INFO  pooling:115 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@rev2001-ian.cwlsep5a7dcz.us-east-2.rds.amazonaws.com:1521:ORCL]
+2020-03-21 17:54:10 INFO  pooling:124 - HHH10001001: Connection properties: {user=Loose_Coupling, password=****}
+2020-03-21 17:54:10 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2020-03-21 17:54:10 INFO  DriverManagerConnectionProviderImpl:249 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2020-03-21 17:54:11 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-03-21 17:54:14 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-21 17:54:14 ERROR AnswersHibernate:14 - class java.lang.IllegalArgumentException: attempt to create saveOrUpdate event with null entity
+2020-03-21 17:54:14 WARN  AnswersHibernate:16 - 45: org.hibernate.event.spi.SaveOrUpdateEvent
+2020-03-21 17:54:14 WARN  AnswersHibernate:16 - 28: org.hibernate.event.spi.SaveOrUpdateEvent
+2020-03-21 17:54:14 WARN  AnswersHibernate:16 - 611: org.hibernate.internal.SessionImpl
+2020-03-21 17:54:14 WARN  AnswersHibernate:16 - 606: org.hibernate.internal.SessionImpl
+2020-03-21 17:54:14 WARN  AnswersHibernate:16 - 32: com.revature.data.hibernate.AnswersHibernate
+2020-03-21 17:54:14 WARN  AnswersHibernate:16 - 22: com.revature.data.hibernate.AnswersHibernate

@@ -15,6 +15,13 @@ import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
 public class AnswersHibernate implements AnswersDAO{
+	
+	public static void main(String[] args) {
+		AnswersDAO ad = new AnswersHibernate();
+		Answers a = new Answers(5);
+		ad.addAnswer(null);
+	}
+	
 	private HibernateUtil hu = HibernateUtil.getInstance();
 
 	public Integer addAnswer(Answers a) {

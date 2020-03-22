@@ -40,6 +40,7 @@ public class SignupController {
 	
 	@PostMapping(value="/signup")
 	public ResponseEntity<Users> signup(@RequestBody Users u){
+		System.out.println(u);
 		return ResponseEntity.status(201).body(us.addUser(u));
 	}
 	

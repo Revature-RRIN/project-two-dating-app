@@ -16,11 +16,6 @@
     padding:3px;
 }
 
-label{
-    margin-left: 10px;
-    font-weight: bold;
-}
-
   #submit{
     margin-left: 35%;
     margin-top: 30px;
@@ -30,11 +25,10 @@ label{
   }
 
   h3{
-    color:white;
-    
+    font-weight: bold; 
   }
 
 
 p {
-color:white;
+  font-weight: bold;
 }

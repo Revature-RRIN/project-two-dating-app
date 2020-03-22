@@ -23,6 +23,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ProfileService } from './shared/services/createprofile.service';
 import { MessagesComponent } from './messages/messages.component';
 import { QuestionService } from './shared/services/question.service';
+import { UploadResponsesService } from './shared/services/answer.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { QuestionService } from './shared/services/question.service';
   providers: [
     SignupService,
     ProfileService,
-    QuestionService
+    QuestionService,
+    UploadResponsesService
   ],
   bootstrap: [AppComponent]
 })

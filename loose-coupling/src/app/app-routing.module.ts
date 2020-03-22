@@ -13,7 +13,7 @@ import { UserComponent } from './user/user.component';
 const routes: Routes = [
 
   {path: "login", component: LoginComponent},
-  {path: "profile", component: ProfileComponent},
+  {path: "profile", component: ProfileComponent}, 
   {path: "", component: WelcomeComponent},
   {path: "signup", component: SignupComponent},
   {path: "dashboard", component: DashboardComponent},

@@ -12,7 +12,6 @@ export class SignupService {
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
-  private users: Users;
   
 
   constructor(
@@ -29,3 +28,4 @@ export class SignupService {
   }
 
 }
+    

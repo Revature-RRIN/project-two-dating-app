@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.beans.Answers;
 import com.revature.beans.Questions;
+import com.revature.services.AnswerService;
 import com.revature.services.QuestionService;
 
 @RestController
@@ -23,21 +25,28 @@ public class QuestionController {
 	
 	@Autowired
 	private QuestionService qs;
-	
-	@GetMapping()
-	public ResponseEntity<Set<Questions>> getAllQuestions() {
-		return ResponseEntity.ok(qs.getAllQuestions());
-	}
-	
-	@PostMapping
-	public ResponseEntity<Integer> addBook(@RequestBody Questions q) {
-		return ResponseEntity.status(201).body(qs.addQuestion(q));
-	}
+	/*
+	 * @Autowired private AnswerService as;
+	 */
 	
 	
-	@DeleteMapping(value="{questionId}")
-	public ResponseEntity<Void> deleteQuestions(@PathVariable("questionId") Integer id) {
-		qs.deleteQuestions(qs.getQuestionById(id));
-		return ResponseEntity.noContent().build();
-	}
+	  @GetMapping() public ResponseEntity<Set<Questions>> getAllQuestions() {
+	  return ResponseEntity.ok(qs.getAllQuestions()); }
+	 
+	
+	/*
+	 * @PostMapping public ResponseEntity<Integer> addAnswer(@RequestBody Answers a)
+	 * { System.out.println(a);
+	 * 
+	 * return ResponseEntity.status(201).body(as.addAnswers(a)); }
+	 */
+	
+	
+	
+	  @DeleteMapping(value="{questionId}") public ResponseEntity<Void>
+	  deleteQuestions(@PathVariable("questionId") Integer id) {
+	  qs.deleteQuestions(qs.getQuestionById(id)); return
+		  ResponseEntity.noContent().build(); 
+	  }
+	 
 }

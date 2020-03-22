@@ -25,6 +25,7 @@ public class Answers {
 	@Column
 	private Integer response;
 	
+	
 	//QUESTION; NOT ID!!
 	
 	// Need @ManyToOne mapping for user?? Given answers have a user that provided
@@ -37,18 +38,23 @@ public class Answers {
 		super();
 	}
 
-	public Answers(Integer answersId) {
+	public Answers(Integer response) {
 		super();
-		this.answersId = answersId;
+		this.response = response;
 	}
+	
+	/*
+	 * public Answers(Integer answersId) { super(); this.answersId = answersId; }
+	 */
 
-	public Answers(Integer answersId, Questions whichQuestion, Integer response) {
+	public Answers(Integer answersId,Integer response) {
 		super();
 		this.answersId = answersId;
-		this.whichQuestion = whichQuestion;
+		//this.whichQuestion = whichQuestion;
 		this.response = response;
 	}
 
+	
 	public Integer getAnswersId() {
 		return answersId;
 	}
@@ -61,7 +67,7 @@ public class Answers {
 		return whichQuestion;
 	}
 
-	public void setWhichQuestionId(Questions whichQuestion) {
+	public void setWhichQuestion(Questions whichQuestion) {
 		this.whichQuestion = whichQuestion;
 	}
 
@@ -72,6 +78,7 @@ public class Answers {
 	public void setResponse(Integer response) {
 		this.response = response;
 	}
+
 
 	@Override
 	public int hashCode() {

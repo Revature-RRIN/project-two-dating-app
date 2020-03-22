@@ -3,11 +3,16 @@
 <button class="row btn btn-primary" (click)="meetUp()">Meet up!</button>
 <button class="row btn btn-primary" (click)="reportUser()">Report User</button>
 
+<!--
+should be:
+this.message.senderId.usersId == this.currentUser.user.usersId
 
-<ul *ngFor="let specificMessage of messageList">
+-->
+
+<ul *ngFor="let message of messageList">
   <div *ngIf="condition; then thenBlock; else elseBlock"></div>
-  <ng-template #thenBlock><div class="leftSide">{{specificMessage}}</div></ng-template>
-<ng-template #elseBlock><div class="rightSide">{{specificMessage}}</div></ng-template>
+  <ng-template #thenBlock><div class="leftSide">{{message.remark}}</div></ng-template>
+<ng-template #elseBlock><div class="rightSide">{{message.remark}}</div></ng-template>
 </ul>
 
 
@@ -15,5 +20,8 @@
 <input class="col" type="text" (keydown.enter)="sendMessage()" [(ngModel)]="remark">
 <button class="row btn btn-primary" (click)="sendMessage()">Submit</button>
 </div>
+
+<button class="row btn btn-primary" (click)="displayMessages()">displaymessages</button>
+
 
 </div>

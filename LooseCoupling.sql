@@ -60,11 +60,12 @@ create table messages (
     sender_id number (3),
     receiver_id number (3),
     remark varchar2 (300),
-    constraint fk_id foreign key (messages_id) references matches (matches_id),
+--    constraint fk_id foreign key (messages_id) references matches (matches_id),
     constraint fk_sender_id foreign key (sender_id) references users (users_id),
     constraint fk_receiver_id foreign key (receiver_id) references users (users_id) 
     --or should it be user-id to include admins??
 );
+--ALTER TABLE messages DROP CONSTRAINT FK_id;
 
 create table questions (
     question_id number (2) primary key,

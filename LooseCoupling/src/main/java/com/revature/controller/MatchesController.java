@@ -49,7 +49,7 @@ public class MatchesController {
 	@PutMapping(value="/matches/{matchId}")
 	public ResponseEntity<Matches> updateMatch(@PathVariable("matchId") int id, @RequestBody Matches m) {
 		// possible error handling?
-		ms.updateMatch(m);
+		ms.acceptMatch(m);
 		return ResponseEntity.ok(ms.getMatchById(id));
 	}
 	

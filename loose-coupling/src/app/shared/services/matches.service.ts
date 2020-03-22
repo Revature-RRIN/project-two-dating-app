@@ -13,6 +13,8 @@ export class MatchesService {
     "Content-Type": "application/json"
   });
 
+  match: Matches;
+
   constructor(private url: UrlService, private http: HttpClient) {}
 
   getMatches(): Observable<Matches[]> {
@@ -26,5 +28,24 @@ export class MatchesService {
     return this.http
       .post(this.appUrl, body, { headers: this.headers, withCredentials: true })
       .pipe(map(resp => resp as Users));
+  }
+
+  acceptMatch(match: Matches): Observable<object> {
+    const url = this.appUrl + '/' + match.matchesId;
+    const body = JSON.stringify(match);
+
+    return this.http
+      .put(url, body, { headers: this.headers, withCredentials: true })
+      .pipe(map(resp => resp as Matches));
+  }
+
+  rejectMatch(match: Matches): Observable<object> {
+    const url = this.appUrl + '/' + match.matchesId;
+    
+    return this.http.delete(url, {withCredentials: true}).pipe(
+      map(success => {
+        this.match = null;
+        return success;
+      }))
   }
 }

@@ -3,6 +3,7 @@ import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
 import { Router } from '@angular/router';
 import { MatchesService } from '../shared/services/matches.service';
+import { Matches } from '../shared/classes/matches';
 
 @Component({
   selector: 'app-user',
@@ -11,6 +12,9 @@ import { MatchesService } from '../shared/services/matches.service';
 })
 
 export class UserComponent implements OnInit {
+  myMatches: Matches[];
+  matchedUser: Users;
+
   users: Users
   clickedMessage: boolean = false;
   @Output() submitted = new EventEmitter<Users>();
@@ -45,6 +49,15 @@ export class UserComponent implements OnInit {
   }
 
   viewMessages(): void {
+
+
+    this.users = this.us.getUser();
+    console.log(this.users);
+    this.match.getMatches().subscribe(
+      matches => {
+        this.myMatches = matches;
+      }
+    )
     this.clickedMessage = true;
   }
 

@@ -23,10 +23,11 @@ public class MatchesHibernate implements MatchesDAO{
 		Matches m = new Matches();
 		UsersDAO ud = new UsersHibernate();
 		Users u1 = new Users();
-		u1 = ud.getUserById(3);
-		m = md.matchCompatibleUser(u1); 
-		md.acceptMatch(m);
-		System.out.println(md.getAllMatches());
+		u1 = ud.getUserById(17);
+		md.matchByPersonalityType(u1);
+		//m = md.matchCompatibleUser(u1); 
+		//md.acceptMatch(m);
+		//System.out.println(md.getAllMatches());
 	}
 	private HibernateUtil hu = HibernateUtil.getInstance();
 
@@ -113,6 +114,7 @@ public class MatchesHibernate implements MatchesDAO{
 		}
 	}
 
+	//This is the old one I used for testing
 	@Override
 	public Matches matchCompatibleUser(Users u1) {
 		System.out.println("Attempting to create a match between users.");
@@ -127,6 +129,22 @@ public class MatchesHibernate implements MatchesDAO{
 		m.setMatchStatus(s);
 		int matchId = md.addMatch(m);
 		return md.getMatchById(matchId);
+	}
+
+	@Override
+	public void matchByPersonalityType(Users u1) {
+		StatusDAO sd = new StatusHibernate();
+		Status s = sd.getStatusById(1);
+		UsersDAO ud = new UsersHibernate();
+		Set<Users> compGroup = ud.getCompatibleUserGroup(u1);
+		MatchesDAO md = new MatchesHibernate();
+		Matches m = new Matches();
+		for (Users user : compGroup) {
+			m.setUser1(u1);
+			m.setUser2(user);
+			m.setMatchStatus(s);
+			md.addMatch(m);
+		}
 	}
 
 	@Override

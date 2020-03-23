@@ -15,6 +15,7 @@ public interface MatchesDAO {
 	public void updateMatch(Matches m);
 	public void deleteMatch(Matches m);
 	public Matches matchCompatibleUser(Users u1);
+	public void matchByPersonalityType(Users u1);
 	public void acceptMatch(Matches m);
 	public void rejectMatch(Matches m);
 }

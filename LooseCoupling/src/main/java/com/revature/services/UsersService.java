@@ -12,4 +12,5 @@ public interface UsersService {
 	public Users updateUser(Users u);
 	public void deleteUser(Users u);
 	public Users findCompatibleUser(Users u);
+	public Set<Users> getCompatibleUserGroup(Users u);
 }

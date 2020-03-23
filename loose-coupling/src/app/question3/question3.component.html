@@ -1,0 +1,62 @@
+<div class="navbar">
+    <app-nav-bar></app-nav-bar>
+</div>
+
+<div class="container">
+
+
+<!--<ul>
+    <li*ngfor="let q of questions">
+      {{ q.question }}
+    </li>
+  </ul>-->
+
+
+<div class="container" >
+    
+    <h3>Answer personality questions:</h3>
+    <div *ngFor="let q of questions">
+         <div class="formgroup" *ngIf="q.questionId==3">
+        <br>
+        <p>{{q.question}}</p> <br>
+    
+        <select class="form-control" id="grade" [(ngModel)]="users.score">
+            <option [value]="3">A relaxed beach getaway</option>
+            <option [value]="30">A camping trip in the Mountains</option>
+            <option [value]="300">A trip to New Orleans for Mardi Gras</option>
+            <option [value]="3000">A culture-based tour of France</option>
+        </select>
+    </div>
+            
+      <!--  <input class="col" type="text" [(ngModel)]="answers.response">
+
+    
+     
+    <div class="formgroup" *ngIf="q.questionId==2">
+        <br>
+        <p>{{q.question}}</p> <br>
+        <select class="form-control" id="grade" [(ngModel)]="answers.response " >
+            <option [value]="1">Arts and Crafts</option>
+            <option [value]="2">Being outdoors</option> 
+            <option [value]="3">Watching TV and Sports</option>
+            <option [value]="4">Reading</option>
+        </select>
+    </div>
+     
+
+
+      
+    <div class="formgroup" *ngIf="q.questionId==3">
+        <br>
+        <p>{{q.question}}</p> <br>
+        <select class="form-control" id="grade" [(ngModel)]="answers.response">
+            <option [value]="1">A relaxed beach getaway</option>
+            <option [value]="2">A camping trip in the Mountains</option>
+            <option [value]="3">A trip to New Orleans for Mardi Gras</option>
+            <option [value]="4">A culture-based tour of France</option>
+        </select>
+    </div>-->
+
+</div>
+
+    <button type="submit" (click)="submit()" id="submit">Submit</button>

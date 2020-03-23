@@ -34,15 +34,15 @@ public class MatchesController {
 		return ResponseEntity.ok(ms.getAllMatches());
 	}
 	
-	/*
-	 * @PostMapping(value="/matches") public ResponseEntity<Integer>
-	 * addMatch(@RequestBody Matches m) { return
-	 * ResponseEntity.status(201).body(ms.addMatch(m)); }
-	 */
-	
-	@PostMapping(value="/matches")
+	/*@PostMapping(value="/matches")
 	public ResponseEntity<Matches> findMatch(@RequestBody Users u) {
 		return ResponseEntity.status(201).body(ms.matchCompatibleUser(u));
+	}*/
+	
+	@PostMapping(value="/matches")
+	public ResponseEntity<Void> findMatch(@RequestBody Users u) {
+		ms.matchByPersonalityType(u);
+		return ResponseEntity.noContent().build();
 	}
 
 	

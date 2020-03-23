@@ -38,11 +38,11 @@ export class Question3Component implements OnInit {
       
     this.users = this.us.getUser(); 
     
-    this.questionsServices.getQuestions().subscribe(
-      questions => {
-        this.questions = questions;
-      }
-    );
+    // this.questionsServices.getQuestions().subscribe(
+    //   questions => {
+    //     this.questions = questions;
+    //   }
+    // );
     }
 
   submit(): void {
@@ -52,7 +52,6 @@ export class Question3Component implements OnInit {
         this.router.navigate(["user"])
       }
     );
-    //this.router.navigate(["user"]);
   } 
       
 

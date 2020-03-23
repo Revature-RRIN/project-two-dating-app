@@ -19,12 +19,12 @@ export class QuestionService {
     private http: HttpClient
     ) { }
 
-    getQuestions(): Observable<Questions[]> {
+   /* getQuestions(): Observable<Questions[]> {
       // withCredentials enables the sending of cookies.
       return this.http.get(this.appUrl, {headers: this.headers,withCredentials: true} ).pipe(
         map( resp => resp as Questions[] )
       );
-    }
+    }*/
 
     addAnswers(answers:Answers):Observable<Answers> {
       const body = JSON.stringify(answers);

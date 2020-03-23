@@ -45,6 +45,7 @@ export class QuestionsComponent implements OnInit {
     // this.ps.updateProfile(this.users).subscribe(
     //   users => {
     //     this.users = users;
+       
         this.router.navigate(["question2"])
       // }
     // );

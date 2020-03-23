@@ -12,7 +12,7 @@
   <tr *ngFor="let m of matches">
     <ng-container *ngIf="users.usersId == m.user1.usersId || users.usersId == m.user2.usersId">
       <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.firstname }} {{ m.user1.lastname }}</td>
-      <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.firstname }} {{ m.user1.lastname }}</td>
+      <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.firstname }} {{ m.user2.lastname }}</td>
       <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.age }}</td>
       <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.age }}</td>
       <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.gender }}</td>

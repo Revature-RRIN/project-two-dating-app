@@ -20,7 +20,7 @@ public class UsersHibernate implements UsersDAO {
 		Users u = ud.getUserById(5);
 		ud.getCompatibleUser(u);
 	}
-	
+
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	private Logger log = Logger.getLogger(UsersHibernate.class);
 
@@ -127,6 +127,7 @@ public class UsersHibernate implements UsersDAO {
 		}
 	}
 
+	//This is the old one I used just for testing
 	@Override
 	public Users getCompatibleUser(Users u) {
 		System.out.println("Calculating minimum difference.");
@@ -136,15 +137,131 @@ public class UsersHibernate implements UsersDAO {
 		Set<Users> usersSet = ud.getAllUsers();
 		for (Users user : usersSet) {
 			if (!(user.getUsersId() == u.getUsersId())) {
-				if (Math.abs((user.getScore() - u.getScore()) )< diff) {
+				if (Math.abs((user.getScore() - u.getScore())) < diff) {
 					diff = Math.abs((user.getScore() - u.getScore()));
 					index = user.getUsersId();
 				}
-                    
-			}	
+
+			}
 		}
 		System.out.println("The best match is... " + ud.getUserById(index).getFirstname());
 		return ud.getUserById(index);
+	}
+
+	@Override
+	public Set<Users> getCompatibleUserGroup(Users u) {
+		Set<Users> compatibles = new HashSet<Users>();
+		UsersDAO ud = new UsersHibernate();
+		// First assign the user a type by their score
+		int type;
+		if (u.getScore() < 225) {
+			type = 1;
+		} else if (u.getScore() >= 225 && u.getScore() < 275) {
+			type = 2;
+		} else if (u.getScore() >= 275 && u.getScore() < 325) {
+			type = 3;
+		} else {
+			type = 4;
+		}
+
+		// Get user's preferences
+		int pref = 0;
+		if (u.getSexPref().equalsIgnoreCase("Heterosexual")) {
+			pref = 1;
+		} else if (u.getSexPref().equalsIgnoreCase("Homosexual")) {
+			pref = 2;
+		} else {
+			pref = 3;
+		}
+
+		// Retrieve a group of users that match above variables
+		Set<Users> usersSet = ud.getAllUsers();
+		for (Users user : usersSet) {
+			if (!(user.getUsersId() == u.getUsersId())) { // A user shouldn't get matched with himself
+				if (type == 1) { // Personality type 1
+					if (user.getScore() < 225) {
+						if (pref == 1) { // User is straight
+							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}			
+							}
+						} else if (pref == 2) { // User is gay
+							if (u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Homosexual")) { // Make sure other user is also gay
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}		
+							}
+						}
+					}
+				} else if (type == 2) { // Personality type 2
+					if (user.getScore() >= 225 && user.getScore() < 275) {
+						if (pref == 1) { // User is straight
+							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}			
+							}
+						} else if (pref == 2) { // User is gay
+							if (u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Homosexual")) { // Make sure other user is also gay
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}		
+							}
+						}
+					}
+				} else if (type == 3) { // Personality type 3
+					if (user.getScore() >= 275 && user.getScore() < 325) {
+						if (pref == 1) { // User is straight
+							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}			
+							}
+						} else if (pref == 2) { // User is gay
+							if (u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Homosexual")) { // Make sure other user is also gay
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}		
+							}
+						}
+					}
+				} else { // Personality type 4
+					if (user.getScore() >= 325) {
+						if (pref == 1) { // User is straight
+							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}			
+							}
+						} else if (pref == 2) { // User is gay
+							if (u.getGender().equalsIgnoreCase(user.getGender())) {
+								if (user.getSexPref().equalsIgnoreCase("Homosexual")) { // Make sure other user is also gay
+									if (user.getAgePref() >= (u.getAgePref() - 5) && user.getAgePref() <= (u.getAgePref() + 5)) { // Check age range
+										compatibles.add(user);
+									}
+								}		
+							}
+						}
+					}
+				}
+			}
+		}
+		return compatibles;
 	}
 
 }

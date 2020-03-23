@@ -60,4 +60,10 @@ public class MatchesServiceHibernate implements MatchesService {
 		return md.getAllMatches();
 	}
 
+	@Override
+	public void matchByPersonalityType(Users u1) {
+		md.matchByPersonalityType(u1);
+		
+	}
+
 }

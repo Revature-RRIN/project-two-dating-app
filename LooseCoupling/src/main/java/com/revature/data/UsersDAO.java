@@ -13,4 +13,5 @@ public interface UsersDAO {
 	public Users updateUser(Users u);
 	public void deleteUser(Users u);
 	public Users getCompatibleUser(Users u);
+	public Set<Users> getCompatibleUserGroup(Users u);
 }

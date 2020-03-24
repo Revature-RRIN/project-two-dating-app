@@ -2,44 +2,102 @@
   <div class="container border">
     <ng-container>
       <div class="row">
-        <span class="col">First: </span>
+        <label >First:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.firstname">
+      </div>
+     
+      <div class="row">
+        <label >Last:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.lastname">
+      </div>
+     
+        
+      <div class="row">
+        <label >Gender:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.gender">
+      </div>
+      
+      <div class="row">
+        <label >Age:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.age">
+      </div>
+      
+      <div class="row">
+        <label >Location:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.location">
+      </div>
+      
+      <div class="row">
+        <label >Sexual Preference:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.sexPref">
+      </div>
+      
+      <div class="row">
+        <label >Age Preference:</label>
+        <br>
+        <input class="col" type="text" [(ngModel)]="users.agePref">
+      </div>
+      <button class="submitbtn" (click)="signup()">Submit</button>
+    </ng-container>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--<div class="container border">
+    <ng-container>
+      <div class="row">
+        <span class="col">First: </span><br>
         <input class="col" type="text" [(ngModel)]="users.firstname">
       </div>
       <div class="row">
-        <span class="col">Last: </span>
+        <span class="col">Last: </span><br>
         <input class="col" type="text" [(ngModel)]="users.lastname">
       </div>
       <div class="row">
-        <span class="col">Username: </span>
+        <span class="col">Username: </span><br>
         <input class="col" type="text" [(ngModel)]="users.username">
       </div>
       <div class="row">
-        <span class="col">Password: </span>
+        <span class="col">Password: </span><br>
         <input class="col" type="password" [(ngModel)]="users.pass">
       </div>
       <div class="row">
-        <span class="col">Gender: </span>
+        <span class="col">Gender: </span><br>
         <input class="col" type="text" [(ngModel)]="users.gender"> 
       </div>
       <div class="row">
-        <span class="col">Age: </span>
+        <span class="col">Age: </span><br>
         <input class="col" type="text" [(ngModel)]="users.age"> 
       </div>
       <div class="row">
-        <span class="col">Location: </span>
+        <span class="col">Location: </span><br>
         <input class="col" type="text" [(ngModel)]="users.location">
       </div>
       <div class="row">
-        <span class="col">Sexual Orientation: </span>
+        <span class="col">Sexual Orientation: </span><br>
         <input class="col" type="text" [(ngModel)]="users.sexPref">
       </div>
       <div class="row">
-        <span class="col">Age Preference: </span>
+        <span class="col">Age Preference: </span><br>
         <input class="col" type="number" [(ngModel)]="users.agePref">
       </div>
       <button class="row btn btn-primary" (click)="signup()">Register</button>
     </ng-container>
   
-  </div>
+  </div>-->
     
+
+
 

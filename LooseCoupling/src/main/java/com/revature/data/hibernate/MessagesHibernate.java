@@ -19,14 +19,14 @@ import com.revature.utils.LogUtil;
 public class MessagesHibernate implements MessagesDAO{
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
-	public Set<Messages> getConversationByUsers(Users loggedUser, Users matchedUser)	{
+	public Set<Messages> getConversationByUsers(int loggedUser, int matchedUser)	{
 		Session s = hu.getSession();
 		String query = "FROM Messages msg where sender_id = :a AND receiver_id = :b";
 		//		String query = "FROM Messages msg where sender_id = (:blob) AND receiver_id = :marketName";
 		Query<Messages> q = s.createQuery(query, Messages.class);
 
-		int a = loggedUser.getUsersId();
-		int b = matchedUser.getUsersId();
+		int a = loggedUser;
+		int b = matchedUser;
 	    q.setParameter("a", a);
 	    q.setParameter("b", b);
 

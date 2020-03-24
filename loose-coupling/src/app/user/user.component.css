@@ -8,3 +8,11 @@ img {height: 12em; width: 15em;}
 
 #logoutbtn {position: absolute;
             right: 0px;}
+
+
+button {background-color: rgb(240, 184, 131);
+        font-family: Century Gothic, sans-serif;
+        color: #ffffff}
+
+p {color: #7e7785;}
+h3 {color: #7e7785;}

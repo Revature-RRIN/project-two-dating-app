@@ -1,3 +1,10 @@
 li  {
     list-style-type: none;
     }
+
+
+button {background-color: rgb(193, 235, 193);
+        font-family: Century Gothic, sans-serif;
+        color: #7e7785}
+
+li {color: #7e7785;}

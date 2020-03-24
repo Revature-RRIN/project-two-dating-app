@@ -8,7 +8,6 @@ import { MatchesService } from '../shared/services/matches.service';
 import { ProfileService } from '../shared/services/createprofile.service';
 import { Matches } from '../shared/classes/matches';
 
-
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
@@ -16,6 +15,11 @@ import { Matches } from '../shared/classes/matches';
 })
 export class MessagesComponent implements OnInit, OnChanges {
   myMatches: Matches[];
+  matchedUser: Users;
+
+  setMatchedUser(matchedUser: Users) {
+    this.matchedUser = matchedUser;
+  }
 
   private message: Messages;
   condition: boolean = false;
@@ -27,7 +31,6 @@ export class MessagesComponent implements OnInit, OnChanges {
   remark: string;
 
   users: Users;
-  matchedUser: Users;
 
   constructor(private messageService: MessageService,
     private router: Router, private us: UsersService, private ms: MatchesService, private ps: ProfileService) {
@@ -39,7 +42,6 @@ export class MessagesComponent implements OnInit, OnChanges {
       receiverId: null
     }
   }
-
   messageList: Messages[];
 
   ngOnInit(): void {
@@ -49,8 +51,8 @@ export class MessagesComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.displayMessages();
+    this.matchedUser = this.onChange(event);
   }
-
 
   getMatches() {
     this.users = this.us.getUser();
@@ -62,13 +64,15 @@ export class MessagesComponent implements OnInit, OnChanges {
     )
   }
 
-
-  public onChange(event): void {
+  public onChange(event): Users {
     this.matchedUser = event.target.value;
-    console.log(this.matchedUser);
+    console.log("chicken noodle soup " + this.matchedUser);
+    this.setMatchedUser(this.matchedUser);
+    return this.matchedUser;
   }
 
   displayMessages() {
+    console.log(this.matchedUser.firstname);
     this.messageService.viewMessages(this.users, this.matchedUser).subscribe(
       resp => {
         this.messageList = resp.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
@@ -87,6 +91,7 @@ export class MessagesComponent implements OnInit, OnChanges {
     remark: string;
   */
   sendMessage(): void {
+    console.log(this.matchedUser.firstname);
     this.message.remark = this.remark;
     this.message.senderId = this.users;
     this.message.receiverId = this.matchedUser;

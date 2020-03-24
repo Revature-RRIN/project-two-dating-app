@@ -15,11 +15,11 @@ import { Matches } from '../shared/classes/matches';
 })
 export class MessagesComponent implements OnInit, OnChanges {
   myMatches: Matches[];
-  matchedUser: Users;
 
-  setMatchedUser(matchedUser: Users) {
-    this.matchedUser = matchedUser;
-  }
+//  setMatchedUser(matchedUser: Users) {
+//    this.matchedUser = matchedUser;
+//    return this.matchedUser;
+//  }
 
   private message: Messages;
   condition: boolean = false;
@@ -27,6 +27,7 @@ export class MessagesComponent implements OnInit, OnChanges {
 
 
   @Input() messages: Messages;
+  @Input() matchedUser: Users;
   @Output() submitted = new EventEmitter<Messages>();
   remark: string;
 
@@ -51,7 +52,8 @@ export class MessagesComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.displayMessages();
-    this.matchedUser = this.onChange(event);
+
+
   }
 
   getMatches() {
@@ -64,11 +66,9 @@ export class MessagesComponent implements OnInit, OnChanges {
     )
   }
 
-  public onChange(event): Users {
+  public onChange(event): void {
     this.matchedUser = event.target.value;
-    console.log("chicken noodle soup " + this.matchedUser);
-    this.setMatchedUser(this.matchedUser);
-    return this.matchedUser;
+    console.log("this matched user's name is: " + this.matchedUser.firstname);
   }
 
   displayMessages() {

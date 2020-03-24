@@ -23,7 +23,8 @@ const routes: Routes = [
   {path: "user", component: UserComponent},
   {path: "messages", component: MessagesComponent},
   {path: "admin", component: AdminComponent},
-  {path: "matches", component: MatchesComponent},
+  {path: "matches", component: MatchesComponent}
+  
 ];
 
 @NgModule({

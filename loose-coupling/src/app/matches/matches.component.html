@@ -2,16 +2,22 @@
 <h1> Hi {{ users.firstname }}</h1>
 <table>
   <tr>
-    <th>Match</th>
-    <th>User 1</th>
-    <th>User 2</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Location</th>
     <th>Status</th>
   </tr>
   <tr *ngFor="let m of matches">
     <ng-container *ngIf="users.usersId == m.user1.usersId || users.usersId == m.user2.usersId">
-      <td>{{ m.matchesId }}</td>
-      <td>{{ m.user1.firstname }}</td>
-      <td>{{ m.user2.firstname }}</td>
+      <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.firstname }} {{ m.user1.lastname }}</td>
+      <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.firstname }} {{ m.user2.lastname }}</td>
+      <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.age }}</td>
+      <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.age }}</td>
+      <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.gender }}</td>
+      <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.gender }}</td>
+      <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.location }}</td>
+      <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.location }}</td>
       <td>{{ m.matchStatus.statusState }}</td>
       <td><button class="accept" (click)="acceptMatch(m, $event)">Accept</button></td>
       <td><button class="reject" (click)="rejectMatch(m)">Reject</button></td>

@@ -44,7 +44,8 @@ import { UploadResponsesService } from './shared/services/answer.service';
     AdminComponent,
     BanUsersComponent,
     MatchesComponent,
-    NotificationsComponent,
+    NotificationsComponent
+    
   ],
   imports: [
     BrowserModule,

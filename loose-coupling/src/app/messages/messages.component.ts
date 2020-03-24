@@ -1,31 +1,36 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnChanges } from '@angular/core';
 import { Messages } from '../shared/classes/messages';
 import { MessageService } from '../shared/services/message.service';
 import { Router } from '@angular/router';
 import { Users } from '../shared/classes/users';
 import { UsersService } from '../shared/services/users.service';
-import { Currentuser } from '../shared/classes/currentuser';
 import { MatchesService } from '../shared/services/matches.service';
 import { ProfileService } from '../shared/services/createprofile.service';
-
+import { Matches } from '../shared/classes/matches';
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.css']
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent implements OnInit, OnChanges {
+  myMatches: Matches[];
+
+//  setMatchedUser(matchedUser: Users) {
+//    this.matchedUser = matchedUser;
+//    return this.matchedUser;
+//  }
+
   private message: Messages;
   condition: boolean = false;
+  thisMatch: Matches;
 
 
-  users: Users;
   @Input() messages: Messages;
+  @Input() matchedUser: Users;
   @Output() submitted = new EventEmitter<Messages>();
   remark: string;
-
-  currentUser: Currentuser;
-  matchedUser: Users;
+  users: Users;
 
   constructor(private messageService: MessageService,
     private router: Router, private us: UsersService, private ms: MatchesService, private ps: ProfileService) {
@@ -33,53 +38,60 @@ export class MessagesComponent implements OnInit {
     this.message = {
       messagesId: null,
       remark: 'null',
-      senderId: null,
-      receiverId: null
+      sender: null,
+      receiver: null
     }
   }
-
   messageList: Messages[];
 
   ngOnInit(): void {
+    this.users = this.us.getUser();
+    this.getMatches();
+  }
 
-    //    this.users = this.us.getUser();
+  ngOnChanges() {
+    this.displayMessages();
+  }
 
-    //what I'll need                    ^^^
-    //fake login cuz its easier for now vvv
-
-    this.us.login('admin', 'pass').subscribe(
-      resp => {
-        this.currentUser = resp;
+  getMatches() {
+    this.users = this.us.getUser();
+    console.log(this.users);
+    this.ms.getMatches().subscribe(
+      matches => {
+        this.myMatches = matches;
       }
     )
+  }
+
+  match: Matches;
+  public onChange(event): void {
+    console.log(event.target.value);
+    const userPass: string[] = event.target.value.split(" ", 2);
+    const thisUsername: string = userPass[0];
+    const thisPassword: string = userPass[1];
+
+    this.us.login(thisUsername, thisPassword).subscribe(
+      resp => {
+        console.log(resp.user.firstname);
+        this.matchedUser = resp.user;
+      }
+    );
 
   }
 
-  /*
-a. FIND MATCHES (get all "users" I match with)
-b. For EACH user I match with, generate a new "Conversation" component
-c. get ALL the MESSAGES where sender is thisuser and receiver is matched user
-c2. get all the messages where sender is matched user and receiver is this user
-put together
-
-*/
-
-onChanges() {
-  this.displayMessages();
-}
-
   displayMessages() {
-
-    this.messageService.viewMessages(this.currentUser.user).subscribe(
+    console.log(this.matchedUser.firstname);
+    this.messageService.viewMessages(this.users, this.matchedUser).subscribe(
       resp => {
-        //        resp = this.messageList.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
-
         this.messageList = resp.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
       }
     )
-      //this.condition = (this.message.senderId.usersId == this.currentUser.user.usersId);
-
   }
+
+
+
+  //this.condition = (this.message.senderId.usersId == this.currentUser.user.usersId);
+
   /*
     messagesId: number;
     senderId: number;
@@ -87,9 +99,16 @@ onChanges() {
     remark: string;
   */
   sendMessage(): void {
+    console.log(this.matchedUser.firstname);
+    console.log("sending with the sender as . . . " + this.users.firstname);
+    console.log("and the reciever being ... " + this.matchedUser.firstname);
     this.message.remark = this.remark;
-    this.message.senderId = this.currentUser.user;//this.users;
-    this.message.receiverId = this.currentUser.user;//"matched user";
+    this.message.sender = this.users;
+    this.message.receiver = this.matchedUser;
+
+    console.log(this.message.sender);
+    console.log(this.message.receiver);
+
     this.messageService.sendMessage(this.message).subscribe(
       messages => {
         this.messages = messages;
@@ -102,14 +121,14 @@ onChanges() {
   }
 
   reportUser() {
-//    this.ps.updateProfile(this.matchedUser);
+    //    this.ps.updateProfile(this.matchedUser);
     // change user status to "reported"
     // which will then show to admin
   }
 
   meetUp() {
     //move match status to - one has pressed meet up, and if both have, then meet up "text" is send FROm senderID to Receiver
-  
+
   }
 
 }

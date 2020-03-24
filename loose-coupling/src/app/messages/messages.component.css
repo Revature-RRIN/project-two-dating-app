@@ -10,10 +10,18 @@
 
 .rightSide  {
     text-align: right;
+    max-width: 75px;
+    max-height: 150px;
 }
 
 .leftSide   {
     text-align: left;
+    max-width: 75px;
+    max-height: 150px;
+}
+
+.topButtons {
+    text-align: center;
 }
 
 button  {
@@ -22,4 +30,9 @@ button  {
 
 .messager   {
     padding: 10px;
+}
+
+#displayButton  {
+    width: stretch;
+    height: 50px;
 }

@@ -1,7 +1,10 @@
 <div class="messagePopup">
 
-  <button class="row btn btn-primary" (click)="meetUp()">Meet up!</button>
-  <button class="row btn btn-primary" (click)="reportUser()">Report User</button>
+  <div class="topButtons">
+  <button id="leftButton" class="row btn btn-primary" (click)="meetUp()">Meet up!</button>
+
+  <button id="rightButton" class="row btn btn-primary" (click)="reportUser()">Report User</button>
+</div>
   <br>
 
 
@@ -34,7 +37,7 @@ this.message.senderId.usersId == this.currentUser.user.usersId
     <button class="row btn btn-primary" (click)="sendMessage()">Submit</button>
   </div>
 
-  <button class="row btn btn-primary" (click)="displayMessages()">displaymessages</button>
+  <button id="displayButton" class="row btn btn-primary" (click)="displayMessages()">displaymessages</button>
 
 
 </div>

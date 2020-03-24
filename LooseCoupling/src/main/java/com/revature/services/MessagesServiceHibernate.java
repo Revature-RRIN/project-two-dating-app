@@ -52,7 +52,7 @@ public class MessagesServiceHibernate implements MessagesService{
 	}
 
 	@Override
-	public Set<Messages> getConversationByUsers(Users u, Users u2) {
+	public Set<Messages> getConversationByUsers(int u, int u2) {
 		return md.getConversationByUsers(u, u2);
 	}
 

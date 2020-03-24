@@ -8,7 +8,6 @@ drop table matches cascade constraints;
 --drop table admini cascade constraints;
 drop table users cascade constraints;
 
-
 create table users (
     users_id number (3) primary key,
     usertype number (2),

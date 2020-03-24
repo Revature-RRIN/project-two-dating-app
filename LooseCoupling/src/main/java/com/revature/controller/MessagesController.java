@@ -34,19 +34,19 @@ public class MessagesController {
 	
 	@PostMapping(value="/displayMessages")
 	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody String iCollection) {
-		System.out.println("HERE IT IS");
 		System.out.println(iCollection);
 		String[] idCollection = iCollection.split(" ");
 		int u = Integer.valueOf(idCollection[0]);
 		int u2 = Integer.valueOf(idCollection[1]);
 		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
-		returnThis.addAll(ms.getConversationByUsers(u, u));
+		returnThis.addAll(ms.getConversationByUsers(u2, u));
 		return ResponseEntity.ok(returnThis);
 	}
 	
 	@PostMapping(value="/messages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
-		msg.setReceiver(msg.getSender());
+		System.out.println("PEEPEE POSTMAPPING VALUES ARE: " + msg.getSender().getFirstname());
+//		msg.setReceiver(msg.getSender());
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}
 

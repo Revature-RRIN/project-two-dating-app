@@ -16,7 +16,9 @@ import { ProfileService } from '../shared/services/createprofile.service';
 export class QuestionsComponent implements OnInit {
 
   @Input() //questions: Questions[];
-  total : number=0;
+  sum : number=0;
+  q1 : number = 0;
+  q2 : number =0;
   scores1  : Scores;
   scores2  : Scores;
   scores3  : Scores;
@@ -49,16 +51,17 @@ export class QuestionsComponent implements OnInit {
     }
 
     submit(){
-      this.total= this.total+ parseInt(this.scores1.qonescore) ;
+      this.q1=0;
+      this.q1= this.sum+ parseInt(this.scores1.qonescore) ;
       this.router.navigate(["questions"]);
-      console.log(this.total);
+      console.log(this.q1);
     }
 
     submit2(){
-      this.total= this.total+parseInt(this.scores2.qtwoscore);
+      this.q2= this.q1+parseInt(this.scores2.qtwoscore);
       this.router.navigate(["questions"]);
-      console.log(this.total);
-    }
+      console.log(this.q2); 
+    } 
 
   submit3(): void {
     this.ps.updateProfile(this.users).subscribe(

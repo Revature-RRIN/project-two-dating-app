@@ -1,37 +1,43 @@
 <div class="messagePopup">
 
-<button class="row btn btn-primary" (click)="meetUp()">Meet up!</button>
-<button class="row btn btn-primary" (click)="reportUser()">Report User</button>
-<br>
+  <div class="topButtons">
+  <button id="leftButton" class="row btn btn-primary" (click)="meetUp()">Meet up!</button>
+
+  <button id="rightButton" class="row btn btn-primary" (click)="reportUser()">Report User</button>
+</div>
+  <br>
 
 
-  <select (change)="onChange($event)">
-  <option selected disabled>Select a matched user to message</option>
-  
-  <option *ngFor="let match of myMatches" value="{{match.user2}}">{{match.user2.firstname}}</option>
+  <select *ngFor="let match of myMatches" (change)="onChange($event)">
+    <option selected disabled>Select a matched user to message</option>
+      <option value="{{match.user2.username}} {{match.user2.pass}}" *ngIf="match.user1.usersId==this.users.usersId">{{match.user2.firstname}}</option>
+      <option value="{{match.user1.username}} {{match.user1.pass}}" *ngIf="match.user2.usersId==this.users.usersId">{{match.user1.firstname}}</option>
+  </select>
 
-</select>
 
-
-<!--
+  <!--
 should be:
 this.message.senderId.usersId == this.currentUser.user.usersId
 
 -->
 
-<ul *ngFor="let message of messageList">
-  <div *ngIf="this.message.senderId.usersId == this.users.usersId; then thenBlock; else elseBlock"></div>
-  <ng-template #thenBlock><div class="leftSide">{{message.remark}}</div></ng-template>
-<ng-template #elseBlock><div class="rightSide">{{message.remark}}</div></ng-template>
-</ul>
+  <ul *ngFor="let message of messageList">
+    <div *ngIf="this.message.sender.usersId == this.users.usersId; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <div class="leftSide">{{message.remark}}</div>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div class="rightSide">{{message.remark}}</div>
+    </ng-template>
+  </ul>
 
 
-<div class="messager">
-<input class="col" type="text" (keydown.enter)="sendMessage()" [(ngModel)]="remark">
-<button class="row btn btn-primary" (click)="sendMessage()">Submit</button>
-</div>
+  <div class="messager">
+    <input class="col" type="text" (keydown.enter)="sendMessage()" [(ngModel)]="remark">
+    <button class="row btn btn-primary" (click)="sendMessage()">Submit</button>
+  </div>
 
-<button class="row btn btn-primary" (click)="displayMessages()">displaymessages</button>
+  <button id="displayButton" class="row btn btn-primary" (click)="displayMessages()">displaymessages</button>
 
 
 </div>

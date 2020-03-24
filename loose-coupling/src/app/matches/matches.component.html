@@ -1,10 +1,6 @@
-<div class="navbar">
-  <app-nav-bar></app-nav-bar>
-</div>
-
-<button (click)="goBack()">Back</button>
-
-<table id = "matches" border = 1>
+<app-nav-bar></app-nav-bar>
+<h1> Hi {{ users.firstname }}</h1>
+<table>
   <tr>
     <th>Name</th>
     <th>Age</th>
@@ -23,8 +19,8 @@
       <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.location }}</td>
       <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.location }}</td>
       <td>{{ m.matchStatus.statusState }}</td>
-      <td><button type="button" class="btn btn-success" (click)="acceptMatch(m, $event)">Accept</button></td>
-      <td><button type="button" class="btn btn-danger" (click)="rejectMatch(m)">Reject</button></td>
+      <td><button class="accept" (click)="acceptMatch(m, $event)">Accept</button></td>
+      <td><button class="reject" (click)="rejectMatch(m)">Reject</button></td>
     </ng-container>
   </tr>
 </table>

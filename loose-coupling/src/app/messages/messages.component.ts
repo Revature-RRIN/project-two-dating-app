@@ -8,7 +8,6 @@ import { MatchesService } from '../shared/services/matches.service';
 import { ProfileService } from '../shared/services/createprofile.service';
 import { Matches } from '../shared/classes/matches';
 
-
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
@@ -17,17 +16,21 @@ import { Matches } from '../shared/classes/matches';
 export class MessagesComponent implements OnInit, OnChanges {
   myMatches: Matches[];
 
+//  setMatchedUser(matchedUser: Users) {
+//    this.matchedUser = matchedUser;
+//    return this.matchedUser;
+//  }
+
   private message: Messages;
   condition: boolean = false;
   thisMatch: Matches;
 
 
   @Input() messages: Messages;
+  @Input() matchedUser: Users;
   @Output() submitted = new EventEmitter<Messages>();
   remark: string;
-
   users: Users;
-  matchedUser: Users;
 
   constructor(private messageService: MessageService,
     private router: Router, private us: UsersService, private ms: MatchesService, private ps: ProfileService) {
@@ -35,11 +38,10 @@ export class MessagesComponent implements OnInit, OnChanges {
     this.message = {
       messagesId: null,
       remark: 'null',
-      senderId: null,
-      receiverId: null
+      sender: null,
+      receiver: null
     }
   }
-
   messageList: Messages[];
 
   ngOnInit(): void {
@@ -51,7 +53,6 @@ export class MessagesComponent implements OnInit, OnChanges {
     this.displayMessages();
   }
 
-
   getMatches() {
     this.users = this.us.getUser();
     console.log(this.users);
@@ -62,15 +63,24 @@ export class MessagesComponent implements OnInit, OnChanges {
     )
   }
 
-
+  match: Matches;
   public onChange(event): void {
+    console.log(event.target.value);
+    const userPass: string[] = event.target.value.split(" ", 2);
+    const thisUsername: string = userPass[0];
+    const thisPassword: string = userPass[1];
 
+    this.us.login(thisUsername, thisPassword).subscribe(
+      resp => {
+        console.log(resp.user.firstname);
+        this.matchedUser = resp.user;
+      }
+    );
 
-    this.matchedUser = event.target.value;
-    console.log(this.matchedUser);
   }
 
   displayMessages() {
+    console.log(this.matchedUser.firstname);
     this.messageService.viewMessages(this.users, this.matchedUser).subscribe(
       resp => {
         this.messageList = resp.sort((a, b) => a.messagesId < b.messagesId ? -1 : a.messagesId > b.messagesId ? 1 : 0);
@@ -99,9 +109,16 @@ export class MessagesComponent implements OnInit, OnChanges {
     );
   */
   sendMessage(): void {
-    
-    this.message.senderId = this.users;
-    this.message.receiverId = this.matchedUser;
+    console.log(this.matchedUser.firstname);
+    console.log("sending with the sender as . . . " + this.users.firstname);
+    console.log("and the reciever being ... " + this.matchedUser.firstname);
+    this.message.remark = this.remark;
+    this.message.sender = this.users;
+    this.message.receiver = this.matchedUser;
+
+    console.log(this.message.sender);
+    console.log(this.message.receiver);
+
     this.messageService.sendMessage(this.message).subscribe(
       message => {
         this.message = message;

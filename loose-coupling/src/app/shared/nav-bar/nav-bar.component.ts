@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { Router } from '@angular/router';
+import { Users } from '../classes/users';
 
 
 @Component({
@@ -11,9 +12,21 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
   title = 'Loose Coupling';
 
-  constructor(public route: Router, private usersService: UsersService) { }
+  users:Users;
+
+  constructor(public router: Router, private us: UsersService) { }
 
   ngOnInit(): void {
   }
 
+  logOut(): void {
+    this.us.logout().subscribe(
+      resp => {
+        this.users = null;
+      }
+    );
+    this.router.navigate(["login"])
+  }
+
 }
+

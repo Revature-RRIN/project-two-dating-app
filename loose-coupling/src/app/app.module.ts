@@ -30,7 +30,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { MatchesService } from './shared/services/matches.service';
 import { UploadResponsesService } from './shared/services/answer.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,

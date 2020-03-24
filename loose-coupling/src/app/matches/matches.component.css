@@ -1,40 +1,48 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+td, th{
+    padding:8px;
+    font-size:14px;
+    width:150px;
+    text-align:center;
+    border:2px sold rgb(1, 10, 10); 
+  }
 
-#matches {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  table{
+    padding-left:20px;
+      width:100%;
+      background-color: #00FFFF; 
+      box-shadow:0px 0px 10px 2px rgb(228, 225, 225);
+      border-radius:7px 7px 7px 7px;
+      padding-right:-50px;
+    }
 
-#matches td,
-#matches th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+    tr:nth-child(even) {
+        background-color: rgb(231, 172, 117);;
+      }
 
-#matches tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+      h1{
+          height: 20px;
+          margin-left: 25px;
+          font-weight: bold;
+      }
 
-#matches tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
+      button{
+          margin-left: 5%;
+          width: 150px;
+          background-color: #00FFFF; 
+      }
 
-#matches tr:hover {
-  background-color: #ddd;
-}
+      tr:hover{
+        background-color:#FFFAF0;
+    }
 
-#matches th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #ffb6c1;
-  color: white;
-}
+    .accept:hover{
+        background-color: #228B22;
+        color:white;
+        padding: 5px;
+    }
 
-#mtc-btn {
-  float: right;
-  width: 300px;
-  border: 3px solid #73AD21;
-  padding: 10px;
-}
+    .reject:hover{
+        background-color: #FF4500;
+        color:white;
+        padding: 5px;
+    }

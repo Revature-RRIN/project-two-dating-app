@@ -2,49 +2,63 @@
   <app-nav-bar></app-nav-bar>
 </div>
 
-<h2>Profile</h2>
+
 <div class="container border">
+  <h2>Profile</h2>
   <ng-container>
     <div class="row">
-      <span class="col">First: </span>
+      <label >First:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.firstname">
     </div>
+    <hr>
     <div class="row">
-      <span class="col">Last: </span>
+      <label >Last:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.lastname">
     </div>
+    <hr>
     <div>
         <form class="col" action="upload.php" method ="POST" encType="multipart/form-data"
           handler = "https://lc-profile-bucket.s3.us-east-2.amazonaws.com">
             Upload your desired profile picture:
             <input
-              type = file (change)="fileEvent($event)" name = fileInput id = fileInput
+                type = file (change)="fileEvent($event)" name = fileInput id = fileInput
             /> 
             
         </form>
       </div>
+      <hr>
     <div class="row">
-      <span class="col">Gender: </span>
+      <label >Gender:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.gender">
     </div>
+    <hr>
     <div class="row">
-      <span class="col">Age: </span>
+      <label >Age:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.age">
     </div>
+    <hr>
     <div class="row">
-      <span class="col">Location: </span>
+      <label >Location:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.location">
     </div>
-
+    <hr>
     <div class="row">
-      <span class="col">Sexual Preference: </span>
+      <label >Sexual Preference:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.sexPref">
     </div>
+    <hr>
     <div class="row">
-      <span class="col">Age Preference: </span>
+      <label >Age Preference:</label>
+      <br>
       <input class="col" type="text" [(ngModel)]="users.agePref">
     </div>
-    <button class="row btn btn-primary" (click)="updateProfile()">Submit</button>
+    <button class="submitbtn" (click)="updateProfile()">Submit</button>
   </ng-container>
 
 </div>

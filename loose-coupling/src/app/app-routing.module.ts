@@ -12,7 +12,6 @@ import { AdminComponent } from './admin/admin.component';
 import { MatchesComponent } from './matches/matches.component';
 
 
-
 const routes: Routes = [
 
   {path: "login", component: LoginComponent},

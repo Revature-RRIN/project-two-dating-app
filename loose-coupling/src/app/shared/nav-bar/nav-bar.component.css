@@ -1,26 +1,49 @@
 nav {
-  background-color: #4b387e;
-  height: 75px;
-  box-shadow: black;
-  background-image: linear-gradient(#565554,#6f6e6d, #565554);
+  background-color: #479ba1;
+  height: 85px;
+  box-shadow: rgb(0, 0, 0);
+  background-image: #f3bdbd;
 }
 
 .badge-primary  {
   color: #f6f5ae;
+ 
 }
 
 ul {
 
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 2em;
     color: #f24236;
   }
 
 li  {
+  top: 30%;
+  text-align: center;
+  font-size: 500%;
+  color: #f8a1a1;
+  text-shadow: 1px 1px 3px #88887f;
+  font-family: Century Gothic, sans-serif;
+}
+
+h1{
   text-align: center;
   font-size: 500%;
   color: #f6f5ae;
   text-shadow: 1px 1px 3px #3b3b3a;
   font-family: Century Gothic, sans-serif;
+  background-color: #4b387e;
+  height: 65px;
+  padding-top: 30px;
 }
+
+#logout{
+	padding:10px;
+	  float:right;
+	  margin-right: 20px;
+	  box-shadow:0px 0px 3px 3px rgb(226, 219, 219);
+	border-radius:2px 2px 2px 2px;
+    background-color: rgb(250, 112, 112);
+    font-weight: bold;
+  }

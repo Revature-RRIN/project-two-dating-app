@@ -46,7 +46,9 @@ public class MessagesController {
 	
 	@PostMapping(value="/messages")
 	public ResponseEntity<Integer> addMessage(@RequestBody Messages msg) {
-		msg.setReceiver(msg.getSender());
+		System.out.println("PEEPEE POSTMAPPING VALUES ARE: " + msg.getSender().getFirstname());
+		System.out.println("AND " + msg.getReceiver().getFirstname());
+//		msg.setReceiver(msg.getSender());
 		return ResponseEntity.status(201).body(ms.addMessage(msg));
 	}
 

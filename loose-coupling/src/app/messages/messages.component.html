@@ -7,8 +7,8 @@
 
   <select *ngFor="let match of myMatches" (change)="onChange($event)">
     <option selected disabled>Select a matched user to message</option>
-      <option value="{{match.user1}}" *ngIf="match.user1.usersId==this.users.usersId">{{match.user2.firstname}}</option>
-      <option value="{{match.user2}}" *ngIf="match.user2.usersId==this.users.usersId">{{match.user1.firstname}}</option>
+      <option value="{{match.user2.username}} {{match.user2.pass}}" *ngIf="match.user1.usersId==this.users.usersId">{{match.user2.firstname}}</option>
+      <option value="{{match.user1.username}} {{match.user1.pass}}" *ngIf="match.user2.usersId==this.users.usersId">{{match.user1.firstname}}</option>
   </select>
 
 

@@ -30,7 +30,6 @@ export class MessagesComponent implements OnInit, OnChanges {
   @Input() matchedUser: Users;
   @Output() submitted = new EventEmitter<Messages>();
   remark: string;
-
   users: Users;
 
   constructor(private messageService: MessageService,
@@ -52,8 +51,6 @@ export class MessagesComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.displayMessages();
-
-
   }
 
   getMatches() {
@@ -66,8 +63,21 @@ export class MessagesComponent implements OnInit, OnChanges {
     )
   }
 
+  match: Matches;
   public onChange(event): void {
-    this.matchedUser = event.target.value;
+    console.log(event.target.value);
+    const userPass: string[] = event.target.value.split(" ", 2);
+    console.log('that`s it');
+    const thisUsername: string = userPass[0];
+    const thisPassword: string = userPass[1];
+
+    this.us.login(thisUsername, thisPassword).subscribe(
+      resp => {
+        console.log(resp.user.firstname);
+        this.matchedUser = resp.user;
+      }
+    );
+
     console.log("this matched user's name is: " + this.matchedUser.firstname);
   }
 
@@ -92,6 +102,8 @@ export class MessagesComponent implements OnInit, OnChanges {
   */
   sendMessage(): void {
     console.log(this.matchedUser.firstname);
+    console.log("sending with the sender as . . . " + this.users.firstname);
+    console.log("and the reciever being ... " + this.matchedUser.firstname);
     this.message.remark = this.remark;
     this.message.senderId = this.users;
     this.message.receiverId = this.matchedUser;

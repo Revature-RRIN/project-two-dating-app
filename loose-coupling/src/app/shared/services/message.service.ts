@@ -22,7 +22,6 @@ export class MessageService {
 
   sendMessage(message: Messages): Observable<Messages> {
     console.log(message);
-    
     const body = JSON.stringify(message);
     return this.http.post(this.appUrl, body,
       { headers: this.headers }).pipe(
@@ -30,23 +29,23 @@ export class MessageService {
   }
 
   idString: String;
-//get both the loggedin user, and the user that you are matched with
-  viewMessages(users:Users, matchedUser:Users): Observable<Messages[]>  {
+  //get both the loggedin user, and the user that you are matched with
+  viewMessages(users: Users, matchedUser: Users): Observable<Messages[]> {
     this.idString = "";
     this.idString = this.idString + users.usersId.toString();
     this.idString = this.idString + " ";
-    this.idString = this.idString + users.usersId.toString();
+    this.idString = this.idString + matchedUser.usersId.toString();
     console.log("ids are: " + this.idString);
-    return this.http.post(this.url.getUrl() + "displayMessages", this.idString, {headers: this.headers}).pipe(
+    return this.http.post(this.url.getUrl() + "displayMessages", this.idString, { headers: this.headers }).pipe(
 
       map(resp => {
         const messageList: Messages[] = resp as Messages[];
         console.log(messageList);
         return messageList;
       }));
-      }
-
-      
   }
-  
+
+
+}
+
 

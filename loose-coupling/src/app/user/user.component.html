@@ -24,7 +24,7 @@
 
 <div *ngIf="clickedMessage" class = "messagePopup">
 <div *ngFor="let match of myMatches">
-<app-messages>{{match.user2Id}}</app-messages>
+<app-messages id="[match.user2Id]">{{match.user2Id}}</app-messages>
 </div>
 </div>
 

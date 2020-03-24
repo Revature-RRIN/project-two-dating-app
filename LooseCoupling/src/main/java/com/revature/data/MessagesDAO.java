@@ -12,7 +12,7 @@ public interface MessagesDAO {
 	public Messages getMessageById(int id);
 	public Set<Messages> getMessageByUser(Users u);
 	public Set<Messages> getMessagesByMatch(Matches m);
-	public Set<Messages> getConversationByUsers(Users u, Users u2);
+	public Set<Messages> getConversationByUsers(int u, int u2);
 	
 	//ByStatus for Admin functionality... (so he/she can retrieve "deleted/reported" messages)?
 	public Set<Messages> getMessageByStatus(Status s);

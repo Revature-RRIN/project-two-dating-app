@@ -33,8 +33,13 @@ public class MessagesController {
 	private MessagesService ms;
 	
 	@PostMapping(value="/displayMessages")
-	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody Users u) {
-		Set<Messages> returnThis = ms.getConversationByUsers(u, u);
+	public ResponseEntity<Set<Messages>> getConversationByUsers(@RequestBody String iCollection) {
+		System.out.println("HERE IT IS");
+		System.out.println(iCollection);
+		String[] idCollection = iCollection.split(" ");
+		int u = Integer.valueOf(idCollection[0]);
+		int u2 = Integer.valueOf(idCollection[1]);
+		Set<Messages> returnThis = ms.getConversationByUsers(u, u2);
 		returnThis.addAll(ms.getConversationByUsers(u, u));
 		return ResponseEntity.ok(returnThis);
 	}

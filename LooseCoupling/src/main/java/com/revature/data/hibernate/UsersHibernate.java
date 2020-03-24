@@ -154,11 +154,11 @@ public class UsersHibernate implements UsersDAO {
 		UsersDAO ud = new UsersHibernate();
 		// First assign the user a type by their score
 		int type;
-		if (u.getScore() < 225) {
+		if (u.getScore() < 10) {
 			type = 1;
-		} else if (u.getScore() >= 225 && u.getScore() < 275) {
+		} else if (u.getScore() >= 10 && u.getScore() < 100) {
 			type = 2;
-		} else if (u.getScore() >= 275 && u.getScore() < 325) {
+		} else if (u.getScore() >= 100 && u.getScore() < 1000) {
 			type = 3;
 		} else {
 			type = 4;
@@ -179,7 +179,7 @@ public class UsersHibernate implements UsersDAO {
 		for (Users user : usersSet) {
 			if (!(user.getUsersId() == u.getUsersId())) { // A user shouldn't get matched with himself
 				if (type == 1) { // Personality type 1
-					if (user.getScore() < 225) {
+					if (user.getScore() < 10) {
 						if (pref == 1) { // User is straight
 							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
 								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
@@ -199,7 +199,7 @@ public class UsersHibernate implements UsersDAO {
 						}
 					}
 				} else if (type == 2) { // Personality type 2
-					if (user.getScore() >= 225 && user.getScore() < 275) {
+					if (user.getScore() >= 10 && user.getScore() < 100) {
 						if (pref == 1) { // User is straight
 							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
 								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
@@ -219,7 +219,7 @@ public class UsersHibernate implements UsersDAO {
 						}
 					}
 				} else if (type == 3) { // Personality type 3
-					if (user.getScore() >= 275 && user.getScore() < 325) {
+					if (user.getScore() >= 100 && user.getScore() < 1000) {
 						if (pref == 1) { // User is straight
 							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
 								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight
@@ -239,7 +239,7 @@ public class UsersHibernate implements UsersDAO {
 						}
 					}
 				} else { // Personality type 4
-					if (user.getScore() >= 325) {
+					if (user.getScore() >= 1000) {
 						if (pref == 1) { // User is straight
 							if (!u.getGender().equalsIgnoreCase(user.getGender())) {
 								if (user.getSexPref().equalsIgnoreCase("Heterosexual")) { // Make sure other user is also straight

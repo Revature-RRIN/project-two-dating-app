@@ -29,8 +29,6 @@ import { MatchesComponent } from './matches/matches.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { MatchesService } from './shared/services/matches.service';
 import { UploadResponsesService } from './shared/services/answer.service';
-import { Question2Component } from './question2/question2.component';
-import { Question3Component } from './question3/question3.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +45,6 @@ import { Question3Component } from './question3/question3.component';
     BanUsersComponent,
     MatchesComponent,
     NotificationsComponent,
-    Question2Component,
-    Question3Component
   ],
   imports: [
     BrowserModule,

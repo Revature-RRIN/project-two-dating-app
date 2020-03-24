@@ -4,22 +4,14 @@
 
 <div class="container">
 
-
-<!--<ul>
-    <li*ngfor="let q of questions">
-      {{ q.question }}
-    </li>
-  </ul>-->
-
-
-
     
     <h3>Answer personality questions:</h3>
          <div class="formgroup">
         <br>
         <p>Given the options listed, what is your favorite food?</p> <br>
     
-        <select class="form-control" id="grade" [(ngModel)]="this.scores1.qonescore">
+        <select class="form-control" aria-placeholder="Default" id="grade"  [(ngModel)]="this.scores1.qonescore">
+            <option [value]=0>Default</option>
             <option [value]=1>Italiain</option>
             <option [value]=10>Mexican</option> 
             <option [value]=100>Cheese burger</option>
@@ -36,7 +28,8 @@
    <div class="formgroup">
         <br>
         <p>Given the options listed, what is your preferred pasttime?</p> <br>
-        <select class="form-control" id="grade" [(ngModel)]="scores2.qtwoscore" >
+        <select class="form-control" aria-placeholder="Default" id="grade"  [(ngModel)]="scores2.qtwoscore" >
+            <option [value]=0>Default</option>
             <option [value]=1>Arts and Crafts</option>
             <option [value]=10>Being outdoors</option> 
             <option [value]=100>Watching TV and Sports</option>
@@ -52,11 +45,12 @@
    <div class="formgroup">
         <br>
         <p>Given the options listed, what is your ideal vacation?</p> <br>
-        <select class="form-control" id="grade" [(ngModel)]="users.score"> 
-            <option [value]=this.total+1>A relaxed beach getaway</option>
-            <option [value]=this.total+10>A camping trip in the Mountains</option>
-            <option [value]=this.total+100>A trip to New Orleans for Mardi Gras</option>
-            <option [value]=this.total+1000>A culture-based tour of France</option>
+        <select class="form-control" aria-placeholder="Default"  id="grade"  [(ngModel)]="users.score"> 
+            <option [value]=this.q2+0>Default</option>
+            <option [value]=this.q2+1>A relaxed beach getaway</option>
+            <option [value]=this.q2+10>A camping trip in the Mountains</option>
+            <option [value]=this.q2+100>A trip to New Orleans for Mardi Gras</option>
+            <option [value]=this.q2+1000>A culture-based tour of France</option>
         </select>
         <button type="submit" (click)="submit3()" id="submit">Submit</button>  
     </div>

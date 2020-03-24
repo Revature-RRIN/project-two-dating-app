@@ -49,3 +49,15 @@
                   padding-left: 75%;
                   padding-top: 10%;
            }
+
+
+           h1{
+            text-align: center;
+            font-size: 500%;
+            color: #f6f5ae;
+            text-shadow: 1px 1px 3px #3b3b3a;
+            font-family: Century Gothic, sans-serif;
+            background-color: #4b387e;
+            height: 65px;
+            padding-top: 30px;
+          }

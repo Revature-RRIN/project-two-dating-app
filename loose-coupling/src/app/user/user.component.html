@@ -1,21 +1,21 @@
 <div class="navbar">
     <app-nav-bar></app-nav-bar>
 </div>
-
-<button class="row btn btn-primary" (click)="editProfile()">Edit Profile</button>
+<div class="container">
+<button class="button" (click)="editProfile()">Edit Profile</button>
 <!--NEED MATCHES BUTTON BELOW TO ROUTE TO MATCHES... NO COMPONENT CURRENTLY-->
-<button class="row btn btn-primary" (click)="viewMatches()">View Matches</button>
-<button class="row btn btn-primary" (click)="findMatch()">Find a match</button>
-<button class="row btn btn-primary" (click)="viewMessages()">View Messages</button>
-
-<button class="row btn btn-primary" id="logoutbtn" (click)="logOut()">Logout</button>
+<button class="button" (click)="viewMatches()">View Matches</button>
+<button class="button" (click)="findMatch()">Find a match</button>
+<button class="button" (click)="viewMessages()">View Messages</button>
 
 
-<div>
-    <h3>Welcome {{users.firstname}} {{users.lastname}}!</h3>
+
+<div class="image">
+    <h2>Welcome {{users.firstname}} {{users.lastname}}!</h2>
     <img src='http://liftnorthamerica.com/wp-content/uploads/2018/02/person-silhouette-9.gif'/>
-    <p>{{users.age}}</p> 
-    <p>{{users.location}}</p>
+    <h2>{{users.firstname}}, {{users.age}} / {{users.firstname}} location : {{users.location}} </h2> 
+    <!--<div id="loc">{{users.location}}</div>-->
+    
 </div>
 
 <div>
@@ -27,7 +27,7 @@
 <app-messages>{{match.user2Id}}</app-messages>
 </div>
 </div>
-
+</div>
 <!--
 <div *ngIf="users.id != 1 && users.id != null">
     <div>

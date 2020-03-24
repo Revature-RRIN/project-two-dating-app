@@ -23,6 +23,7 @@ export class MessageService {
   sendMessage(message: Messages): Observable<Messages> {
     console.log(message);
     const body = JSON.stringify(message);
+    console.log(body);
     return this.http.post(this.appUrl, body,
       { headers: this.headers }).pipe(
         map(resp => resp as Messages));

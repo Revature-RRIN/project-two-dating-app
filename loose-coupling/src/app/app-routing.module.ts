@@ -20,10 +20,10 @@ const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "dashboard", component: DashboardComponent},
   {path: "questions", component: QuestionsComponent},
-  {path: "user", component: UserComponent},
+  {path: "user", component: UserComponent}, 
   {path: "messages", component: MessagesComponent},
   {path: "admin", component: AdminComponent},
-  {path: "matches", component: MatchesComponent}
+  {path: "matches", component: MatchesComponent} 
   
 ];
 

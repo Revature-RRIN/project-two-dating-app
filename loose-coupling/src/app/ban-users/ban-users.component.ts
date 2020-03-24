@@ -28,7 +28,7 @@ export class BanUsersComponent implements OnInit {
     this.bu.deleteUser(banned).subscribe(
       banned => {
         // this.banned = banned;
-        this.router.navigate(["login"])
+        this.router.navigate(["login"]) 
       }
     );
     }

@@ -1,19 +1,18 @@
 <div class="navbar">
     <app-nav-bar></app-nav-bar>
 </div>
-
+<h1>Welcome {{users.firstname}} {{users.lastname}}!</h1>
+<button class="question" (click)="addQuestions()">Manage questions</button>
 <div class="ban"  *ngIf="isBanClicked; else banButton">
     <app-ban-users></app-ban-users>
 </div>
+
+
+
 <ng-template #banButton>
-    <button class= "banButton" (click)=showBan()>Ban Users</button>
+    <button class= "banbtn" (click)=showBan()>Ban Users</button>
 </ng-template>
 
-<button class="row btn btn-primary" (click)="addQuestions()">Add a Personality-Test Question</button>
-
-<button class="row btn btn-primary" id="logoutbtn" (click)="logOut()">Logout</button>
 
 
-<div>
-    <h3>Welcome {{users.firstname}} {{users.lastname}}!</h3>
-</div>
+

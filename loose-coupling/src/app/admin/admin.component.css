@@ -1,2 +1,21 @@
-#logoutbtn {position: absolute;
-    right: 0px;}
+ h1{
+     margin-left: 43%;
+     font-weight: bolder;
+ }
+
+ .question{
+    margin-left: 42%;
+    background-color:#00FFFF;
+    padding: 20px;
+    font-size: larger;
+    font-weight: 700;
+ }
+ 
+
+ .banbtn{
+    background-color:#00FFFF;
+    padding: 20px;
+    width: 8%;
+    font-size: larger;
+    font-weight: 700;
+ }

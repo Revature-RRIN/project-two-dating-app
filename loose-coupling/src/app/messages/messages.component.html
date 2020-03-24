@@ -19,7 +19,7 @@ this.message.senderId.usersId == this.currentUser.user.usersId
 -->
 
   <ul *ngFor="let message of messageList">
-    <div *ngIf="this.message.senderId.usersId == this.users.usersId; then thenBlock; else elseBlock"></div>
+    <div *ngIf="this.message.sender.usersId == this.users.usersId; then thenBlock; else elseBlock"></div>
     <ng-template #thenBlock>
       <div class="leftSide">{{message.remark}}</div>
     </ng-template>

@@ -38,8 +38,8 @@ export class MessagesComponent implements OnInit, OnChanges {
     this.message = {
       messagesId: null,
       remark: 'null',
-      senderId: null,
-      receiverId: null
+      sender: null,
+      receiver: null
     }
   }
   messageList: Messages[];
@@ -67,7 +67,6 @@ export class MessagesComponent implements OnInit, OnChanges {
   public onChange(event): void {
     console.log(event.target.value);
     const userPass: string[] = event.target.value.split(" ", 2);
-    console.log('that`s it');
     const thisUsername: string = userPass[0];
     const thisPassword: string = userPass[1];
 
@@ -78,7 +77,6 @@ export class MessagesComponent implements OnInit, OnChanges {
       }
     );
 
-    console.log("this matched user's name is: " + this.matchedUser.firstname);
   }
 
   displayMessages() {
@@ -105,8 +103,12 @@ export class MessagesComponent implements OnInit, OnChanges {
     console.log("sending with the sender as . . . " + this.users.firstname);
     console.log("and the reciever being ... " + this.matchedUser.firstname);
     this.message.remark = this.remark;
-    this.message.senderId = this.users;
-    this.message.receiverId = this.matchedUser;
+    this.message.sender = this.users;
+    this.message.receiver = this.matchedUser;
+
+    console.log(this.message.sender);
+    console.log(this.message.receiver);
+
     this.messageService.sendMessage(this.message).subscribe(
       messages => {
         this.messages = messages;

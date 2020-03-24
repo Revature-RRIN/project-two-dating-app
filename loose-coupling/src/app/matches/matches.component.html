@@ -20,8 +20,10 @@
       <td *ngIf="users.firstname != m.user1.firstname">{{ m.user1.location }}</td>
       <td *ngIf="users.firstname != m.user2.firstname">{{ m.user2.location }}</td>
       <td>{{ m.matchStatus.statusState }}</td>
-      <td><button type="button" class="btn btn-success" (click)="acceptMatch(m, $event)">Accept</button></td>
-      <td><button type="button" class="btn btn-danger" (click)="rejectMatch(m)">Reject</button></td>
+      <td>
+        <button id="mtc-btn" type="button" class="btn btn-success" (click)="acceptMatch(m, $event)">Accept</button>
+        <button id="mtc-btn" type="button" class="btn btn-danger" (click)="rejectMatch(m)">Reject</button>
+      </td>
     </ng-container>
   </tr>
 </table>

@@ -4,21 +4,20 @@
     <app-nav-bar></app-nav-bar>
 </div>
 
-<div class="login" *ngIf="isLogClicked; else logButton">
-    <app-login></app-login>
+<div class="side-text">
+    Find your perfect match today!
 </div>
 
-<ng-template #logButton>
-    <button class= "loginButton" (click)=showLogin()>login </button>
-</ng-template>
 
 
 <a class="image">
     <img src="assets/hearts.png">
 </a>
 
-<div class="signup"  *ngIf="isSignClicked; else signButton">
+<div class="signup">
+    <h1>Sign up for free!</h1>
     <app-signup></app-signup>
+    Already a user? Click <a href="/login">here</a> to login.
 </div>
 
 <ng-template #signButton>

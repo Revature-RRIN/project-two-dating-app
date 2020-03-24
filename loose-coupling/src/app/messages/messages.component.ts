@@ -64,6 +64,8 @@ export class MessagesComponent implements OnInit, OnChanges {
 
 
   public onChange(event): void {
+
+
     this.matchedUser = event.target.value;
     console.log(this.matchedUser);
   }
@@ -85,15 +87,25 @@ export class MessagesComponent implements OnInit, OnChanges {
     senderId: number;
     receiverId: number;
     remark: string;
+
+
+    signup(): void {
+    this.signupService.signup(this.users).subscribe(
+      users => {
+        this.users = users;
+        this.submitted.emit(users);
+        this.router.navigate(["login"]);
+      }
+    );
   */
   sendMessage(): void {
-    this.message.remark = this.remark;
+    
     this.message.senderId = this.users;
     this.message.receiverId = this.matchedUser;
     this.messageService.sendMessage(this.message).subscribe(
-      messages => {
-        this.messages = messages;
-        this.submitted.emit(messages);
+      message => {
+        this.message = message;
+        this.submitted.emit(message);
       }
     );
   }

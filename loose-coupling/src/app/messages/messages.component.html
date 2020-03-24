@@ -7,7 +7,9 @@
 
   <select (change)="onChange($event)">
   <option selected disabled>Select a matched user to message</option>
+  
   <option *ngFor="let match of myMatches" value="{{match.user2}}">{{match.user2.firstname}}</option>
+
 </select>
 
 
@@ -24,7 +26,7 @@ this.message.senderId.usersId == this.currentUser.user.usersId
 </ul>
 
 
-  <div class="messager">
+<div class="messager">
 <input class="col" type="text" (keydown.enter)="sendMessage()" [(ngModel)]="remark">
 <button class="row btn btn-primary" (click)="sendMessage()">Submit</button>
 </div>

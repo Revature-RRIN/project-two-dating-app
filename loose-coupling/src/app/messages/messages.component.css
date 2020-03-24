@@ -1,10 +1,11 @@
 .messagePopup   {
-    max-width: 200px;
-    max-height: 400px;
+    max-width: 300px;
+    max-height: 600px;
     box-shadow: 1px 1px 3px black;
-    padding: 10px;
-        border: 2px solid #F24236;
+    padding: 20px;
+        border: 2px solid orange;
         border-radius: 5px;
+        text-align: right;
 }
 
 .rightSide  {
@@ -13,4 +14,12 @@
 
 .leftSide   {
     text-align: left;
+}
+
+button  {
+    background-color: cyan;
+}
+
+.messager   {
+    padding: 10px;
 }

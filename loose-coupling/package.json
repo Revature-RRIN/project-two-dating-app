@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^9.0.7",
     "@angular/platform-browser-dynamic": "^9.0.7",
     "@angular/router": "^9.0.7",
-    "aws-sdk": "^2.644.0",
+    "aws-sdk": "^2.814.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "rxjs": "~6.5.4",

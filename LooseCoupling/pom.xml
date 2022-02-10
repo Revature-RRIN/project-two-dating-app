@@ -49,7 +49,7 @@
 		<dependency>
 			<artifactId>hibernate-core</artifactId>
 			<groupId>org.hibernate</groupId>
-			<version>5.4.9.Final</version>
+			<version>5.4.24.Final</version>
 		</dependency>
 		<!-- Spring Core Dependency. The IOC Container. Necessary for Spring -->
 		<dependency>
